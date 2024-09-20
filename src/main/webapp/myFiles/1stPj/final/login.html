@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css?after">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/toTopCss.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <header class="header">
+    
+        <!--  로고  -->
+        <h1><a href="index.html">더 조은</a></h1>
+        
+        <!--  토글 버튼  -->
+         <a class="menu_trigger" href="#">
+             <span></span>
+             <span></span>
+             <span></span>
+         </a>
+         
+         <div class="ph_Nav">
+            <div class="nav_Bg"></div>
+            <div class="toggle_Wrap">
+                <div class="toggle_All_Wrap">
+                    <a href="./login.html">
+                        <div class="toggle_login">
+                            <p>로그인</p>
+                        </div>
+                    </a>
+                     
+                     
+                     
+                     <!--  토글 메뉴  -->
+                   <div class="toggle_List_Wrap">
+                    <ul>
+                        <li class="toggle_List_Intro list_Open">
+                            <a href="#" class="toggle_Intro">소개</a>
+                            <ul class="toggle_Intro_List">
+                                <li><a href="./history.html">연혁</a></li>
+                                <li><a href="./beef.html">원산지</a></li>
+                                <li><a href="./membership.html">멤버쉽</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="toggle_List_Menu list_Open">
+                            <a href="#" class="toggle_Menu">메뉴</a>
+                            <ul class="toggle_Menu_List">
+                                <li><a href="./steak.html">스테이크</a></li>
+                                <li><a href="./pasta.html">파스타</a></li>
+                                <li><a href="./pizza.html">피자</a></li>
+                                <li><a href="./side.html">사이드</a></li>
+                                <li><a href="./drink.html">음료</a></li>
+                                <li><a href="./alcohol.html">주류</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="toggle_List_Store list_Open">
+                            <a href="#" class="toggle_Store">매장</a>
+                            <ul class="toggle_Store_List">
+                                <li><a href="./map_joonggu.html">중구점</a></li>
+                                <li><a href="./map_nowongu.html">노원</a></li>
+                                <li><a href="./map_seochogu.html">서초점</a></li>
+                                <li><a href="./map_songpagu.html">송파점</a></li>
+                                <li><a href="./map_yeongdeuphogu.html">영등포점</a></li>
+                                <li><a href="./map_busan.html">부산지점</a></li>
+                            </ul>
+                        </li>
+                        <li class="toggle_List_News list_Open">
+                            <a href="#" class="toggle_News">소식</a>
+                            <ul class="toggle_News_List">
+                                <li><a href="./notice.html">공지사항</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li class="toggle_List_Five">
+                            <a href="#">채용</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    
+    <main>
+        <section class="select_Section">
+            <button id="loginSelect_Btn">
+                Login
+            </button>
+            <button id="signupSelect_Btn" onclick="location.href='signUp.html'" >
+                Sign up
+            </button>
+        </section>
+        <section class="login_Section">
+            <form class="loginInfo_Form" action="#">
+                <input type="text" name="login_ID" id="login_ID" placeholder="아이디">
+                <input type="password" name="login_PWD" id="login_PWD" placeholder="비밀번호">
+                
+            </form>
+            <div class="forget_Section">
+                <button class="forgetID_Btn" onclick="location.href='#'">아이디찾기</button>
+                <button class="forgetPWD_Btn" onclick="location.href='#'">비밀번호찾기</button>
+            </div>
+            <button class="loginIn_Btn">로그인</button>
+        </section>
+        <section class="oauthLogin_Section">
+            <div class="oauth_Google" type="button"><img src="./img/google.svg" alt="구글" onclick="location.href='#'"/><p>구글로 로그인 하기</p></div>
+            <div class="oauth_Apple" type="button"><img src="./img/apple.svg" alt="애플" onclick="location.href='#'"><p>애플로 로그인 하기</p></div>
+            <div class="oauth_Naver" type="button"><img src="./img/naver.svg" alt="네이버" onclick="location.href='#'"><p>네이버로 로그인 하기</p></div>
+            <div class="oauth_Kakao" type="button"><img src="./img/kakao.svg" alt="카카오" onclick="location.href='#'"><p>카카오로 로그인 하기</p></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="f_container">
+        <div class="f1_1">
+           <h2 class="f_logo">The Johen Restaurant</a></h2>
+           
+           <p class="f_p1">고객만족센터</p>
+           <p class="f_p2">02.1818.1818</p>
+           
+           <div class="f1_2">
+              <h3>Follow us</h3>
+              <div class="f_img">
+              
+              <ul class="f_icon">
+                 <li><a class="f_icon1"><img src="img/f_img_insta.png"></a></li>
+                 <li><a class="f_icon1"><img src="img/f_img_face.png"></a></li>
+                 <li><a class="f_icon1"><img src="img/f_img_you.png"></a></li>
+              </ul>
+              </div>
+           </div>
+        </div>
+        
+         <div class="f2">
+             <ul>
+                 <li><a>소개</a></li>
+                 <li><a>연혁</a></li>
+                 <li><a>고기</a></li>
+                 <li><a>멤버쉽</a></li>
+             </ul>
+             <ul>
+                <li><a>소식</a></li>
+                <li><a>공지사항</a></li>
+                <li><a>이벤트</a></li>
+                   <li><a>FAQ</a></li>
+             </ul>
+             <ul>
+                 <li>이용약관</li>
+                 <li>이용약관</li>
+                 <li>정보처리</li>
+             </ul>
+          </div>
+         </div>
+               
+             
+            <address class="copy" alt="(우)03189 서울특별시 종로구 우정국로2길 21 ">
+                <area shape="rect" coords="550, 19, 660, 36" target="_blank" href="" title="" alt="">
+            </address>
+            <p class="blind">Copyright &copy; 2024 ddddddddddddd . ALL RIGHT RESERVED.</p>
+         
+     </footer>
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://kit.fontawesome.com/3904c47793.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/hamburger.js"></script>
+    
+<script src="./js/login.js?after"></script>
+</body>
+</html>

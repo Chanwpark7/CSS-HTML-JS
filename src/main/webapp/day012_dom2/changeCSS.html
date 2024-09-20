@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		#container {
+		  width: 400px;
+		  height: 400px;
+		  position: relative;
+		  background: yellow;
+		}
+		#animate {
+		  width: 50px;
+		  height: 50px;
+		  position: absolute;
+		  background-color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <h1 id="id1">이건 heading h1</h1>
+	<button onclick="document.getElementById('id1').style.color='red'">스타일 바꿔보기</button> -->
+	<script>
+	//DOM을 이용하면 inline에 바로 스타일 변경 가능.
+	
+	let id=null; //interval ID
+	let elem=null;
+	let pos=0;
+	function move(){
+		/* setInterval(callback,millisec)은 콜백을 millisecond 주기로 수행함.
+			만약 계속 수행하게 되면 container 밖으로 빠져나가게 됨.
+			따라서 container 의 하단 모서리(350*350)에 도달하게 되면 clear()를 해줘야 함.
+			이때 id 를 사용. 즉 set Interval 을 생성할때 id 변수를 할당해 주고,
+			끝낼때는 clearInterval(id)를 호출하면 종료됨. */
+		elem=document.getElementById("animate");
+		id=setInterval(frame,5); //frame 콜백을 5/1000sec 간격으로 계속 호출하고, id에 인터벌을 대입함(나중에 종료시 필요)
+	}
+	
+	function frame(){
+		if(pos>=350){ //모서리를 넘어가면 이동 종료.
+			pos=0;
+			elem.style.top = pos;
+			elem.style.left = pos;
+		}else{
+			pos++;
+			elem.style.top = pos+"px";
+			elem.style.left = pos+"px";
+		}
+	}
+	</script>
+	
+	<p><button onclick="move()">클릭하세요.</button></p>
+	<div id="container">
+		<div id="animate">
+		</div>
+	</div>
+</body>
+
+</html>

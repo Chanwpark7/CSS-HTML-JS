@@ -1,0 +1,534 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* background img 정의 */
+.background{
+    width: 100%;
+    top: 0;
+    height:30vh;
+    z-index: -5;
+}
+
+
+#bg_container{
+    z-index: -5;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: linear-gradient(rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.ml11 {
+  font-weight: 700;
+  font-size: 3.5em;
+  display:block;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: white;
+  transform-origin: 0 50%;
+}
+
+.ml11 .line1 { 
+  top: 0; 
+  left: 0;
+}
+
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+  color: white;
+}
+
+#snowMan{
+  position: absolute;
+  left: 20rem;
+  bottom:-0.2rem;
+  width: 5rem;
+}  
+
+#bg_wrap{
+  overflow: hidden;
+  position: absolute;
+  width:100%;
+  height: 300%;
+}
+
+#moving{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height:66.66%;
+  position: absolute;
+}
+
+#snowflower1{
+  display: flex;
+  flex-direction: row nowrap;
+  height: 50%;
+  order:1;
+  justify-content: center;
+}
+
+#snowflower1 img, #snowflower2 img{
+    width: 20%;
+  }
+
+#snowflower1 img:nth-child(even){
+  transform: rotate(180deg);
+}
+
+#snowflower2{
+  display: flex;
+  flex-direction: row nowrap;
+  height: 50%;
+  order:2;
+  justify-content: center;
+}
+
+
+#snowflower2 img:nth-child(even){
+  transform: rotate(180deg);
+}
+
+#sf1{
+  width: 9rem;
+  height: 9rem;
+  position: absolute;
+  animation: turning 3s ease-in-out infinite alternate;
+}
+
+#sf2{
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  animation: turning 2.8s ease-in-out infinite alternate;
+}
+
+#sf3{
+  width: 7rem;
+  height: 7rem;
+  position: absolute;
+  animation: turning 2.6s ease-in-out infinite alternate;
+}
+
+#sf4{
+  width: 6.5rem;
+  height: 6.5rem;
+  position: absolute;
+  animation: turning 2.35s ease-in-out infinite alternate;
+}
+
+#sf5{
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  animation: turning 2.1s ease-in-out infinite alternate;
+}
+
+#sf6{
+  width: 5.5rem;
+  height: 5.5rem;
+  position: absolute;
+  animation: turning 1.85s ease-in-out infinite alternate;
+}
+
+#sf7{
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  animation: turning 1.6s ease-in-out infinite alternate;
+}
+
+#sf8{
+  width: 4.5rem;
+  height: 4.5rem;
+  position: absolute;
+  animation: turning 1.4s ease-in-out infinite alternate;
+}
+
+#sf9{
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  animation: turning 1.2s ease-in-out infinite alternate;
+}
+
+#sf10{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  animation: turning 1s ease-in-out infinite alternate;
+}
+
+@keyframes turning {
+    0% {
+      transform: scaleX(1);
+    }
+    100% {
+      /* 애니메이션 종료점의 css 정의 */
+      transform: scaleX(-1);
+    }
+}
+
+/* body 내 nav bar 정의 */
+.board {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    height: 5vh;
+    background-color: white;
+  }
+
+/* 1번 탭(홈) */
+.toHome{
+    position: relative;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toHome .home{
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.toHome img{
+    width:50%;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* 홈 탭 마우스 오버시 효과 정의 */
+.toHome:hover{
+    background-color: black;
+}
+
+.toHome:hover img{
+    filter: invert(100%);
+}
+
+/* 2번 탭(소개 상세페이지) */
+.detail {
+    position: relative;
+    width: 30%;
+    height: 100%;
+  }
+  
+  .btn{
+    height: 100%;
+    width:50%;
+  }
+  
+  /* dropdown 정의 */
+  .detail .dropBtn {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    top: 5vh;
+    display: none;
+    z-index: 4;
+    background-color: black;
+  }
+  
+  .detail .dropdown-content a {
+    display: block;
+    padding: auto;
+    text-decoration: none;
+    width: 80%;
+    padding: 5% 10%;
+    color: white;
+  }
+  
+  .detail .dropdown-content a:last-child {
+    text-decoration: none;
+    color: gray;
+  }
+  
+  /* dropdown 이벤트 정의 */
+  .btn:hover .dropBtn {
+    background-color: black;
+    color: white;
+  }
+  
+  .btn:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: gray;
+    color: black;
+  }
+  
+  .dropdown-content a:last-child:hover {
+    background-color: black;
+    color: gray;
+  }
+
+/* 3번 탭(경로) */
+.path{
+    display: flex;
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* Body 정의 */
+.mainBody{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+/*메인내용 img css*/
+.main_cards{
+    width:100%;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.main_cards div{
+    display: flex;
+    margin-top: 50px;
+}
+
+.cards{
+    display: flex;
+    width: 864px;
+    flex-direction: column; /*세로정렬*/
+    margin: 0 auto;
+}
+
+.cards div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    text-align: center;
+}
+
+.cards div p{
+    line-height: 50px;
+    margin: 0 auto;
+}
+
+.cards div img{
+    height: 300px;
+    margin-right: 50px;
+}
+
+/*하위 nav css 시작*/
+.undernav{
+    width: 480px;
+    height: 50px;
+    color: black;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.undernav a{
+    width:160px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    background: orange;
+}
+
+.undernav a:hover{
+    background-color: black;
+    color: white;
+}
+/*하위 nav css 끝*/
+
+/* upload btn 정의 */
+#container {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	right: 30px;
+	bottom: 30px;
+	position: fixed;
+	cursor: pointer;
+	box-sizing: border-box;
+    z-index: 10;
+}
+
+#container img{
+	display: absolute;
+	width: 20px;
+	height: 20px;
+	z-index: 4;
+}
+
+#container .circle {
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	stroke: black;
+	stroke-width: 1;
+	stroke-dasharray: 157;
+	stroke-dashoffset: 157;
+	z-index: 5;
+}
+
+#container .circle circle{
+	transform-origin: center center;
+	transform: rotate(-90deg);
+}
+
+/* 추가하기 */
+
+/* mobile 용 css */
+@media all and (max-width:767px){
+  .ml11 {
+    font-size: 2em;
+  }
+  
+    #wrap{
+        flex: row wrap;
+    }
+    
+    .board .path{
+      display: none;
+    }
+  
+    .board .detail{
+      width:70%;
+    }
+  
+    .board .btn{
+      width:100%;
+    }
+  
+    .board .dropdown-content{
+      width:100%;
+      z-index: 10;
+    }
+
+    /* background img */
+    .header #bgImg{
+        width: 1440px;
+    }
+    
+    /* main page의 p tag */
+    p{
+        font-size: 0.7rem;
+        font-weight: lighter;
+    }
+
+    .main_cards div{
+        width: 100%;
+        min-width: 320;
+        margin-top:20px;
+    }
+
+    .cards div p{
+        line-height: 20px;
+        margin: 0 auto;
+        margin-right: 15%;
+    }
+
+    .cards div img{
+        height: 100px;
+        margin-left: 15%;
+        margin-right:5%;
+    }
+
+    
+    .undernav{
+        width: 100%;
+        height: 40px;
+    }
+
+    .undernav a{
+        font-size: 0.8rem;
+        line-height: 40px;
+        width: 33.33%;
+    }
+
+    .background #snowMan{
+      left: 40%;
+    }
+}
+
+/* tablet 용 css */
+@media all and (min-width:768px) and (max-width:1279px){
+    #wrap{
+        flex: row wrap;
+    }
+    /* main page의 p tag */
+    p{
+        font-size: 0.8rem;
+        font-weight: lighter;
+    }
+
+    .main_cards div{
+        width: 100%;
+    }
+
+    .cards div img{
+        height: 200px;
+        margin-left: 70px;
+    }
+
+    .undernav{
+        height: 40px;
+    }
+
+    .undernav a{
+        width:100px;
+        font-size: 0.8rem;
+        line-height: 40px;
+    }
+
+}

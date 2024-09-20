@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		const me={name:"박찬우"};
+		class Me2{
+			name; //name이라는 속성을 선언
+			
+			/* 생성자 정의. 얘가 실제 Me2 라는 클래스의 instance(객체)를 생성해주는 역할을 합니다.
+				class를 정의하면 기본 생성자는 자동으로 VM이 넣어줌. 기본 생성자란 파라미터가 하나도 없는 생성자를 뜻함.
+				이 생성자를 이용해서 만들어진 객체를 기본객체라고 함.
+				기본객체는 내부의 속성값이 모두 undefined 로 초기화됨. */
+			/* constructor(){//기본 생성자 정의함.
+				
+			} */
+			//객체 생성시에 이름값을 받아서 속성값을 그 값으로 초기화 하는 생성자 정의.
+			constructor(name){
+				this.name=name;
+			}
+			
+			//메소드 정의.
+			getName(){
+				return this.name;
+			}
+			setName(name){
+				this.name=name;
+			}
+		}
+		
+		class Car{
+			model;
+			
+			constructor(model){
+				this.model=model;
+			}
+			//static은 정적이라고 표현하기 때문에 static이 붙은 애들은 객체를 생성하지 않고도 접근 가능.
+			static setModel(model){
+				//꼭 기억해라!! static은 정적이기 때문에 내부 속성에 접근이 불가함. static은 only static만 접근 가능.
+			}
+			static getModel(){
+				return "Good bye Good night";
+			}
+		}
+		
+		const me2=new Me2();
+		const me3=new Me2("찬우");
+		console.log(Car.getModel());
+		
+		console.log(me);
+		console.log(me2);
+		console.log(me3);
+		console.log(me3.getName());
+		
+		me3.setName("Leonardo Dicafrio");
+		console.log(me3.getName());//setter 호출
+		/*  class : 객체의 원형(prototype) or 설계도 라고 함.(객체지향 언어에서)
+		모든 객체는 객체의 원형을 통해 instance 를 생성하고, 이 생성된 인스턴스를 ref 하는 변수를 객체라고 함.
+		이 개념은 나중에 자바할때 좀더 깊이 알아보도록 하고, 자바스크립트에서도 클래스를 정의해서 객체를 생성할 수 있는
+		문법이 오래전부터 존재했음. 이를 이용해서 클래스의 기초 개념과 문법, 객체 생성 및 활용법을 알아보겠음
+		
+		class 는 항상 class 라는 키워드 로 시작을 하고 다음에 클래스 이름 {필드, 생성자, 메소드}형태로 정의함.
+		필드 생성자 메소드의 정의 순서는 바껴도 상관없음. 여기서 필드란, 속성이라고 생각하면 됨.
+		
+		클래스를 정의할때는 반드시 생성자를 정의해야 하는데 이유는 이 생성자 함수가 실제 클래스로부터 instance를 생성해서 객체 변수에
+		대입하는 역할을 하기 때문임. 만약 생성자에서 필드의 값을 초기화 할 일이 생긴다면 반드시 this.를 통해서 instance 변수에 접근해야함.
+		메소드에서도 마찬가지. */
+	</script>
+</body>
+</html>

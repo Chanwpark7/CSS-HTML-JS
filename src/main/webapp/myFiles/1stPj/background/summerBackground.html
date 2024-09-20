@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#bg_container{
+  overflow: hidden;
+  position: relative;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: linear-gradient(#8eb2ff 0%, rgb(160, 228, 255) 25%, rgb(214, 250, 255) 50%,rgb(255, 255, 255) 100%);
+  z-index: -5;
+}
+
+#ocean{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 9rem;
+  width: 100%;
+  z-index: -2;
+}
+
+#sunRay{
+  position: absolute;
+  top: 0;
+  right: -2rem;
+  width: 20rem;
+  z-index: -4;
+  transform-origin: top right;
+}
+
+#family2{
+  position: absolute;
+  bottom: 0rem;
+  width: 10rem;
+  z-index: -1;
+}
+
+#bg_wrap{
+  overflow: hidden;
+  position: absolute;
+  width:100%;
+  height: 300%;
+}
+</style>
+</head>
+
+<body>
+  <div id="bg_container">
+    <img id="ocean" src="../img/ocean.png">
+    <img id="sunRay" src="../img/sunRay.png">
+    <img id="family2" src="../img/family2.png">
+  </div>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

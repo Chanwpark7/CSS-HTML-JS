@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <script src="https://js.cx/libs/animate.js"></script>
+  <style>
+    #field {
+      height: 400px;
+      border-bottom: 3px black groove;
+      position: relative;
+    }
+
+    #bounce_text {
+      position: absolute;
+      cursor: pointer;
+      height: 50px;
+      font-size: 2rem;
+      color: white;
+      font-weight: bold;
+      background-color: red;
+      opacity: 1;
+      transition: 1s opacity;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="field">
+    <div id="bounce_text">Membership</div>
+  </div>
+
+  <script>
+
+    function makeEaseOut(timing) {
+      return function(timeFraction) {
+        return 1 - timing(1 - timeFraction);
+      }
+    }
+
+    function bounce(timeFraction) {
+      for (let a = 0, b = 1; 1; a = a + b, b = b / 2) {
+        if (timeFraction >= (7 - 4 * a) / 11) {
+          return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+        }
+      }
+    }
+
+    function quad(timeFraction) {
+      return Math.pow(timeFraction, 2);
+    }
+
+    window.addEventListener("load", ()=>{
+
+      let height = field.clientHeight - bounce_text.clientHeight;
+      let width = 100;
+
+      animate({
+        duration: 2000,
+        timing: makeEaseOut(bounce),
+        draw: function(progress) {
+          bounce_text.style.top = height * progress + 'px'
+        }
+      });
+
+      animate({
+        duration: 2000,
+        timing: makeEaseOut(quad),
+        draw: function(progress) {
+          bounce_text.style.left = width * progress + "px"
+        }
+      });
+    });
+
+    window.onload = function() {
+      window.setTimeout(fadeout, 5000); //5 seconds
+    }
+
+    function fadeout() {
+      document.getElementById('bounce_text').style.opacity = '0';
+    }
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="./css/signUp.css?after">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/toTopCss.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+    
+        <!--  로고  -->
+        <h1><a href="./index.html">더 조은</a></h1>
+        
+        <!--  토글 버튼  -->
+         <a class="menu_trigger" href="#">
+             <span></span>
+             <span></span>
+             <span></span>
+         </a>
+         
+         <div class="ph_Nav">
+            <div class="nav_Bg"></div>
+            <div class="toggle_Wrap">
+                <div class="toggle_All_Wrap">
+                    <a href="./login.html">
+                        <div class="toggle_login">
+                            <p>로그인</p>
+                        </div>
+                    </a>
+                     
+                     
+                     
+                     <!--  토글 메뉴  -->
+                   <div class="toggle_List_Wrap">
+                    <ul>
+                        <li class="toggle_List_Intro list_Open">
+                            <a href="#" class="toggle_Intro">소개</a>
+                            <ul class="toggle_Intro_List">
+                                <li><a href="./history.html">연혁</a></li>
+                                <li><a href="./beef.html">원산지</a></li>
+                                <li><a href="./membership.html">멤버쉽</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="toggle_List_Menu list_Open">
+                            <a href="#" class="toggle_Menu">메뉴</a>
+                            <ul class="toggle_Menu_List">
+                                <li><a href="./steak.html">스테이크</a></li>
+                                <li><a href="./pasta.html">파스타</a></li>
+                                <li><a href="./pizza.html">피자</a></li>
+                                <li><a href="./side.html">사이드</a></li>
+                                <li><a href="./drink.html">음료</a></li>
+                                <li><a href="./alcohol.html">주류</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="toggle_List_Store list_Open">
+                            <a href="#" class="toggle_Store">매장</a>
+                            <ul class="toggle_Store_List">
+                                <li><a href="./map_joonggu.html">중구점</a></li>
+                                <li><a href="./map_nowongu.html">노원</a></li>
+                                <li><a href="./map_seochogu.html">서초점</a></li>
+                                <li><a href="./map_songpagu.html">송파점</a></li>
+                                <li><a href="./map_yeongdeuphogu.html">영등포점</a></li>
+                                <li><a href="./map_busan.html">부산지점</a></li>
+                            </ul>
+                        </li>
+                        <li class="toggle_List_News list_Open">
+                            <a href="#" class="toggle_News">소식</a>
+                            <ul class="toggle_News_List">
+                                <li><a href="./notice.html">공지사항</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li class="toggle_List_Five">
+                            <a href="#">채용</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section class="select_Section">
+            <button id="loginSelect_Btn" onclick="location.href='login.html'">
+                Login
+            </button>
+            <button id="signUpSelect_Btn">
+                Sign up
+            </button>
+        </section>
+
+        <section class="agree_Section">
+            <h2 class="signUp_title">약관 동의</h2>
+            <iframe></iframe>
+            <div class="agree">
+                <label for="agree">위 약관에 동의함</label>
+                <input class="checkAgree" type="checkbox" value="agree">
+            </div>
+            <iframe></iframe>
+            <div class="agree">
+                <label for="agree">위 약관에 동의함</label>
+                <input class="checkAgree" type="checkbox" value="agree">
+            </div>
+            <iframe></iframe>
+            <div class="agree">
+                <label for="agree">위 약관에 동의함 (선택)</label>
+                <input class="checkAgree" type="checkbox" value="agree">
+            </div>
+            <div class="hor_Bar"></div>
+            <div class="agreeAll">
+                <label for="agree">모든 약관을 확인하고 전체 동의함</label>
+                <input id="checkAgreeAll" type="checkbox" value="agree">
+            </div>
+        </section>
+
+        <section class="signUp_Section">
+            <div>
+            <h2 class="signUp_title">회원 정보 입력</h2>
+            <div class="signContainer">
+            <form class="signUpInfo_Form" action="#">
+                <input type="text" name="signUp_NAME" id="signUp_name" placeholder="이름">
+                <div class="idContainer">
+                    <input type="text" name="signUp_ID" id="signUp_ID" placeholder="아이디">
+                    <button type="button" id="idcheck">중복확인</button>
+                    <p id="validId"></p>
+                </div>
+                <div class="pwContainer">
+                    <input type="password" name="signUp_PWD" id="signUp_PWD" placeholder="비밀번호">
+                    <div class="pass_p">
+                    <p id="Warning"></p>
+                    <p id="pw_p"></p>
+                    <p id="pw_p_up"></p>
+                    <p id="pw_p_lo"></p>
+                    <p id="pw_p_num"></p>
+                    <p id="pw_p_sub"></p>
+                </div>
+                </div>
+                <div class="chkPwContainer">
+                    <input type="check_password" name="signUp_Check_PWD" id="signUp_Check_PWD" placeholder="비밀번호확인">
+                    <p id="checkpw_p"></p>
+                </div>
+                <div class="phoneNumber">
+                    <input type="tel" name="signUp_PN" id="signUp_PN" placeholder="010-xxxx-xxxx">
+                    <select name="telecom" id="telecom">
+                        <option value="kt">KT</option>
+                        <option value="skt">SKT</option>
+                        <option value="lg">LG</option>
+                    </select>
+                    <p id="number_p"></p>
+                </div>
+                <div class="emailContainer">
+                    <input type="email" name="signUp_EMAIL" id="signUp_EMAIL" placeholder="이메일">
+                    <select name="emailTail" id="emailTail">
+                        <option value="naver">@naver.com</option>
+                        <option value="google">@gmail.com</option>
+                        <option value="daum">@hanmail.net</option>
+                        <option value="type">직접입력</option>
+                    </select>
+                    <p id="email_p"></p>
+                </div>
+                <!-- <input type="date" name="signUp_BIRTH" id="signUp_BIRTH" date-placeholder="생년월일" > -->
+                <input type="text" name="signUp_BIRTH" id="signUp_BIRTH" placeholder="생년월일">
+            </form>
+        </div>
+        </section>
+        <section class="complete_Section">
+            <button class="signUp_Btn">회원가입</button>
+        </section>
+    </main>
+    <footer>
+        <div class="f_container">
+        <div class="f1_1">
+           <h2 class="f_logo">The Johen Restaurant</a></h2>
+           
+           <p class="f_p1">고객만족센터</p>
+           <p class="f_p2">02.1818.1818</p>
+           
+           <div class="f1_2">
+              <h3>Follow us</h3>
+              <div class="f_img">
+              
+              <ul class="f_icon">
+                 <li><a href="./insta.html" class="f_icon1"><img src="img/f_img_insta.png"></a></li>
+                 <li><a href="#" class="f_icon1"><img src="img/f_img_face.png"></a></li>
+                 <li><a href="#"  class="f_icon1"><img src="img/f_img_you.png"></a></li>
+              </ul>
+              </div>
+           </div>
+        </div>
+        
+         <div class="f2">
+             <ul>
+                 <li><a href="./history.html">연혁</a></li>
+                 <li><a href="./beef.html">원산지</a></li>
+                 <li><a href="./membership.html">멤버쉽</a></li>
+             </ul>
+             <ul>
+                <li><a href="#">소식</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">이벤트</a></li>
+                   <li><a href="#">FAQ</a></li>
+             </ul>
+             <ul>
+                 <li><a href="#">이용약관</a></li>
+                 <li><a href="#">운영방침</a></li>
+                 <li><a href="#">정보처리</a></li>
+             </ul>
+          </div>
+         </div>
+               
+             
+            <address class="copy" alt="(우)03189 서울특별시 종로구 우정국로2길 21 ">
+                <area shape="rect" coords="550, 19, 660, 36" target="_blank" href="" title="" alt="">
+            </address>
+            <p class="blind">Copyright &copy; 2024 ddddddddddddd . ALL RIGHT RESERVED.</p>
+         
+     </footer>
+
+    <script src="./js/signUp.js?after"></script>
+    <script src="https://kit.fontawesome.com/3904c47793.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/hamburger.js"></script>
+    <script src="./js/toTopApp.js"></script>
+</body>
+
+</html>

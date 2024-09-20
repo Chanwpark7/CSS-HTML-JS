@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.talk_Wrap{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    bottom: 200px;
+    right: 15px;
+    max-width: 350px;
+    line-height: 1.3;
+    z-index: 1000;
+}
+.talk_Wrap .talk_Window_Wrap{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0.2em 0.8em rgba(0, 0, 0, 0.25);
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+.talk_Wrap .talk_Window_Wrap .talk_Window{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #b22222;
+}
+.talk_Wrap .talk_Window .talk_Header{
+    width: 100%;
+    height: 100px;
+    background-color: #b22222;
+}
+.talk_Wrap .talk_Window .talk_Header>p{
+    text-align: center;
+    line-height: 100px;
+}
+.talk_Window_Wrap .talk_Window .talk_List_Wrap{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+.talk_Window_Wrap .talk_Window .talk_List_Wrap::-webkit-scrollbar{
+    display:none;
+}
+.talk_Window_Wrap .talk_Window .talk_List_Wrap>div{
+    margin: 6px 14px;
+    padding: 16px;
+    background-color: white;
+    border-radius: 15px;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Time{
+    display: flex;
+    flex-direction: column;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Time>p{
+    text-align: center;
+    font-size: 14px;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Connect{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Connect>a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Connect>a:first-child{
+    background-color: #b22222;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Connect>a:last-child{
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+    border-radius: 100%;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Connect>a:first-child i{
+    font-size: 25px;
+    color: white;
+    margin: 0 5px;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Connect>a:last-child i{
+    font-size: 20px;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Notice>p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Notice>ul{
+    padding-left: 10px;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Notice>ul>li{
+    white-space: nowrap;
+    width: 100%;
+    list-style: none;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Notice>ul>li>a{
+    display: block;
+    width:100%;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Notice>ul>li>a:hover{
+    background-color: rgb(241, 241, 241);
+    color: black;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest_Input_Wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    height: 30px;
+    border: 1px solid transparent;
+    width: 100%;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest_Input_Wrap:hover, 
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest_Input_Wrap.talk_Active{
+    border: 1px solid black;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest_Input_Wrap .talk_Quest_Input{
+    width: 100%;
+    border: none;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest_Input_Wrap .talk_Quest_Input:focus{
+    outline: none;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest>p{
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest>ul{
+    width: 100%;
+    padding-left: 5px;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest>ul>li{
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.8px;
+    list-style: none;
+    padding-left: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest>ul>li::before{
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    left: 0;
+    top: calc(50% - 2px);
+    background-color: black;
+    border-radius: 50%;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest>ul>li>a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+.talk_Window_Wrap .talk_List_Wrap .talk_Quest>ul>li>a:hover{
+    background-color: rgb(241, 241, 241);
+    color: black;
+}
+.talk_Window .talk_Footer{
+    width: 100%;
+    background-color: lightgray;
+}
+.talk_Window .talk_Footer>p{
+    text-align: center;
+    font-size: 15px;
+    margin: 8px 0;
+}
+.talk_Wrap .talk_Icon{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    bottom: 0;
+    right: 0;
+    background: url("../img/talk/talk_on_red.png"), center;
+    background-size: 90px;
+    cursor: pointer;
+}
+.talk_Window_Wrap.talk_Opa{
+    opacity: 0;
+}
+.talk_Hidden{
+    display: none;
+}
+
+@media all and (max-height: 600px){
+    .talk_Wrap{
+        display: none;
+    }
+}
+@media all and (max-width: 767.9px){
+    .talk_Wrap{
+        bottom: 30px;
+        max-width: 300px;
+    }
+}

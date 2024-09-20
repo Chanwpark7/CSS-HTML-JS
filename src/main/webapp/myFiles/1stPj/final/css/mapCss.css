@@ -1,0 +1,387 @@
+
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  html{
+    font-family: "Pacifico", cursive; 
+    font-family: "Noto Sans KR", sans-serif;
+  }
+
+  #bg_container{
+    overflow: hidden;
+    position: relative;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(#8eb2ff 0%, rgb(160, 228, 255) 25%, rgb(214, 250, 255) 50%,rgb(255, 255, 255) 100%);
+    z-index: -5;
+  }
+  
+.ml2 {
+  font-weight: 900;
+  font-size: 3.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+  
+  #ocean{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 9rem;
+    width: 100%;
+    z-index: -2;
+  }
+  
+  #sunRay{
+    position: absolute;
+    top: 0;
+    right: -2rem;
+    width: 20rem;
+    z-index: -4;
+    transform-origin: top right;
+  }
+  
+  #family2{
+    position: absolute;
+    bottom: 0rem;
+    width: 10rem;
+    z-index: -1;
+  }
+  
+  #bg_wrap{
+    overflow: hidden;
+    position: absolute;
+    width:100%;
+    height: 300%;
+  }
+
+/* Body 정의 */
+.mainBody{
+    width: 100%;
+    background-color: white;
+}
+
+/* body 내 nav bar 정의 */
+.board {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    height: 5vh;
+    background-color: white;
+  }
+  
+  /* 1번 탭(홈) */
+  .toHome {
+    position: relative;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .toHome .home {
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .toHome img {
+    width: 50%;
+    position: absolute;
+    cursor: pointer;
+    float: left;
+  }
+  
+  /* 홈 탭 마우스 오버시 효과 정의 */
+  .toHome:hover {
+    background-color: black;
+  }
+  
+  .toHome:hover img {
+    filter: invert(100%);
+  }
+  
+  /* 2번 탭(소개 상세페이지) */
+  .detail {
+    position: relative;
+    width: 30%;
+    height: 100%;
+  }
+  
+  .btn{
+    height: 100%;
+    width:50%;
+  }
+  
+  /* dropdown 정의 */
+  .detail .dropBtn {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    top: 5vh;
+    display: none;
+    z-index: 4;
+    background-color: black;
+  }
+  
+  .detail .dropdown-content a {
+    display: block;
+    padding: auto;
+    text-decoration: none;
+    width: 80%;
+    padding: 5% 10%;
+    color: white;
+  }
+  
+  .detail .dropdown-content a:nth-child(3) {
+    text-decoration: none;
+    color: gray;
+  }
+  
+  /* dropdown 이벤트 정의 */
+  .btn:hover .dropBtn {
+    background-color: black;
+    color: white;
+  }
+  
+  .btn:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: gray;
+    color: black;
+  }
+  
+  .dropdown-content a:nth-child(3):hover {
+    background-color: black;
+    color: gray;
+  }
+  
+  
+  /* 3번 탭(경로) */
+  .path {
+    display: flex;
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    align-items: center;
+    float: right;
+  }
+  
+/*페이지 제목 정의*/
+.title h2{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 5%;
+}
+
+/*map 전체 div*/
+.map2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;    
+}
+
+.seoul, .busan{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+}
+
+.seoul h2, .busan h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.seoul img, .busan img{
+    margin-top: 2%;
+    width: 100%;
+}
+
+ /*지점 안내 글*/
+ .brand{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-bottom: 10%;
+    text-decoration: none;
+}
+
+.brand h3{
+    margin-bottom: 2%;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.brand ul{
+    font-size: 1.4rem;
+    line-height: 120%;
+}
+  
+  /* upload btn 정의 */
+  #container {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    right: 30px;
+    bottom: 30px;
+    position: fixed;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+  
+  #container img {
+    display: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 4;
+  }
+  
+  #container .circle {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    stroke: black;
+    stroke-width: 1;
+    stroke-dasharray: 157;
+    stroke-dashoffset: 157;
+    z-index: 5;
+  }
+  
+  #container .circle circle {
+    transform-origin: center center;
+    transform: rotate(-90deg);
+  }
+
+
+/* mobile 용 css */
+@media all and (max-width:767px){
+  .ml2 {
+    font-size: 2em;
+  }
+   
+    
+    
+    /*v페이지 제목 정의*/
+    .title{
+        padding-top: 5%;
+        font-size: 1.0rem;
+    }
+
+    /*map 전체 div*/
+    .map2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        pad: 5%;
+    }
+
+    /*서울 이미지*/
+    .seoul img{
+        width: 100%;
+    }
+
+    /*부산 이미지*/
+    .busan img{
+        width: 100%;
+    }
+    
+    .board .path{
+      display: none;
+    }
+  
+    .board .detail{
+      width:70%;
+    }
+  
+    .board .btn{
+      width:100%;
+    }
+  
+    .board .dropdown-content{
+      width:100%;
+      z-index: 10;
+    }
+}
+
+
+/* tablet 용 css */
+@media all and (min-width:768px) and (max-width:1279px){
+   
+
+    /*map 전체 div*/
+    .map2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+    }
+
+    /*서울 이미지*/
+    seoul img{
+        width: 100%;
+    }
+
+    .seoul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .busan {
+        margin: 0;
+        padding: 0;
+        margin-top: 5%;
+    }
+
+    /*부산 이미지*/
+    .busan img{
+        width: 100%;
+    }
+
+
+
+}

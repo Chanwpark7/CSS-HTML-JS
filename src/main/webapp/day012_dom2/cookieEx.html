@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="checkCookies()">
+	<p id="demo"></p>
+	
+	영문자를 넣으면 모두 대문자로 나옴<input type="text" id="txt" onfocus="changeBg(this)">
+	
+	<div onmousedown="mDown(this)" onmouseup="mUp(this)"
+	style="background-color: cyan;width:90px;height:30px;padding:35px;">
+		Click me
+	</div>
+	
+	<script>
+		function changeBg(obj){
+			document.querySelector("body").style.backgroundColor="black";
+		}
+	
+		//div 색상 변경 핸들러 정의
+		function mDown(obj){
+			obj.style.backgroundColor="red";
+			obj.innerHTML="please release";
+		}
+		
+		function mUp(obj){
+			obj.style.backgroundColor="cyan";
+			obj.innerHTML="Have a good day";
+		}
+		
+		//나중에 배울 window 하위 객체인 navigator 를 이용하면 해당 브라우저가 쿠키를 사용 가능하게 하는지 여부를 알 수 있음.
+		function checkCookies(){
+			let txt="";
+			if(navigator.cookieEnabled==true){
+				txt="쿠키 사용 가능";
+			}else{
+				txt="쿠키 사용 불가";
+			}
+			document.getElementById("demo").innerHTML = txt;
+		}
+		
+		//리스너를 사용해서 input 이벤트를 등록
+		const input=document.getElementById("txt");
+		/* const x=Math.round(9*Math.random());
+		const y=Math.round(9*Math.random());
+		const z=Math.round(9*Math.random());
+		const a=Math.round(9*Math.random());
+		const b=Math.round(9*Math.random());
+		const c=Math.round(9*Math.random());
+		console.log(d); */
+		input.addEventListener("input",()=>{
+			input.value = input.value.toUpperCase();
+			document.querySelector("body").style.backgroundColor=white;
+		});
+	</script>
+</body>
+</html>

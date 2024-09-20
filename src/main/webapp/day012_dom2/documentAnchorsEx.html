@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 내 a 코드 모두 찾아내기</title>
+</head>
+<body>
+	<a href="#" name="html">html</a>
+	<a href="#" name="css">css</a>
+	<a href="#" name="script">javascript</a>
+	
+	<hr>
+	
+	<img src="../imgGallery/pic_htmltree.gif" width="486px" height="266">
+	<img src="../imgGallery/pic_navigate.gif" width="486px" height="266">
+	<script type="text/javascript">
+		//문서내에는 하나 이상의 a 태그가 존재할 수 있기 때문에 역시 배열로 리턴됨. 찾아내는 속성명은 anchors임.
+		console.log(document.anchors);
+		
+		//모든 이미지 노드 찾아내기
+		console.log(document.images);
+	</script>
+</body>
+</html>

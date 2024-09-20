@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	/* 익명함수(함수표현식): 지금까지 배운 일반 함수는 function 함수명([파라미터]){} 형식이었음.
+		자바 스크립트에서는 위의 일반식 외에 지금 배울 익명 함수를 제공함.
+		익명함수란 말그대로 함수명이 없는 함수. 그 외에는 일반함수와 같음.
+		문법) const x=function(){}; //사용시엔 x(); 이런식으로 사용 */
+		
+		console.log(function a(){})
+		//const x=function(){};
+		const x = function(a,b){
+		    return a*b
+		};
+		console.log(x(2,2));
+		
+		function map(fn,arr){
+		    const res=new Array(arr.length);
+		    for(let i=0;i<res.length;i++){
+		        res[i]=fn(arr[i]);
+		    }
+		    return res;
+		}
+		
+		const fn=function(x){
+		    return x*x*x;
+		}
+		const numbers=[0,1,2,3,4,5,6,10];
+		const result=map(fn,numbers);
+		
+		console.log(result);
+		
+		//함수는 실행이 되려면 반드시 호출이 되어야 합니다.
+		//만약 함수 자신이 자신을 호출해야할 때가 있다면, 아래의 문법처럼 정의하면 됩니다.
+		(function(a){
+		    console.log(a,"내가 나를 부른 결과")
+		})(10);
+		
+		//함수도 자바 스크립트에서는 객체입니다.
+	</script>
+</body>
+</html>

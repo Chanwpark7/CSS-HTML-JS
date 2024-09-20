@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+/* text-effect : text 가 box 내부에 존재한 때, 만약 글 내용이 많거나 할때 어떻게 처리할 지를 결정하는 속성
+	text-overflow, word-wrap, word-break, writing-mode 등의 속성이 있음. */
+		p.t1{
+			white-space: nowrap; /* 엔터나 공백등의 처리를 설정. 넘치도록 하겠다는 의미 */
+			width: 200px;
+			border: 1px solid black;
+			overflow: hidden;
+			text-overflow: clip;
+		}
+		p.t2{
+			white-space: nowrap; /* 엔터나 공백등의 처리를 설정. 넘치도록 하겠다는 의미 */
+			width: 200px;
+			border: 1px solid black;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		p.t2:hover{
+			overflow: visible;
+		}
+		p.t3{
+			width: 11em; /* 반응형 web 구조에서 사용하는 단위 */
+			border: 1px solid black;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<body>
+	<h1>The text-overflow Property</h1>
+	<p>The following two paragraphs contains a long text that will not fit in the box.</p>
+	
+	<h2>text-overflow: clip:</h2>
+	<p class="t1">This is some long text that will not fit in the box</p>
+	
+	<h2>text-overflow: ellipsis:</h2>
+	<p class="t2">This is some long text that will not fit in the box</p>
+	
+	<h2>text-overflow: ellipsis:</h2>
+	<p class="t3">This is very very very very very very very very very very very very very very long text that will fit in the box</p>
+</body>
+</html>

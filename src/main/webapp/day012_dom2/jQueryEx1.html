@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>神</p>
+	<p>창</p>
+	<p>섭</p>
+	<p id="demo"></p>
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(()=>{
+			let myEle = $('p');
+			$('#demo').text("첫번째 p의 text 값은 " + myEle[0].innerHTML);
+		})
+	</script>
+</body>
+</html>

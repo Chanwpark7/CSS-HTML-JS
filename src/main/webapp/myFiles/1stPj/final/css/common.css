@@ -1,0 +1,912 @@
+@charset "UTF-8";
+
+   
+
+*{
+    font-family: "Noto Sans KR", sans-serif; 
+}
+
+ul,li{text-decoration: none;}
+
+a{color:#333;}
+
+
+/* 모바일  */
+@media all and (max-width:767px) {
+
+    /*   헤더  */
+
+    /*   헤더  */
+
+.header{
+    position: fixed;
+    background: rgba(1,1,1,0.5);
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 9999;
+  
+}
+
+
+/*   로고  */
+.header > h1 > a {
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 30px;
+    background-color: rgb(243, 10, 10);
+    height:90px;
+    line-height: 90px;
+}
+
+.header >  div.nav_icon{
+    display:none;
+}
+  
+        
+.nav_Bg{
+            width: 100%;
+            height: 100vh;
+            visibility: hidden;
+        }
+        .ph_Nav{
+            -ms-overflow-style: none;
+        }
+        .ph_Nav::-webkit-scrollbar {
+            display: none;
+        }
+        .ph_Nav{
+            position: fixed;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            right: 0;
+            width: 0;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: width 0.5s;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+
+
+        .visible{
+            visibility: visible;
+        }
+        
+
+        
+
+        .menu_trigger, .menu_trigger span{
+            display: inline-block;
+            transition: all 0.5s;
+            box-sizing: border-box;
+        }
+
+        .menu_trigger.active-1+.ph_Nav{
+            width: 250px;
+        }
+
+        .menu_trigger{
+            position: relative;
+            top: 25px;
+            right: 20px;
+            width: 50px;
+            height: 44px;
+            z-index: 1000;
+        }
+        
+        .menu_trigger span{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+
+        .menu_trigger span:nth-of-type(1){
+            top: 0;
+        }
+
+        .menu_trigger span:nth-of-type(2){
+            top: 20px;
+        }
+
+        .menu_trigger span:nth-of-type(3){
+            bottom: 0;
+        }
+        
+        /* x자 만들기*/
+        .menu_trigger.active-1 span:nth-of-type(1){
+            -webkit-transform: translateY(20px) rotate(-45deg);
+            transform: translateY(20px) rotate(-45deg);
+        }
+
+        .menu_trigger.active-1 span:nth-of-type(2){
+            opacity: 0;
+        }
+
+        .menu_trigger.active-1 span:nth-of-type(3){
+            -webkit-transform: translateY(-20px) rotate(45deg);
+            transform: translateY(-20px) rotate(45deg);
+        }
+      
+      
+      /* 내비 메뉴 */
+        .ph_Nav .toggle_Wrap{
+            min-width: 250px;
+            height: 100%;
+            display: flex;
+            background: #822222;
+            justify-content: center;
+            align-items: center;
+        }
+        .ph_Nav .toggle_Wrap .toggle_All_Wrap{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 70%;
+        }
+        .ph_Nav .toggle_Wrap .toggle_All_Wrap>a{
+            text-decoration: none;
+        }
+        
+        .ph_Nav .toggle_Wrap .toggle_All_Wrap>a .toggle_login{
+            white-space: nowrap;
+            box-shadow: 3px 3px 10px white;
+        }
+
+        .ph_Nav .toggle_Wrap .toggle_All_Wrap>a .toggle_login>p{
+            font-size: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .ph_Nav .toggle_Wrap .toggle_All_Wrap .toggle_List_Wrap{
+            width: 100%;
+            height: 100%;
+            margin-top: 30px;
+        }
+
+        .ph_Nav .toggle_List_Wrap>ul>li{
+            list-style: none;
+            font-size: 20px;
+        }
+
+        .ph_Nav .toggle_List_Wrap>ul>li>a{
+            position:relative;
+            width: 100%;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .ph_Nav .toggle_List_Wrap>ul>li>a:not(:last-child)::before{
+            content: "";
+            position: absolute;
+            right: 0;
+            display: block;
+            width: 10px;
+            height: 10px;
+            top: calc(50% - 5px);
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+            transform: rotate(-45deg);
+            transition: transform 0.1s;
+        }
+
+        .ph_Nav .toggle_List_Wrap>ul>li.rotate a::before{
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .ph_Nav .toggle_List_Wrap>ul>li>ul{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .ph_Nav .toggle_List_Wrap .toggle_List_Intro.active ul{
+            height: calc(36px *3);
+        }
+
+        .ph_Nav .toggle_List_Wrap .toggle_List_Menu.active ul{
+            height: calc(36px * 6);
+        }
+
+        .ph_Nav .toggle_List_Wrap .toggle_List_Store.active ul{
+            height: calc(36px * 6);
+        }
+
+        .ph_Nav .toggle_List_Wrap .toggle_List_News.active ul{
+            height: calc(36px * 3);
+        }
+
+        .ph_Nav .toggle_List_Wrap .list_Open.active>a{
+            color: #333;
+        }
+
+        .ph_Nav .toggle_List_Wrap>ul>li>ul>li{
+            padding: 7px 30px;
+            font-size: 15px;
+            list-style: none;
+        }
+        
+        .ph_Nav .toggle_List_Wrap>ul>li>ul>li>a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+      .menu_trigger.active-1+.ph_Nav{
+                width: 100vw;
+        }
+        
+
+      /*//////////////////////////////////////////////////////////////////////////*/
+
+
+
+    /* 푸터 수정 예정 */
+    footer{
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: #D8D8D8;
+        color: #582931;
+    }
+
+    footer > .f_container{
+        width:80%;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+
+    footer > .f_container > div.f1_1{
+        width: 40%;
+        display:flex;
+        flex-direction: column;
+        margin:0 2%;
+    }
+
+    div.f1_1 > h2.f_logo{
+        font-size:1.2em;
+    }
+
+
+    div.f1_1 > p.f_p1{
+        font-size: 0.7em;
+        margin: 2% 0;
+    }
+    div.f1_1 > p.f_p2{
+        font-size: 0.7em;
+    }
+
+
+
+    div.f1_2 h3{
+        text-align: center;
+        margin:3% 0;
+        font-size: 0.7em;
+        font-weight: bold;
+    }
+
+
+    div.f1_2 ul.f_icon{
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    div.f1_2 ul.f_icon li{
+        text-align: center;
+    }
+
+    div.f1_2 ul.f_icon img{
+        width:20%;
+        padding: 10px;
+    }
+
+
+
+
+    footer > .f_container > div.f2{
+        width: 60%;
+        display:flex;
+        flex-direction: row;
+    }
+    footer > .f_container > div.f2 >ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    footer > .f_container > div.f2 >ul > li{
+        width: 100%;
+        
+        
+        font-size: 0.8em;
+        margin: 4% 0;
+    }
+
+    footer > .f_container > div.f2 > ul > li:first-child {
+        margin-top: 10%;
+    }
+
+    footer adress.copy{
+        text-align: center;
+        border:1px solid red;
+        font-size: 1.5em;
+    }
+
+    footer p.blind{
+        text-align: center;
+        font-size: 0.8em;
+        padding: 2% 0;
+        background: #462931;
+        color: #d8d8d8;
+        font-weight: bold;
+    }
+}
+
+
+
+
+
+/* 태블릿 */
+
+@media all and (min-width:768px) and (max-width:1279px) {
+
+    .header {
+        width: 100%;
+        height: 80px;
+        background-color: #b22222;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* 로고와 메뉴를 양쪽으로 배치 */
+        padding: 0 20px; /* 여백 추가 */
+        box-sizing: border-box;
+        
+    }
+    
+    /* 로고 스타일 */
+    .header > h1 > a {
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold; /* 로고에 글씨 두껍게 */
+        cursor: pointer;
+        box-sizing: border-box;
+        font-size: 30px;
+        background-color: rgb(243, 10, 10);
+        padding:15px;
+    }
+    
+    /* div.ph_Nav > div.toggle_Wrap > div.toggle_All_Wrap > a  */
+    /* 로그인  */
+    div.toggle_All_Wrap > a {
+    
+        display: none;
+    
+    }
+    
+    
+    /* 내비게이션 메뉴 스타일 */
+    .ph_Nav {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .toggle_List_Wrap {
+        display: flex;
+        align-items: center;
+    }
+    
+    .toggle_List_Wrap > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+    
+    .toggle_List_Wrap > ul > li {
+        position: relative;
+    }
+    
+    .toggle_List_Wrap > ul > li > a {
+        text-align: center;
+        width: 5em;
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        
+        color: #fff;
+        text-decoration: none;
+        border-left: 1px solid pink;
+        box-sizing: border-box;
+        
+        font-size: 1em;
+    }
+    
+    .toggle_List_Wrap > ul > li > a:last-child{
+    
+        border-right: 1px solid pink;
+    } 
+    
+    
+    
+    .toggle_List_Wrap a:hover {
+        background-color: #a11a1a;
+    }
+    
+    /* 서브 메뉴 스타일 */
+    .toggle_List_Wrap > ul > li > ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 0;
+        width: 5em; /* 메인 메뉴와 동일한 너비 설정 */
+        box-sizing: border-box; /* padding과 border를 포함한 너비 설정 */
+        z-index: 1000;
+    }
+    
+    /* 서브 메뉴 항목 스타일 */
+    .toggle_List_Wrap > ul > li > ul > li {
+        border-bottom: 1px solid #ddd; /* 서브 메뉴 항목 사이에 경계선 추가 */
+    }
+    
+    .toggle_List_Wrap > ul > li > ul > li:last-child {
+        border-bottom: none; /* 마지막 항목에는 경계선 제거 */
+    }
+    
+    .toggle_List_Wrap > ul > li > ul > li > a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+        text-align: center;
+        background-color: #f7cfcc;
+        border-top:1px solid red;
+        
+        font-size: 0.9em;
+    
+    
+    }
+    
+    .toggle_List_Wrap > ul > li > ul > li > a:hover {
+        background-color: #e49689; /* 서브 메뉴 항목 호버 시 배경색 변경 */
+    }
+    
+    /* 서브 메뉴 표시 */
+    .toggle_List_Wrap > ul > li:hover > ul {
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
+    /*///////////////////푸터////////////////////////*/
+
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        background-color: #D8D8D8;
+        color: #582931;
+    }
+    
+    footer > .f_container{
+        width:80%;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+    
+    
+       footer > .f_container > div.f1_1{
+           width: 40%;
+           display:flex;
+           flex-direction: column;
+           margin:0 2%;
+    }
+    
+    div.f1_1 > h2.f_logo{
+        font-size:2em;
+        padding:2% 0%;
+    }
+
+    
+    div.f1_1 > p.f_p1{
+        font-size: 1.5em;
+        margin: 2% 0;
+    }
+    div.f1_1 > p.f_p2{
+        font-size: 2em;
+    }
+    
+   
+    
+    div.f1_2 h3{
+        text-align: center;
+        margin:3% 0;
+    }
+    
+    
+    div.f1_2 ul.f_icon{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+    div.f1_2 ul.f_icon li{
+        text-align: center;
+    }
+    
+    div.f1_2 ul.f_icon img{
+        width:20%;
+        padding: 10px;
+    }
+    
+    
+    
+    
+    footer > .f_container > div.f2{
+        width: 70%;
+        display:flex;
+        flex-direction: row;
+    }
+    footer > .f_container > div.f2 >ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    footer > .f_container > div.f2 >ul > li{
+        
+        
+        
+        font-size: 1em;
+        margin: 2% 0;
+    }
+    
+    footer > .f_container > div.f2 > ul > li:first-child {
+        margin-top: 10%;
+    }
+    
+    footer adress.copy{
+        text-align: center;
+        border:1px solid red;
+        font-size: 2em;
+    }
+    
+    footer p.blind{
+        text-align: center;
+        font-size: 1em;
+        padding: 2% 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/* pc */
+
+@media all and (min-width:1280px){
+
+
+    /* 헤더 스타일 */
+    header {
+        width: 100%;
+        height: 80px;
+        background-color: #b22222;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* 로고와 메뉴를 양쪽으로 배치 */
+        padding: 0 20px; /* 여백 추가 */
+        box-sizing: border-box;
+        /* background-image: radial-gradient( #dc143c 5%, #ff4500 70%); */
+        /* background: #ab143c; */
+        /* background: #ff4500; */
+        /* background: #cd5b45; */
+      
+        
+    }
+    
+    /* 로고 스타일 */
+    header > h1 > a {
+        height:100%;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold; /* 로고에 글씨 두껍게 */
+        cursor: pointer;
+        box-sizing: border-box;
+        font-size: 30px;
+        background-color: rgb(243, 10, 10);
+        padding:15px;
+        
+        
+    }
+
+
+
+
+    /* div.ph_Nav > div.toggle_Wrap > div.toggle_All_Wrap > a  */
+    /* 로그인  */
+    div.toggle_All_Wrap > a {
+
+        display: none;
+
+    }
+
+
+    /* 내비게이션 메뉴 스타일 */
+    .ph_Nav {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toggle_List_Wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    .toggle_List_Wrap > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    .toggle_List_Wrap > ul > li {
+        position: relative;
+    }
+
+    .toggle_List_Wrap > ul > li > a {
+        text-align: center;
+        width: 9em;
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        
+        color: #fff;
+        text-decoration: none;
+        border-left: 1px solid pink;
+        box-sizing: border-box;
+        
+    }
+
+    .toggle_List_Wrap > ul > li > a:last-child{
+
+        border-right: 1px solid pink;
+    } 
+
+
+
+    .toggle_List_Wrap a:hover {
+        background-color: #a11a1a;
+    }
+
+    /* 서브 메뉴 스타일 */
+    .toggle_List_Wrap > ul > li > ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 0;
+        width: 9em; /* 메인 메뉴와 동일한 너비 설정 */
+        box-sizing: border-box; /* padding과 border를 포함한 너비 설정 */
+        z-index: 1000;
+    }
+
+    /* 서브 메뉴 항목 스타일 */
+    .toggle_List_Wrap > ul > li > ul > li {
+        border-bottom: 1px solid #ddd; /* 서브 메뉴 항목 사이에 경계선 추가 */
+    }
+
+    .toggle_List_Wrap > ul > li > ul > li:last-child {
+        border-bottom: none; /* 마지막 항목에는 경계선 제거 */
+    }
+
+    .toggle_List_Wrap > ul > li > ul > li > a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+        text-align: center;
+        background-color: #f7cfcc;
+        border-top:1px solid red;
+        
+
+
+    }
+
+    .toggle_List_Wrap > ul > li > ul > li > a:hover {
+        background-color: #e49689; /* 서브 메뉴 항목 호버 시 배경색 변경 */
+    }
+
+    /* 서브 메뉴 표시 */
+    .toggle_List_Wrap > ul > li:hover > ul {
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        background-color: #D8D8D8;
+        color: #582931;
+        box-sizing: border-box;
+    }
+    
+    footer > .f_container{
+        width:80%;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+    
+    
+       footer > .f_container > div.f1_1{
+           width: 40%;
+           display:flex;
+           flex-direction: column;
+           margin:0 2%;
+    }
+    
+    div.f1_1 > h2.f_logo{
+        font-size:2em;
+        padding:2% 0%;
+    }
+
+    
+    div.f1_1 > p.f_p1{
+        font-size: 1.5em;
+        margin: 2% 0;
+    }
+    div.f1_1 > p.f_p2{
+        font-size: 2em;
+    }
+    
+   
+    
+    div.f1_2 h3{
+        text-align: center;
+        margin:3% 0;
+    }
+    
+    
+    div.f1_2 ul.f_icon{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+    div.f1_2 ul.f_icon li{
+        text-align: center;
+    }
+    
+    div.f1_2 ul.f_icon img{
+        width:20%;
+        padding: 10px;
+    }
+    
+    
+    
+    
+    footer > .f_container > div.f2{
+        width: 60%;
+        display:flex;
+        flex-direction: row;
+    }
+    footer > .f_container > div.f2 >ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    footer > .f_container > div.f2 >ul > li{
+        width: 33%;
+        
+        
+        font-size: 1em;
+        margin: 2% 0;
+    }
+    
+    footer > .f_container > div.f2 > ul > li:first-child {
+        margin-top: 10%;
+    }
+    
+    footer adress.copy{
+        text-align: center;
+        border:1px solid red;
+        font-size: 2em;
+    }
+    
+    footer p.blind{
+        text-align: center;
+        font-size: 1em;
+        padding: 2% 0;
+    }
+    
+    
+   /*///////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

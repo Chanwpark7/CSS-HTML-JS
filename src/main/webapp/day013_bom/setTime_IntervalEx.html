@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="setTimeout(myf,3000)">누르면 3초후에  alert 발생.</button>
+	
+	<button onclick="myVar=setTimeout(myf2,5000)">누르면 5초후에  alert 발생.</button>
+	<button onclick="clearTimeout(myVar)">누르면 alert 중지.</button>
+	
+	<button onclick="stopInter()"><img src="../imgGallery/timestopu.jpg"></button>
+	<p id="demo1"></p>
+	
+	<script>
+	/*  setTimeout(콜백,millis), setInterval(콜백,millis)
+	
+		setTimeout은 millis 이후에 콜백을 딱한번만 실행하도록 하는 지연 실행 api 임.
+		setInterval은 millis 마다 콜백을 계속 실행시키도록 하는 api
+		이 두 API 내부적으로 thread 를 구현한 애들임.
+		필요에 따라서 이 두 API 를 제어하기 위한 참조 변수를 할당해서 제어시킬 수 있음.
+		이 두 메소드는 모두 window 객체의 메소드임. 때문에 객체명 없이 사용 가능. */
+		
+		function myf(){
+			alert("hello");
+		}
+		function myf2(){
+			alert("hi");
+		}
+		
+	/*  demo1 id인 p 요소 생성, setInterval(createTime,1000) 를 정의하여 1초에 한번씩 Date 객체를 생성하고,
+		toLocaleTimeString()을 호출해서 demo 에 시간을 표시. */
+		
+		let stop = setInterval(createTime,1000);
+		
+		function createTime(){
+			const now=new Date();
+			document.getElementById("demo1").innerHTML=now.toLocaleTimeString();
+		}
+		
+		//interval 중지 시키는 메소드인 clearInterval 을 호출하는 콜백 정의
+		function stopInter(){
+			clearInterval(stop)
+		}
+		
+	/* 	response : 응답 헤더와 content가 있는 본문(body)가 하나의 set 로 전송됨. content에는 당연히 html 문서가 날라감.
+		응답헤더로부터 받아서 분석을 하고 이후에 바디를받아서 처리함.
+		
+		응답 헤더 : http/1.0 200 OK(프로토콜 버전, 응답 코드, 응답 값)
+		content-type : text/html
+		set-cookie : cookieName1=value
+		set-cookie : cookieName2=value;
+		expires=날짜
+		
+		클라이언트 request : 역시 header 와 body 로 구분되어 날아감.
+		GET/pageURL http/1.1
+		host:www.abc.com
+		Cookie : coockename1=value;
+		cookiename2=value											 */
+	 // Accept */*	
+		
+	 /* Cookie : 서버가 필요한 목적으로 데이터를 생성해서 클라이언트의 브라우저에 보내는 데이터.
+	 	이 데이터를 이용해서 나중에 클라이언트가 다시 오면 서버에서 get 한 후 목적한 대로 사용할 수 있도록 한 http 프로토콜의 공식 데이터.
+	 	단, 쿠키는 사용자의 컴퓨터에 저장되기 때문에 보안에 취약할 수 있다는 단점을 갖고 있음. 이를 위한 암호화 복호화 과정을 거쳐서 하기도 함. */
+	</script>
+</body>
+</html>

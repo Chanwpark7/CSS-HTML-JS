@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="checkCookie();">
+	<button onclick="delCookie('username')">쿠키 삭제</button>
+	<script>
+	/*  cookie : 스크립트에서 생성해서 클라이언트로 보낼 수 있음.
+		cookie는 document 객체의 속성으로 document.cookie 로 호출 가능.
+		쿠키를 설정시에는 위 속성명에 ="key=value; expires=날짜; key2=value2; nKeys=navlue;"
+		형태로 설정할 수 있다. 여기서 꼴 들어가야 하는 것은 key=value, 즉 이름이며, 값을 설정 후 반드시 ; 으로 구분해야 하고
+		한번의 공백을 줘야 한다.
+		이렇게 설정된 쿠키는 해당 페이지에 접근한 클라이언트 브라우저에 자동으로 다운되고, 특정 영역에 저장되어 사이트 재방문시 서버에 제공된다.
+		만약 유효한 쿠키를 제거할 때는 expires 를 과거 날짜로 지정하면 더이상 사용되지 않는다. */
+		
+		function checkCookie(){
+			let user = getCookie("username");
+			if(user != ""){
+				alert("재방문 ${user}");
+			}else{
+				user = prompt("영어 이름.");
+				if(user != "" && user != null){
+					//쿠키 생성 함수 호출.
+					setCookie("username",user,30);
+				}
+			}
+		}
+		
+		/* 	쿠키를 가져와서 정보를 확인하는 함수를 정의함.
+			쿠키는 위에서 보듯이 하나 이상의 key=value; 로 클라이언트에게 넘길 수 있음. 즉 다중의 정보로 구성돼있음.
+			때문에 쿠키를 얻어 낼때는 하나 이상의 쿠키가 올거임. 즉, ;를 기준으로 문자열로 리턴됨.
+			쿠키를 얻는 방법 또한 생성할때와 같은 document.cookie 로 얻어낼 수 있음. */
+			
+		function getCookie(cname){ //키에 해당하는 값을 리턴하는 getter 정의.
+			let name = cname +"=";
+			let cookieStr=document.cookie.split(";");
+			
+			for(let i=0;i<cookieStr.length;i++){
+				let c=cookieStr[i];
+				while(c.charAt(0)==" "){
+					c=c.substring(1);
+				}
+				if(c.indexOf(name)==0){
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		
+		function setCookie(cname,cvalue,exdays){ //key, value, 유효기간을 파라미터로 받도록 함.
+			/*  쿠키의 유효기간은 반드시 문자열로 돼야 함. 때문에 현재 시간을 기준으로 Date 객체를 생성하고
+				여기에 exdays 만큼 기간을 더해줌. 이후 이걸 문자열로 리턴 받아서 처리함. */
+				
+			const d = new Date();
+			d.setTime(d.getTime() + (exdays*24*60*60*1000)); //현재시간으로부터 30일 이후의 시간값으로 날짜 세팅(밀리초로 계산.)
+			
+			//모든 쿠키는 반드시 문자열로 되어야 함.
+			let expires="expires="+d.toUTCString();
+			
+			//쿠키를 설정하기만 하면 자동으로 응답시 클라이언트에 넘겨짐.
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			document.cookie = "passwd=1111"; //; expires="+expires;
+			
+			getCookie("passwd");
+		}
+		
+		function delCookie(theKey){
+			/* 쿠키 삭제는 expires 를 현재 시간 이전값으로 다시 주면 됨.
+				즉 key 이름이 같도록 하고 expires 만 변경 해주면 된다는 뜻
+				여기에 쿠키를 삭제하도록 정의하세요.
+				당연히 theKey에 해당하는 쿠키를 찾아서 날짜를 다시 세팅 후 넘겨야합니다. */
+			let exist = getCookie(theKey); //getCookie 를 이용해서 쿠키가 존재하는지 확인.
+			if(exist != ""){//존재한다면
+				/* let expired = new Date(new Date().getTime()-1).toUTCString();//현재시간 -1 해준 시간값으로 date 객체 생성.
+				
+				//같은 key 이름으로 유효시간을 다시 설정, 넘겨줌. 이때 값은 의미 없음.
+				document.cookie = "username='';expires="+expired;+"path=/";
+				} */
+				setCookie("username",exist,-1);
+			}
+		}
+	</script>
+</body>
+</html>

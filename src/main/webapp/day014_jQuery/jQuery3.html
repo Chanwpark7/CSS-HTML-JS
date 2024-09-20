@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="../jQuery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+	<button>보이기</button>
+	<img
+		id="img1"
+		src="../imgGallery/1.jpg"
+		width = "300"
+		height = "300"
+		style="position: relative"
+		>
+	<input type="text" onkeydown="test()">
+	<script>
+		$(document).ready(function(){
+			/* $("button").click(function(){
+				$("#img1").show("slow");
+			}); */
+			$("button").dblclick(function(){
+				$("#img1").css("display","none");
+			});
+			//애니메이션 효과 주기
+			//animate 메소드를 이용하고, 파라미터로는 속성, 지속시간, easing, complete 시 콜백.
+			/* $("button").click(function(){
+				$("#img1").animate({left:"200px",opacity:"0.1",width:"400"});
+			}); */
+			$("button").click(function(){
+				$("#img1").fadeOut(3000);
+			});
+		});
+		function test(){
+			console.log(event);
+		}
+	</script>
+</body>
+</html>

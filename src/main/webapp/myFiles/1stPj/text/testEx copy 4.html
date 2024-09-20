@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #bg_container{
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 20%;
+      background-color: rgba(0,212,255,1);
+    }
+  
+    #bg_wrap{
+      overflow: hidden;
+      position: absolute;
+      width:120%;
+      height: 300%;
+    }
+
+    #moving{
+      display: flex;
+      flex-direction: column;
+      width:100%;
+      height:66.66%;
+      position: absolute;
+    }
+
+    #snowflower1{
+      display: flex;
+      flex-direction: row nowrap;
+      height: 50%;
+      order:1;
+    }
+
+    #snowflower2{
+      display: flex;
+      flex-direction: row nowrap;
+      height: 50%;
+      order:2;
+    }
+
+    .inner1{
+      border: 10px solid red;
+      width:50%;
+      box-sizing: border-box;
+    }
+
+    .inner2{
+      border: 10px solid blue;
+      width:50%;
+      box-sizing: border-box;
+    }
+    </style>
+</head>
+
+<body>
+  <div id="bg_container">
+    <div id="bg_wrap">
+      <div id="moving">
+        <div id="snowflower1">
+          <div class="inner1"></div>
+          <div class="inner2"></div>
+        </div>
+        <div id="snowflower2">
+          <div class="inner1"></div>
+          <div class="inner2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let sf_bgImg1 = document.querySelector("#snowflower1");
+    let sf_bgImg2 = document.querySelector("#snowflower2");
+    let moving_bg = document.querySelector("#moving");
+    let posTop = 0;
+    let k=0;
+
+    console.log(sf_bgImg1.offsetHeight);
+
+    window.addEventListener("load",()=>{
+      setInterval(frame,30);
+    });
+
+    function frame(){
+      if(posTop>=sf_bgImg1.offsetHeight){
+        k++;
+        posTop=0;
+        moving_bg.style.top = 0+"px";
+        sf_bgImg1.style.order=(k%2+1);
+        sf_bgImg2.style.order= (2-k%2);
+      }else{
+        posTop++;
+        moving_bg.style.top = posTop+"px";
+      }
+    }
+  </script>
+</body>
+
+</html>

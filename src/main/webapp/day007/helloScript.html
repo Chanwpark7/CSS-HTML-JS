@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="alert('문서 다운로드가 완료된 후 랜더링 시점에 이벤트가 수행되어 이 내용이 나옵니다.')">
+	<h2>자바 스크립트로 뭘 할 수 있게요?</h2>
+	<p>자바 스크립트는 HTML 노드의 속성을 동적으로 변경하는데 주로 사용됨.</p>
+	<p>최근 10년 사이에 비약적으로 발전해서 서버프로그램, 확장 자바 스크립트(리액트, 타입스크립트, next, node, vanila etc.)
+		등이 계속 나오고 있습니다. 현재는 매우 중요한 프로그램으로 확실하게 자리 잡았음.
+	</p>
+	<h2>아래는 가장 기초 예시입니다.</h2>
+	<button onclick="document.getElementById('myImg').src='../imgGallery/pic_bulbon.gif'">불을 켜주세요</button>
+	<img src="../imgGallery/pic_bulboff.gif" style="width:100px" id="myImg">
+	<button onclick="document.getElementById('myImg').src='../imgGallery/pic_bulboff.gif'">불을 꺼주세요</button>
+	
+	<hr>
+	
+	<h2>노드를 감춰보자.</h2>
+	<p id="demo">이 노드는 버튼을 클릭 시 사라짐.(display:none)</p>
+	<button onclick="document.getElementById('demo').style.display='none'">삭제</button>
+	<button onclick="document.getElementById('demo').style.display='block'">생성</button>
+	<script>
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	/*  screen 객체 : window 객체의 속성으로 내부적으로는 객체의 형태임.
+		이 객체가 하는 역할은 사용자의 모니터 속성을 제공하는게 목적임.
+		대표적 속성 : width, height, availWidth, availHeight, colorDepth 등이 있음.
+		각각 모니터의 너비, 높이, 작업표시줄(status bar) 를 제외한 화면 너비, 높이, 사용자의 모니터가 표현 가능한 color bit 리턴.
+		중요한건 사용자의 정보를 얻어내는 것. */
+		
+	/* 	location 객체 : 사용자의 브라우저와 관련되, 그 중 URL에 관련된 속성과 메소드를 제공해주는 개체입니다.
+		대표적 속성으로는 href 속성임. 이 속성은 지정된 url 로 요청을 보내거나 주소 참조 값을 리턴하거나 하는 속성임.
+		이외에 reload()는 페이지를 refresh 하는 기능이 있음. */
+		
+		document.write("요청된 full url 정보 "+location.href+"<br>");
+		document.write("요청된 host 정보 "+location.hostname+"<br>");
+		//url 중 호스트를 제외하고 실제 이 페이지가 존재하는 path 경로
+		document.write("요청된 페이지의 path 정보 "+location.pathname+"<br>");
+		document.write("요청된 port 정보 "+location.port+"<br>");
+		
+		//setTimeout(()=>{location.reload()},3000);
+		
+		//assign(URL) : 해당 URL 로 요청을 보내는 역할을 함.
+		function goURL(){
+			location.assign('http://localhost:8080/html_css_Basic/day001/greeting.html')
+		}
+		
+		//history 객체 : 사용자 브라우저의 이전, 다음의 URL 로의 전환을 해주는 메소드로 back(), forward() 등이 있음.
+		
+	/* 	윈도우 객체의 대표적 alert 메소드들(alert, confirm, prompt 등)
+		alert 는 잘 알거고, confirm 은 확인 버튼을 내장함. 선택한 버튼에 따라 리턴이 다름.
+		prompt는 입력을 바아서 그 값을 리턴하도록 정의됨. */
+		
+	</script>
+	<button onclick="location.href='../day001/greeting.html'">새문서를 로드 요청합니다.</button>
+</body>
+</html>

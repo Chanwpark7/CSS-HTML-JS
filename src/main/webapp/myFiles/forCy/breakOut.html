@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+
+    #background{
+      width:1920px;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
+
+    #theBall{
+      background-color: red;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+    }
+
+    #theBoard{
+      position: absolute;
+      width: 100px;
+      height:5px;
+      background-color: blue;
+      top:90%;
+    }
+    
+    #brickContainer{
+      display: flex;
+      flex-direction: row;
+      flex-flow: wrap;
+      height: 80vh;
+    }
+
+    .theBrick{
+      border: 2px solid black;
+      box-sizing: border-box;
+      background-color: aliceblue;
+      width: 80px;
+      height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="background">
+    <div id="brickContainer">
+      <div class="theBrick"></div>
+    </div>
+    <div id="theBall"></div>
+    <div id="theBoard"></div>
+  </div>
+
+  <script>
+    let ran1= Math.random()*(1-0.4)+0.4;
+    let ran2 = Math.random();
+    let bTop=1;
+    let bLeft=1;
+    let bg=document.querySelector("#background");
+    let ball=document.querySelector("#theBall");
+    let board=document.querySelector("#theBoard");
+    let x;
+    let y;
+    let gameStart=false;
+    let gameOver=false;
+    let passThrough=false;
+
+    window.addEventListener("keydown", (e) => {
+      if(e.code=="Escape"){
+        gameStart=false;
+        clearInterval(interval);
+        clearInterval(interval2);
+      }
+      if(e.code=="Space"){
+        gameOver=false;
+        passThrough=false;
+        if(gameStart==true){
+          return false;
+        }
+        interval = setInterval(movingBall,1);
+        interval2 = setInterval(movingBall,1);
+        gameStart=true;
+      }
+    });
+
+    bg.addEventListener("mousemove",(e)=>{
+      x=e.pageX;
+      y=e.pageY;
+
+      if(gameStart==false){
+        ball.style.top=window.innerHeight*9/10-ball.offsetHeight +"px";
+        ball.style.left=x-ball.offsetWidth/2 +"px";
+      }
+      board.style.left=x-board.offsetWidth/2 +"px";
+    })
+
+    function movingBall(){
+        if(gameOver==true){
+          return false;
+        }
+
+      if(parseInt(ball.style.top)>4.5*window.innerHeight/5-ball.offsetHeight/1.5){
+          passThrough=true;
+          if(parseInt(ball.style.top)<4.5*window.innerHeight/5&&parseInt(ball.style.left)>parseInt(board.style.left)&&parseInt(ball.style.left)<parseInt(board.style.left)+board.offsetWidth-ball.offsetWidth){
+          passThrough=false;
+          bTop=-bTop;
+        }
+      }
+      if(passThrough==true&&parseInt(ball.style.top)>window.innerHeight-ball.offsetHeight){
+        gameOver=true;
+      }
+
+      if(gameStart==true&&gameOver==true){
+          alert("Game Over");
+        }
+
+      if(gameStart==true){
+        if(parseInt(ball.style.top)<0){
+          bTop=-bTop;
+        }
+        if(parseInt(ball.style.left)>window.innerWidth-ball.offsetWidth||parseInt(ball.style.left)<0){
+          bLeft=-bLeft;
+          // ran1= 1-ran1
+        }
+          ball.style.top=-1*bTop + parseInt(ball.style.top) +"px";
+          ball.style.left=bLeft+ parseInt(ball.style.left) +"px";
+          console.log(ran1*bLeft)
+      }
+    }
+  </script>
+</body>
+</html>

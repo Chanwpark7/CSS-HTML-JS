@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Componenet 의 위치를 지정하는 position 속성 : static(정적: 일반적인 기본속성), relative(상대), fixed(고정), absolute(절대), sticky
+	각 속성에 따라서 이미지나 content 들의 위치값이 조정이 되거나, 고정 되거나 합니다.
+	중요!! 각 포지션의 설정 범위는 Top->Right->Bottom->Left 순으로 정의 합니다.
+-->
+	<style>
+		div.static{
+			/* 반드시 position 을 먼저 정의 하고, 다음 다른 속성을 정의 해야 함. 안그럼 적용 안될 수 있음. */
+			position:	static;
+			border:		3px solid black;
+		}
+		div.relative{
+			/* 일반위치(static) 으로 정의된 요소를 기준으로 상대적으로 위치를 지정하게 됨.
+				이때 방위(T,R,B,L) 등을 정의 하게 되면 정상적인 위치에서 더 멀어짐 */
+			position:	relative;
+			left:		30px;
+			border:		3px solid red;
+		}
+		div.fixed{
+			/* 뷰포트(사용자의 화면)을 기준으로 특정 구역(절대값의 위치)에 고정. 스크롤이 생겨도 해당 뷰포트 값의 위치를 항상 유지함. */
+			position:	fixed;
+			bottom:		0;
+			right:		0;
+			width:		300px;
+			border:		3px solid blue;
+		}
+		div.absolute{
+			/* 페이지의 좌표값을 기준으로 특정 위치에 고정. 스크롤이 생기면 이동하게 됨. */
+			position:	absolute;
+			right:		0;
+			top:		50%;
+			width:		200px;
+			height:		100px;
+			border:		3px solid green;
+		}
+		div.sticky{
+			/* Internet Explorer 에서는 지원안됨. 특정 위치 값에 고정을 시키는 속성, fixed 와 유사함
+			주의: 선언시엔 반드시 -webkit-sticky 라고 해야함, 즉 position이 2번 나와야 함. */
+			position:	-webkit-sticky;
+			position:	sticky;
+			top:		0;
+			background-color: purple;
+			border:		3px solid yellow;
+		}
+	</style>
+</head>
+<body style="height: 300vh">
+	<div class="static">
+		이건 static 으로 정의된 div 포지션임.
+	</div>
+	<div class="relative">
+		이건 relative 으로 정의된 div 포지션임.
+	</div>
+	<div class="fixed">
+		이건 fixed 으로 정의된 div 포지션임.
+	</div>
+	<div class="absolute">
+		이건 absolute 으로 정의된 div 포지션임.
+	</div>
+	<div class="sticky">
+		이건 sticky 으로 정의된 div 포지션임.
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>const의 객체에 대한 특이점 확인하기.</h2>
+	<p id="demo"></p>
+	
+	<script>
+		/* const : 고정값을 사용하는 상수 키워드 입니다.
+			이미 예시는 봤는데, 여러분이 여기서 봐야 할 또다른 부분이 있습니다. 매우 중요!!
+			
+			상수는 객체를 사용할 때 일반적으로 사용하는데, 이때 꼭 기억해야 할 것이 있음.
+			
+			1. 상수의 배열 객체에 reference(참조) 하게 되면, 배열의 index 값은 변경이 가능합니다. 그러나 배열 자체가 바뀌면 에러가 남.
+			2. 상수를 배열이 아닌 일반 객체를 ref(참조) 하게 되면, 객체를 변경할 수는 없지만, 속성의 값을 변경할 수는 있음.
+			3. 상수도 block scope 를 갖음. */
+		
+		//Collection의 대표적인 구조인 배열 생성하기
+		const students=['김도연','김재형'];
+	
+		//배열 객체의 0번 index에 새로운 값을 추가합니다.
+		students[0]='이재흥'; //0번의 값 대체.
+		
+		//마지막에 새로운 학생을 추가함. 메소드를 이용.
+		students.push('허지윤');
+		
+		//변수에 객체를 바꿔봄. 에러 유발함.
+		/* students =['박찬우']; */
+		
+		//script에서는 객체를 표현할때 {}를 이용하고, 내부에 속성:값 을 , 로 구분하는 문법을 가장 많이 사용.
+		const me={name:'박찬우',gender:'male',addr:'경기 과천'};
+		
+		//속성 추가
+		me.favor='Badminton';
+		
+		me={name:'주영'}; //me 변수에 새로운 객체 대입 = 에러 발생.
+		
+		
+		document.getElementById('demo').innerHTML=students;
+		document.getElementById('demo').innerHTML=me.favor;
+	</script>
+</body>
+</html>

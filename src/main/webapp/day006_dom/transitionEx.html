@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		/* transition : 변환 효과를 주는 cSS, animation 하고는 다름.
+			속성으로는 transition(short hand), delay, duration, property, timing-function 등이 있습니다.
+			각 값은 작업하면서.
+			
+			transition-timing-function(변형 효과)의 형태를 값으로 구분해놨음.
+			ease, linear, ease-in, ease-out, ease in-out, cubic-bezier() */
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			transition: width 3s, height 2s;
+			transition-delay: 4s;
+		}
+		div:hover{
+			width: 300px;
+			height: 300px;
+			transition: width 1s, height 1s;
+		}
+		
+		#div1{
+			transition-timing-function: ease;
+			background: yellow;
+		}
+		#div2{
+			transition-timing-function: linear;
+			background: green;
+		}
+		#div3{
+			transition-timing-function: ease-in;
+			background: orange;
+		}
+		#div4{
+			transition-timing-function: ease-out;
+			background: blue;
+		}
+		#div5{
+			transition-timing-function: ease in-out;
+			background: navy;
+		}
+		#div6{
+			transition-timing-function: width 0.5s cubic-bezier(0.25,0.25,0.75,0.75);
+			background: purple;
+		}
+	</style>
+</head>
+<body>
+	<h2>아래 div에 마우스를 올려보세요.</h2>
+	<div></div>
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+	<div id="div4"></div>
+	<div id="div5"></div>
+	<div id="div6"></div>
+</body>
+</html>

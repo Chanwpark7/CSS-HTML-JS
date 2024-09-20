@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p></p>
+	
+	<form action="#" name='f' onsubmit="return gugu();"><!-- 이렇게 하면 전송 안됨 -->
+		값 입력 : <input type="text" name="srp" id="srp" placeholder="계산할 단을 입력하세요">
+		<p>
+			<label for="girlGroup">좋아하는 걸 그룹 선택</label>
+			<select id="girlGrType" name="girlGrType" multiple="multiple">
+				<option selected="selected">뉴진스</option>
+				<option>아이브</option>
+				<option>소녀시대</option>
+				<option>원더걸스</option>
+			</select>
+		</p>
+		<p><input type="button" value="제출" id="btn"> <input type="button" value="게임하기" id="btn2"></p>
+	</form>
+
+	<script>
+		//선택된 걸그룹을 for을 통해서 갯수 찾아내기
+		function howMany(selectedObj){
+			let numberSelected=0;
+			for(let i=0;i<selectedObj.options.length;i++){ //dom에서 select 노드는 length 속성을 갖고 있음.
+				if(selectedObj.options[i].selected){
+					numberSelected++;
+				}
+			}
+			return numberSelected;
+		}
+		
+		let btn=document.getElementById("btn");
+		btn.addEventListener("click",function(){//버튼에 이벤트 연결 및 함수 도출
+			alert("선택된 걸그룹의 수 : "+howMany(document.f.girlGrType));
+		});
+		
+		let btn2=document.getElementById("btn2");
+		btn2.addEventListener("click",gugu);
+		
+		function gugu(){
+			let dan=document.f.srp.value;
+			//console.log(dan);
+			result="";
+			let resText="";
+			for(let i=1;i<=9;i++){//루프 탈출 시 break를 사용
+				if(i%2!=0){
+					//break; //탈출시엔 가장 가까운 루프 블락 밖으로 탈출.
+					//continue : 해당 조건이 만족되어 이 키워드를 만나면 아래의 실행문은 모두 무시하고 속해있는 루프의 조건으로 넘어감.
+					continue;}
+				result = dan * i;
+				resText+=dan+" * "+i+" = "+result;
+			}
+			let p=document.querySelector("p");
+			p.textContent=resText;
+			return false
+		}
+	</script>
+</body>
+</html>

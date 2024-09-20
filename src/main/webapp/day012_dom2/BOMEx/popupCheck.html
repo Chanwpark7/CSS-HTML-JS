@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="openUp();">
+	<p>팝업 블락시 확인 및 대처 방안</p>
+	<script>
+		let blocked = false;
+		function openUp(){
+			let newWin = window.open("notice.html","pop","width=400, height=400");
+			if(newWin==null){
+				alert("팝업 차단해놨네? 해제 해야겠지?");
+			}
+		}
+	</script>
+</body>
+</html>

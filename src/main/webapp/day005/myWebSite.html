@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Web Site</title>
+	<style>
+		*{/* 기본값은 border-content 인데, 이게 뭐냐면, 내부의 컨텐트가 늘어나면 margin 도 그만큼 늘어나는데, 아래처럼 box로
+			처리해주면 박스모델에서 선언한 값으로 고정됨. 즉, 내부 컨텐츠의 영역과는 상관없이 초기 영역을 유지하도록 하는 속성임. */
+			box-sizing: border-box;
+		}
+		body{
+			font-family: sans-serif, arial;
+			padding: 10px;
+			background: #f1f1f1;
+		}
+		.header{
+			padding: 30px;
+			text-align: center;
+			background: white;
+		}
+		.header h1{
+			font-size: 50px;
+		}
+		.topNav{
+			overflow: hidden;
+			background-color: black;
+		}
+		.topNav a{
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding:14px 16px;
+			text-decoration: none;
+			line-height: 1;
+		}
+		.topNav a:hover{
+			background-color: #a3a3a3;
+			color: black;
+		}
+		.row{
+			content: "";
+			display: table;
+			clear: both;
+			width: 100%;
+		}
+		.leftColumn{
+			float: left;
+			width: 75%;
+		}
+		.card{
+			background-color: white;
+			padding: 20px;
+			margin-top: 20px;
+		}
+		.fakeImg{
+			background-color: #aaa;
+			width: 100%;
+			padding: 20px;
+		}
+		.rightColumn{
+			float: left;
+			width: 25%;
+			padding-left: 20px;
+		}
+		.row:after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.drpbutton{
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+		button{
+			text-decoration: none;
+		}
+		.footer{
+			padding: 20px;
+			text-align: center;
+			background: white;
+			margin: 20px;
+		}
+/* 반응형 CSS 사용 미디어 쿼리라고 함. 만약 400px 이하의 device 로 접근시엔 2개의 칼럼이 stack 형태로 보여지도록 만듦. */
+	@media screen and (max-width:400px){
+		.topNav a{
+			float: none;
+			width: 100%;
+		}
+	}
+	@media screen and (max-width:800px){
+		.leftColumn, .rightColumn{
+			width: 100%;
+			padding: 0;
+		}
+	}
+	</style>
+</head>
+<body>
+
+	<div class="drpbutton">
+		<button onclick="window.scrollTo(0,0)">^ top</button>
+	</div>
+	
+<!-- 제일 먼저 header 영역에 대한 HTML 작성합니다. -->
+	<div class="header">
+		<h1>나의 첫 Web Site</h1>
+		<p>필요에 따라서 브라우저의 크기를 조정해서 보시길 바랍니다.</p>
+	</div>
+<!-- End of header -->
+
+<!-- Main nav 정의 -->
+	<div class="topNav">
+		<a href="#">Link</a>
+		<a href="#">Link</a>
+		<a href="#">Link</a>
+		<a href="#">Link</a>
+		<a href="#" style="float: right;">독립된 메뉴 링크</a>
+	</div>
+<!-- End of Main nav -->
+
+<!-- Main 영역 정의 : Grid 형식으로 정의할 예정입니다. 하나의 Row 에 각 column 식으로 정의하는 방식(table 아님) -->
+	<div class="row"> <!-- container div -->
+		<div class="leftColumn"> <!-- left Column : 이 내부에 들어오는 content 는 head 와 간략한 글과 하부에는 메인 이미지를 넣을 겁니다. -->
+			<div class="card"> <!-- leftC Card1 div -->
+				<h2>Title Heading</h2>
+				<h5>이건 타이틀에 대한 간략한 설명입니다. 2024.08.02 By Jason</h5>
+				<div class="fakeImg" style="height: 200px">Image</div>
+				<p>텍스트 또는 컨텐츠</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+				</p>
+			</div> <!-- End of Card1 div -->
+			
+			<div class="card"> <!-- leftC Card2 div -->
+				<h2>Title Heading</h2>
+				<h5>이건 타이틀에 대한 간략한 설명입니다. 2024.08.01 By Jason</h5>
+				<div class="fakeImg" style="height: 200px">Image</div>
+				<p>텍스트 또는 컨텐츠</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+				</p>
+			</div> <!-- End of Card2 div -->
+		</div> <!-- End of left Column -->
+		
+		<div class="rightColumn"><!-- right Column -->
+			<div class="card"> <!-- rightC Card1 div -->
+				<h2>About something</h2>
+				<div class="fakeImg" style="height: 100px">Image</div>
+				<p>텍스트 또는 컨텐츠</p>
+			</div> <!-- End of Card1 div -->
+			
+			<div class="card"> <!-- rightC Card2 div -->
+				<h2>About something</h2>
+				<div class="fakeImg"><p>Image</p></div>
+				<div class="fakeImg"><p>Image</p></div>
+				<div class="fakeImg"><p>Image</p></div>
+				<div class="fakeImg"><p>Image</p></div>
+			</div> <!-- End of Card2 div -->
+			
+			<div class="card"> <!-- rightC Card3 div -->
+				<h3>Posting Me</h3>
+				<p>Fill 컨텐츠</p>
+			</div> <!-- End of Card3 div -->
+		</div> <!-- End of right Column -->
+	</div><!-- End of row div -->
+	
+	<div class="footer"> <!-- Footer -->
+		<h2>바닥페이지입니다.</h2>
+	</div> <!-- End of Footer -->
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/*  window 객체의 속성 알아보기
+			대표적인 속성 : innerHeight, innerWidth(둘 다 브라우저의 크기 pixel 단위, toolbar, scrollbar 제외)
+			open() : 팝업창을 여는 메소드. open()을 변수에 대입해서 실행 후 null 리턴 시 브라우저에서 popup block 시킨 것임.
+			메소드의 파라미터는 여러개가 올 수 있음.
+			close() : open 으로 연 팝업을 닫는데 사용. 기본적으로 자신의 창을 닫지만, 변수를 선언해서 열면 해당 창을 제어할 수 있음.
+			moveTo() : 현재 브라우저 창을 이동시킴. 팝업창에 많이 사용. */
+		
+			document.write("브라우저의 inner width : "+window.innerWidth);
+			document.write("브라우저의 inner height : "+window.innerHeight);
+	</script>
+</body>
+</html>

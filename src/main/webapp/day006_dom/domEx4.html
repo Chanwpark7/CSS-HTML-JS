@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>class 이름으로 노드 찾기</title>
+
+</head>
+<body>
+	<h1>getElementsByTagName() Method 알아보기</h1>
+	<p>메소드의 값으로 찾으려는 Tag 명을 주면 문서내의 모든 Tag Element 를 Collection으로 리턴함.</p>
+	<ul>
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ul>
+	<script>
+		//document.getElementsByTagName('li')[2].style.color='red';
+		const length=document.getElementsByTagName("*").length;
+		//컬렉션의 대표적 속성인 length: 값이 존재하면 그 갯수를 카운트해서 정수로 리턴. 매우 많이 사용함.
+		console.log('찾아낸 tag 갯수',length);
+		
+		//li 모두를 찾운 후, 마지막 li node 를 get 한 후 style 적용.
+		//document.getElementsByTagName("li")[length-1].style.color='red';
+	</script>
+</body>
+
+</html>

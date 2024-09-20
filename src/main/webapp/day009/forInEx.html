@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="demo"></p>
+	<script>
+		/* for in : 객체를 반복해서 자동으로 순한하여 값을 얻어내는 for 구문
+		문법은 for(key in object){}의 형태로 되어있고, 객체 type 이라면 뭐든지 다 됩니다.
+		위 문법에서 key 객체가 갖고 있는 속성을 나타냄. 이 속성을 VM 이 자동으로 읽어와 key에 mapping 시킴.
+		그럼 이 키를 이용하여 속성의 값을 가져다 사용하는 문법. */
+		const person ={name:"홍길동", gender:"남", phone:"010-0000-0000"}
+		for(let x in person){
+			console.log(person[x]);
+		}
+		const arr=['a','b','c'];
+		/* 배열에는 값의 길이인 length 속성이 있음. 호출하면 배열의 길이가 리턴함. arr은 값이 3개이므로 3이 리턴됨.
+			배열의 값에 접근할때는 배열명[index] 로 접근해야 함. ex>arr[0] -> a가 리턴됨. */
+		for(let i=0;i<arr.length;i++){
+			console.log(arr[i]);
+		}
+		
+		//for in 을 통해서 모든 값에 접근
+		for(let y in arr){
+			console.log(arr[y]);
+		}
+		
+		//배열에는 forEach() 라는 메소드도 있음. for과 유사한데, 나중에 람다와 자바스크립트 중급정도에 나옴.
+		
+		//for of : 또다른 형식의 for 구문. 배열객체 뿐 아니라 문자열등에도 사용 가능한 for. 객체에는 사용 불가.
+		//문법 : for(value of Interator)
+		//for in 이 key를 리턴한다면 for of 는 값을 리턴하는데 차이가 있음.
+		for(let x of arr){
+			console.log(x);
+		}
+		
+		let theComment="식곤증은 신이다";
+		for(let x of theComment){
+			console.log(x);
+		}
+	</script>
+</body>
+</html>

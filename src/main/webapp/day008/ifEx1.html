@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+	<script>
+	// 제어문: 조건에 따라서 프로그램의 흐름을 변경하도록 하는 구문을 통틀어 제어문이라고 합니다.
+	// 종류로는 if, else if, else if, ...else 가 있고, if 없이 else if else 는 정의 할 수 없습니다.
+	// 하나의 조건만 검증할 때는 if 한번만 써도 되고, 조건에 따라서 if, else if, else 를 계속 정의할 수 있습니다.
+	// 위 나열은 하나의 값을 기준으로 계속 검증시에 사용하고, 만약 다른 조건을 나열 하고 싶을때는 if만 계속 나열할 수 있음.
+	// 즉 내가 조건 검증을 하고 싶은 만큼 가능하다는 뜻. 당연히 중첩도 가능
+	
+	// syntax : if(조건식){조건식이 true 시 실행문}else{결과가 false 시 실행문}
+	// if(조건식){}else{} -> else if 를 넣어 2개의 조건 검색을 수행함.
+	
+	/* 다음과 같은 값은 false로 처리합니다.(자바스크립트에서만)
+		false, undefined, null, 0, NaN(Not a Number), ""(빈 문자열) */
+		
+	
+	</script>
+<body>
+	<p></p> <!-- 여긴 메시지 영역 -->
+	<form action="" name="form1">
+		<input type="password" name="pw" id="pw" placeholder="4자만 입력하세요.">
+		<select id="fc">
+			<option value="">Favor Color</option>
+			<option value="red">Red</option>
+			<option value="blue">Blue</option>
+			<option value="green">Green</option>
+			<option value="aqua">Aqua</option>
+		</select>
+		<select id="deg">
+			<option value="">현재 기온</option>
+			<option value="25">25&#8451;이하</option>
+			<option value="0">0&#8451;</option>
+			<option value="-10">-10&#8451;</option>
+			<option value="28">28&#8451;</option>
+		</select>
+		<button onclick="return checkData()">전송</button>
+	</form>
+	
+	<script>
+	// select box 에 이벤트 걸기.
+		
+		const fc = document.getElementById('fc');
+		const deg = document.getElementById('deg');
+		const para =document.querySelector('p');
+		fc.addEventListener('change',propose);
+		deg.addEventListener('change',propose);
+		
+		let degVal, fcVal; //이 함수에서 변수를 선언.
+		
+		function propose(key){
+			//console.log(key.currentTarget.getAttribute("id"));
+			const theSel=key.currentTarget.getAttribute("id");
+			
+			if(theSel=='fc'){
+				fcVal=fc.value;
+				//console.log(fcVal);
+			}else if(theSel=='deg'){
+				degVal=parseInt(deg.value);
+			}
+			
+			console.log(degVal);
+			
+			if((degVal>=28 && fcVal=="aqua")||(degVal<0 && fcVal=="red")){//논리곱 연산자 사용. 영하 10도에 red 를 선택했을 경우
+				//p 컬러를 fcVal 로 바꾸고 fcVal 컬러로 제안 합니다. 라고 내용을 작성
+				//아쿠아 컬러를 선택했다면, 아래 p의 내용을 탁월한 선택입니다. 라고 해주세요.
+				para.textContent="탁월한 선택입니다.";
+				para.style.backgroundColor=fcVal;
+				para.style.color="white";
+			}//0도이면서 blue 또는 28도 이면서 green 을 선택하면 컬러감이 좋은 사람이라고 출력. 만약 둘다 아무것도 선택하지 않았다면 "" 공백 넣기
+			else if((degVal==25 && fcVal=="green")||(degVal==0 && fcVal=="blue")){
+				//p 컬러를 fcVal 로 바꾸고 fcVal 컬러로 제안 합니다. 라고 내용을 작성
+				//아쿠아 컬러를 선택했다면, 아래 p의 내용을 탁월한 선택입니다. 라고 해주세요.
+				para.textContent="컬러감 좀 좋네?";
+				para.style.backgroundColor=fcVal;
+				para.style.color="white";
+			}
+			else if(degVal == 0){
+				para.textContent="";
+			}
+			else if(!degVal && !fcVal){
+				para.textContent="왜 아무것도 안선택?";
+				para.style.backgroundColor="white";
+				para.style.color="black";
+			}
+		}
+		/* function propose(){
+			// 좋아하는 색상을 선택하면 선택 컬러명을, p 요소의 배경색을 해당 컬러로 바꾸고, 글씨는 흰색으로 변경.
+			
+			if(choice=="red"){
+				para.textContent=choice;
+				para.style.backgroundColor=choice;
+				para.style.Color='white';
+				}else if(choice=="blue"){
+					para.textContent=choice;
+					para.style.backgroundColor=choice;
+					para.style.Color='white';
+					}else if(choice=="green"){
+						para.textContent=choice;
+						para.style.backgroundColor=choice;
+						para.style.Color='white';
+						}else if(choice=="aqua"){
+							para.textContent=choice;
+							para.style.backgroundColor=choice;
+							para.style.Color='white';
+						}else{}
+			return false;
+		} */
+		
+		
+		//document.getElementById('toDo').innerHTML=choice;
+		
+		function checkData(){
+			//버튼이 클릭되면, 사용자가 입력한 값을 콘솔에 출력시켜보세요.
+			//만약 4글자이면 alert(전송)하고 아닌 경우 4자 입력하세요 라고 alert 전송.
+			let value=document.querySelector('#pw').value;
+			console.log(value.length);
+			if(value.length==4){
+				alert("전송");
+			}else{
+				alert("4자를 정확히 입력해주세요.");
+			}
+			return false;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		div{
+			background-color: gray;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>이건 1번 div의 p</p>
+		<input type="text" name="day" placeholder="ex)일요일"><br>
+		<button onclick="showDay();">오늘의 요일 보기</button>
+	</div>
+	<div>
+		<p>이건 2번 div 의 p</p>
+	</div>
+	<div>
+		<p>이건 2번 div 의 p</p>
+	</div>
+	<script>
+		/* 개인의 속성(이름, 나이, 주소, 전화번호에 대한 정보)을 출력하려고 함.
+		적당한 변수를 선언하고 값을 대입하기.
+		var name;
+		let age, add, ph;
+		name="홍길동";
+		age=24;
+		add="조선 한양시";
+		ph="010-0000-0000";
+		
+		{
+			var name="임꺽정";
+			let age = 41;
+		}
+		
+		var name="박보검"
+		console.log(name+"은 "+add+"에 거주하는 "+age+"살 청년이다. 전화번호는 "+ph+"이다."); */
+		
+		const dayNode=document.getElementsByName("day")[0];
+		
+		function showDay(){
+			let theDayt=dayNode.value;
+			switch(theDayt){
+				case "일요일": dayNode.value="0 입니다.";
+				break;
+				case "월요일": dayNode.value="1 입니다.";
+				break;
+				case "화요일": dayNode.value="2 입니다.";
+				break;
+				case "수요일": dayNode.value="3 입니다.";
+				break;
+				case "목요일": dayNode.value="4 입니다.";
+				break;
+				case "금요일": dayNode.value="5 입니다.";
+				break;
+				case "토요일": dayNode.value="6 입니다.";
+				break;
+			}
+		}
+		
+		for(i=1;i<20;i++){
+			if(i%2!=0){
+				continue;
+			}
+			console.log(i+"박찬우");
+			
+			if(i%3==0 && i%6==0){
+				break;
+			}
+		}
+	</script>
+</body>
+</html>

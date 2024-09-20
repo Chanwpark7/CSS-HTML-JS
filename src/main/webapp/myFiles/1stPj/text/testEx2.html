@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <style>
+      body {
+				margin:0;
+				padding:0;
+				height: 500vh;
+      }
+      #container {
+        width: 50px;
+        background: red;
+				position: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" ></div>
+    <script>
+      window.addEventListener(onclick,(event)=>{
+        yOffset=event.offsetY;
+        let x = event.pageX;
+        let y = event.pageY;
+
+				console.log(x,y,yOffset);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+/*CSS의 가상클래스를  이용해서 link 상태에 따른 스타일을 정의 할게요.  */
+a:link{/*방문전의 링크 상태 정의*/
+	color: lime;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:visited{/*방문전의 링크 상태 정의*/
+	color: pink;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover{/*방문전의 링크 상태 정의*/
+	color: red;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+a:active{
+	color: yellow;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+
+
+</style>
+
+</head>
+<body>
+<!-- HTML List : 항목을 뜻하며, 여러 컨텐트를 항목별로 표시할때 사용합니다. 이외에도, 이를 변형시켜서 링크와 같이
+	함치게 되면, 사이트 메뉴 등을 구성할 수 잇는 형태로 만들 수 있습니다.
+	
+	리스트는 크게 순서없는 리스트와, 있는 리스트를 구분할 수 있음(ex>1.2.3. or A.B.C......)
+ -->
+<h2>리스트의 기본</h2>
+
+
+<ul style="list-style-image: url('sns_01.gif'); list-style-position: outside;">
+	<!-- li 하위 요소로 컨텐트를 표현 해야합니다. -->
+	<li>
+		<a href="/html_css_Basic/day3/coffeeMain.html" target="_blank">Coffee</a>
+		<!-- 리스트를 중첩합니다. -->
+		<ul style="list-style-position: outside; line-height: 200%">
+			<li>아아</li>
+			<li>뜨아</li>
+			<li>에스프레소</li>
+		</ul>
+	</li>
+	<li>Teavana</li>
+	<li>Coke</li>
+</ul>
+
+<h3>순서있는 목록</h3>
+<ol style="list-style-type:lower-roman; list-style-position: inside;">
+	<li>Coffee</li>
+	<li>Tea</li>
+	<li>Coke</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

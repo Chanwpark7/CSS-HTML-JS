@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Random canvas circles</title>
+    <script>
+    	/* 나를 계속 반복해서 잡아주세요 반복문
+    		대표적인 구문으로는 for, while(), do{}while(); <- ; 주의!! 꼭 있어야함.
+    		가장 많이 쓰이는 구문순으로 정의 되어있음.
+    		특징으로는 for 는 특정 반복을 몇번 해야하는지가 정해져 있을 때 사용하고
+    		while 은 무한 반복을 수행하다가 특정 조건때 탈줄(break)해야할 때 사용하고
+    		do-while 은 일단 한번 수행하고 나중에 조건을 볼 때 사용함.
+    		
+    		반복은 다음과 같은 기능을 갖는 변수와 연산식의 조합으로 생성.
+    		
+    		-카운터: 어떤 값으로 초기화 되어지고, 반복문의 시작이 됨.
+    		-조건: 반복문이 계속 실행될지 여부를 판별하는 식이며, t/false 를 리턴하는 식으로 구성됨.
+    			조건의 결과가 false 가 될때 까지 반복이 계속 됨.
+    		-반복자(iterator): 조건이 더이상 true 가 되지 않을 때까지 카운터가 증가 또는 감소(대부분 증가식을 사용함.)시키는 역할을 함.
+    			이를 통해 카운터는 증가하고, 증가된 카운터를 조건이 검색하면서 false가 될때 까지 반복을 지속시킴. */
+    </script>
+  </head>
+  <body>
+   	<p></p>
+   	
+   	<script>
+   		//1 ~ 10 까지의 숫자를 p에 출력.
+   		const p = document.querySelector("p");
+   		for (let i=1; i<=10; i++){
+   			document.write(i+"<br>");
+   		}
+   		for (let i=1; i<=10; i++){
+   			document.write(Math.floor(Math.random()*3)+"<br>");
+   		}
+   	</script>
+  </body>
+</html>

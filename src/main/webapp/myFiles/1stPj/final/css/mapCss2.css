@@ -1,0 +1,434 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-family: "Pacifico", cursive; 
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+#bg_container{
+  overflow: hidden;
+  position: relative;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: linear-gradient(#8eb2ff 0%, rgb(160, 228, 255) 25%, rgb(214, 250, 255) 50%,rgb(255, 255, 255) 100%);
+  z-index: -5;
+}
+
+.ml2 {
+  font-weight: 900;
+  font-size: 3.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+#ocean{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 9rem;
+  width: 100%;
+  z-index: -2;
+}
+
+#sunRay{
+  position: absolute;
+  top: 0;
+  right: -2rem;
+  width: 20rem;
+  z-index: -4;
+  transform-origin: top right;
+}
+
+#family2{
+  position: absolute;
+  bottom: 0rem;
+  width: 10rem;
+  z-index: -1;
+}
+
+#bg_wrap{
+  overflow: hidden;
+  position: absolute;
+  width:100%;
+  height: 300%;
+}
+
+/* Body 정의 */
+.mainBody {
+  width: 100%;
+  background-color: white;
+}
+
+/* body 내 nav bar 정의 */
+.board {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: white;
+}
+
+/* 1번 탭(홈) */
+.toHome {
+  position: relative;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toHome .home {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.toHome img {
+  width: 50%;
+  position: absolute;
+  cursor: pointer;
+  float: left;
+}
+
+/* 홈 탭 마우스 오버시 효과 정의 */
+.toHome:hover {
+  background-color: black;
+}
+
+.toHome:hover img {
+  filter: invert(100%);
+}
+
+/* 2번 탭(소개 상세페이지) */
+.detail {
+  position: relative;
+  width: 30%;
+  height: 100%;
+}
+
+.btn{
+  height: 100%;
+  width:50%;
+}
+
+/* dropdown 정의 */
+.detail .dropBtn {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  top: 5vh;
+  display: none;
+  z-index: 4;
+  background-color: black;
+}
+
+.detail .dropdown-content a {
+  display: block;
+  padding: auto;
+  text-decoration: none;
+  width: 80%;
+  padding: 5% 10%;
+  color: white;
+}
+
+.detail .dropdown-content a:nth-child(3) {
+  text-decoration: none;
+  color: gray;
+}
+
+/* dropdown 이벤트 정의 */
+.btn:hover .dropBtn {
+  background-color: black;
+  color: white;
+}
+
+.btn:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: gray;
+  color: black;
+}
+
+.dropdown-content a:nth-child(3) {
+  background-color: black;
+  color: gray;
+}
+
+
+/* 3번 탭(경로) */
+.path {
+  display: flex;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  align-items: center;
+  float: right;
+}
+
+
+/* map part 정의 */
+.body_container {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*페이지 제목*/
+.body_container h2 {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.mainBody #googleMap{
+  width: 60%;
+  height: 40rem;
+}
+
+.nav_container {
+  text-align: center;
+  padding: 3%;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+/*글 css 1*/
+#nav1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 18px;
+}
+
+/*글 css2*/
+#nav2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#nav2:last-child {
+  margin-top: 40px;
+}
+
+nav_container {
+  padding-bottom: 8%;
+}
+
+.body_container h2{
+  font-size: 2.0rem;
+}
+
+.nav_container #nav1{
+  font-size: 1.8rem;
+}
+
+.nav_container #nav2{
+  font-size: 1.6rem;
+}
+
+
+
+/* upload btn 정의 */
+#container {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  right: 30px;
+  bottom: 30px;
+  position: fixed;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+#container img {
+  display: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 4;
+}
+
+#container .circle {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  stroke: black;
+  stroke-width: 1;
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  z-index: 5;
+}
+
+#container .circle circle {
+  transform-origin: center center;
+  transform: rotate(-90deg);
+}
+
+
+
+
+/* mobile 용 css */
+@media all and (max-width: 767px) {
+  .ml2 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: lighter;
+  }
+
+  .map img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+  }
+
+  .body_container h2{
+    font-size: 1.2rem;
+  }
+  .nav_container #nav1{
+    font-size: 1.0rem;
+  }
+
+  .nav_container #nav2{
+    font-size: 0.8rem;
+  }
+
+  #nav1 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 18px;
+  }
+
+  /*글 css2*/
+  #nav2 {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  #nav2:last-child {
+    margin-top: 40px;
+  }
+
+  .nav_container{
+    margin-bottom: 5%;
+  }
+
+  .mainBody #googleMap{
+    width: 70%;
+    height: 20rem;
+  }
+
+  .board .path{
+    display: none;
+  }
+
+  .board .detail{
+    width:70%;
+  }
+
+  .board .btn{
+    width:100%;
+  }
+
+  .board .dropdown-content{
+    width:100%;
+    z-index: 10;
+  }
+}
+
+/* tablet 용 css */
+@media all and (min-width: 768px) and (max-width: 1279px) {
+ 
+
+  .board {
+    display: flex;
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: lighter;
+  }
+
+  #nav1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 18px;
+  }
+
+  /*글 css2*/
+  #nav2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  #nav2:last-child {
+    margin-top: 40px;
+  }
+
+  .nav_container{
+    padding-bottom: 8%;
+  }
+
+  .body_container h2{
+    font-size: 1.7rem;
+  }
+
+  .nav_container #nav1{
+    font-size: 1.6rem;
+  }
+
+  .nav_container #nav2{
+    font: size 1.4rem;
+  }
+  
+  
+}

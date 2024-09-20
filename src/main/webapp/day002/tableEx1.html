@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 Tag</title>
+<style>
+table{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,td{
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(odd) {
+	background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h2>우리반 인명록</h2>
+
+<table>
+	<tr>
+		<th>이름</th>
+		<th>전번</th>
+		<th>집주소</th>
+	</tr>
+	<tr>
+		<td>김효빈</td>
+		<td>01033845789</td>
+		<td>혜화동</td>
+	</tr>
+	<tr>
+		<td>김주영</td>
+		<td>01062461597</td>
+		<td>부암동</td>
+	</tr>
+	<tr>
+		<td>전아영</td>
+		<td>01055478035</td>
+		<td>필동</td>
+	</tr>
+	<tr>
+		<td>전지훈</td>
+		<td>01038406901</td>
+		<td>부천</td>
+	</tr>
+	<tr>
+		<td>최우석</td>
+		<td>01091409411</td>
+		<td>도봉동</td>
+	</tr>
+	<tr>
+		<td>한경수</td>
+		<td>01089736306</td>
+		<td>의정부</td>
+	</tr>
+</table>
+
+
+<hr>
+
+<table>
+	<tr>
+		<th>영화명</th>
+		<th>개봉일</th>
+		<th>Rank</th>
+	</tr>
+	<tr>
+		<td>데드풀3</td>
+		<td>7월20일</td>
+		<td>1</td>
+	</tr>
+</table>
+
+<!-- 셀병합 : 테이블에서는 병합은 column 에서만 적용 가능합니다. -->
+<table>
+	<tr>
+		<th colspan="2">이름</th>
+		<th>나이</th>
+	</tr>
+	<tr>
+		<td>노</td>
+		<td>재현</td>
+		<td>31</td>
+	</tr>
+</table>
+
+<!-- Row span -->
+<table>
+	<tr>
+		<th>Name</th>
+		<td>노재현</td>
+	</tr>
+	<tr>
+		<th rowspan="2">전화번호</th>
+		<td>01056865107</td>
+	</tr>
+	<tr>
+		<td>없음</td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+@charset "utf-8";
+@media all and (max-width:1023.9px) {
+
+    .oauthLogin_Section {
+        margin: 1.8rem auto;
+        max-width: 55rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap:1.8rem;
+    }
+
+    .oauthLogin_Section div{
+        margin: 0 auto;
+        width: 60%;
+        height: 3rem;
+        min-width: 245px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-sizing: border-box;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+    .oauthLogin_Section img{
+        position: absolute;
+        left: 3.5rem;
+        top:50%;
+        transform:translate(-50%, -50%);
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .oauthLogin_Section .oauth_Google{
+        background-color: #fff;
+        border: 1px solid black;
+
+    }
+    .oauthLogin_Section .oauth_Apple{
+        border: none;
+        color: #fff;
+        background-color: black;
+    }
+
+    .oauthLogin_Section .oauth_Apple p{
+        color: white;
+    }
+
+    
+    .oauthLogin_Section .oauth_Naver{
+        background-color: #03CF5D;
+        border: none;
+        color: #fff;
+    }
+
+    .oauthLogin_Section .oauth_Naver p{
+        color: white;
+    }
+
+    .oauthLogin_Section .oauth_Kakao{
+        background-color: #FFF300;
+        border: none;
+    }
+}
+@media all and (min-width:1024px) {
+
+
+
+    .oauthLogin_Section {
+        margin: 1rem auto;
+        max-width: 60%;
+        height: 250px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .oauthLogin_Section{
+        display: flex;
+        width: 30rem;
+        align-items: flex-start;
+    }
+    .oauthLogin_Section div{
+        margin: 0 auto;
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        box-sizing: border-box;
+        font-size: 2.6rem;
+        cursor: pointer;
+    }
+    .oauthLogin_Section img{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .oauthLogin_Section div p{
+        display: none;
+    }
+    .oauthLogin_Section .oauth_Google{
+        background-color: #fff;
+        border: 1px solid black;
+    }
+    .oauthLogin_Section .oauth_Apple{
+        background-color: black;
+        border: none;
+        color: #fff;
+        background-color: black;
+    }
+    .oauthLogin_Section .oauth_Naver{
+        background-color: #03CF5D;
+        border: none;
+        color: #fff;
+    }
+    .oauthLogin_Section .oauth_Kakao{
+        background-color: #FFF300;
+        border: none;
+    }
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+.select_Section{
+    margin: 0 auto;
+    height: 3.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 450px;
+    margin-top: 5%;
+}
+.select_Section button{
+    background-color: transparent;
+    border: none;
+    width: 35%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.select_Section #loginSelect_Btn{
+    border: 2px solid black;
+    border-bottom: none;
+    border-radius: 1rem 1rem 0 0;
+}
+.select_Section #signupSelect_Btn{
+    color: #aaa;
+    border-bottom: 2px solid black;
+    border-radius: 1rem 1rem 0 0;
+}
+
+
+.login_Section .forget_Section{
+    margin: 0 auto;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.login_Section .forget_Section button {
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.login_Section .forget_Section button:hover {
+    border-bottom: 2px solid black;
+}
+
+.login_Section .forget_Section div{
+    width: 1px;
+    height: 100%;
+    border-radius: 1px;
+    background-color: #707070;
+}
+.login_Section .forget_Section button:first-child{
+    color: #707070;
+}
+.login_Section .forget_Section button:last-child{
+    color: #22C4EB;
+}
+
+.login_Section{
+    margin: 0 auto;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login_Section .loginInfo_Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.login_Section .loginInfo_Form input{
+    margin: 1rem auto;
+    height: 3rem;
+    width: 30rem;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+}
+.login_Section .loginIn_Btn{
+    margin: 1rem auto;
+    width: 30rem;
+    height: 60px;
+    border: transparent;
+    border-radius: 15px;
+    background-color: lightcoral;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.login_Section .loginIn_Btn:hover {
+    background-color: coral;
+}
+
+
+/* mobile 용 css */
+@media all and (min-width:320px) and (max-width:767px){
+    .login_Section .loginInfo_Form input{
+        width: 20rem;
+    }
+
+    .login_Section .loginIn_Btn {
+        width: 20rem;
+    }
+    
+    .oauthLogin_Section img{
+        width: 10%;
+        left: 3rem;
+    }
+
+    .oauthLogin_Section p{
+        font-size: 0.8rem;
+        float: right;
+    }
+
+    .select_Section{
+        padding-top: 25%;
+    }
+
+
+}
+

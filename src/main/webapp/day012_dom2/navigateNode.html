@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="demo1">이건 demo1의 내용</p>
+	<p id="demo2"></p>
+	<script>
+	document.getElementById("demo2").innerHTML=document.getElementById("demo1").firstChild.nodeValue;
+	console.log(document.getElementById("demo1").childNodes[0].nodeValue);
+	
+	/* DOM에서는 모든 것이 다 node 임. 요소의 속성도 속성 노드로, h2 태그의 content 도 노드(textNode)임.
+		따라서, 만약 특정 노드를 선택 후 해당 노드의 자식, 부모, 형제들로 노드를 변경해야 할때
+		다양한 메소드를 통해 접근함. 여기서 중요한건 DOM에서는 모든게 다 NODE 라는 것임.
+		ex) id가 demo 인 div 에 Hello World 가 있다고 하면,
+			1. document.getElementById("demo").innerHTML로 접근
+			2. nodeValue를 통해 접근하는 방법: document.getElementById("demo").firstChild.nodeValue
+			3. childeNodes 를 통해 배열로 접근하는 방법: document.getElementById("demo").childNodes[0].nodeValue
+			
+			위 3가지는 모두 같은 결과를 도출함. */
+		
+	</script>
+</body>
+</html>

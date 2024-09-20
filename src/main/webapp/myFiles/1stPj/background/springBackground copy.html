@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#bg_container{
+  overflow: hidden;
+  position: relative;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: linear-gradient(rgb(255, 255, 255) 0%, rgb(253, 236, 252) 35%, rgb(255, 223, 253) 100%);
+  z-index: -5;
+}
+
+#bg_wrap{
+  overflow: hidden;
+  position: absolute;
+  width:100%;
+  height: 300%;
+}
+
+#moving{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height:66.66%;
+  position: absolute;
+  animation: vibrating_bg 3s ease-in-out infinite alternate;
+}
+
+#snowflower1{
+  display: flex;
+  flex-direction: row nowrap;
+  height: 50%;
+  order:1;
+  justify-content: center;
+}
+
+#snowflower1 img:nth-child(even){
+  transform: rotate(180deg);
+}
+
+#snowflower2{
+  display: flex;
+  flex-direction: row nowrap;
+  height: 50%;
+  order:2;
+  justify-content: center;
+}
+
+
+#snowflower2 img:nth-child(even){
+  transform: rotate(180deg);
+}
+
+@keyframes vibrating_bg{
+  0%{
+    transform: translateX(1%);
+  }
+  100%{
+    transform: translateX(-1%);
+  }
+}
+</style>
+</head>
+
+<body>
+  <div id="bg_container">
+    <div id="bg_wrap">
+      <div id="moving">
+        <div id="snowflower1">
+          <img src="../img/snowflower.png">
+          <img src="../img/snowflower.png">
+          <img src="../img/snowflower.png">
+          <img src="../img/snowflower.png">
+          <img src="../img/snowflower.png">
+        </div>
+
+        <div id="snowflower2">
+          <img src="../img/snowflower.png">
+          <img src="../img/snowflower.png">
+          <img src="../img/snowflower.png">
+          <img src="../img/snowflower.png">
+          <img src="../img/snowflower.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let posTop = 0;
+    let k=0;
+    let sf_bgImg1 = document.querySelector("#snowflower1");
+    let sf_bgImg2 = document.querySelector("#snowflower2");
+    let bg_container = document.querySelector("#bg_container");
+    let bg_containerHeight = bg_container.offsetHeight;
+    let moving_bg = document.querySelector("#moving");
+
+    window.addEventListener("load",()=>{
+      setInterval(frame,30);
+    });
+
+    function frame(){
+      if(posTop>=sf_bgImg1.offsetHeight){
+        k++;
+        posTop=0;
+        moving_bg.style.top = 0+"px";
+        sf_bgImg1.style.order=(k%2+1);
+        sf_bgImg2.style.order= (2-k%2);
+      }else{
+        posTop++;
+        moving_bg.style.top = posTop+"px";
+      }
+    }
+  </script>
+</body>
+
+</html>

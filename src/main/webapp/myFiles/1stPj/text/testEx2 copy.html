@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <style>
+      body {
+				margin:0;
+				padding:0;
+        height: 200vh;
+      }
+      #container {
+        margin: 0 auto;
+        width:100%;
+        height:80vh;
+        background-color: aliceblue;
+				position: relative;
+      }
+
+      #elem{
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="elem"></div>
+    </div>
+    <script>
+      let bg=document.querySelector("#container");
+      let elem=document.querySelector("#elem");
+      let elemHeight=elem.offsetHeight;
+      let elemWidth=elem.offsetWidth;
+      let x;
+      let y;
+      let o=false;
+
+      window.addEventListener("scroll",()=>{
+        elem.style.position="fixed";
+      })
+
+      bg.addEventListener('mousemove', (event) => {
+
+        elem.style.position="absolute";
+          x = event.pageX;
+          y = event.pageY;
+
+          elem.style.top=y-elemHeight+elemHeight/2 +"px";
+          elem.style.left=x-elemWidth+elemWidth/2+"px";
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 환경 테스트</title>
+	<script src="../jQuery/jquery-3.7.1.min.js"></script>
+	<style>
+		div.out{
+			width: 200px;
+			height: 60px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Click Me</h2>
+
+	<hr>
+
+	<div class="out">
+		<p>여기에 마우스 가져와라</p>
+		<p>마우스 오버 카운트 : 0</p>
+		
+	</div>
+	<script>
+		//jquery 도 자바스크립트를 확장한 라이브러리임. 때문에 사용할때도 스크립트 선언문 내에서 사용돼야함.
+		
+		/*  jquery 는 동작으로 DOM을 제어하도록 함.
+			문법으로는 
+			1. 모든 문서가 로드된 이후에 실행하라는 의미로 $(document).ready() 를 사용함.
+			왜냐하면 문서가 되기 이전은 DOM 이 미구현 돼있기 때문에 jquery에서 특정 dom을 access 하면 null 혹은 undefined가 발생됨.
+			이를 방지하기 위해 위 코드가 항상 시작점임.
+			2. DOM 선택자로는 $ 표시를 사용함.
+			2-1. 선택자표기 $(".cls") : 클래스가 cls 인 node 를 찾으라는 의미
+			2-2. $("#myid") : id 가 myid인 node를 찾으라는 의미
+			2-3. $("*") : 모든 요소 선택
+			2-4. $(this) : 현재 요소
+			2-5. $("p.myCls") : p 요소 중 클래스가 myCls 인 요소 선택
+			2-6. $("p:first") : 첫번째 p 요소
+			2-7. $("div span") : div 내의 span 요소
+			2-8. $(".button") : 모든 button 요소 선택.
+			3. 선택자를 선택한 후엔 보통 이벤트(action)을 등록하고
+			4. 다음에 핼들러 함수를 정의해서 수행하도록 되어짐. */
+			
+		$(document).ready(function(){
+			/* $("h2").click(()=>{ 람다에서 this 는 항상 글로벌(window)를 ref함.
+				console.log(this);
+			}) */
+			$("h2").click(function(){
+				console.log(this);
+				$(this).hide();
+			});
+		})
+		
+		let cnt=0;
+		$(document).ready(function(){
+			$("div.out").mouseover(function(){
+				$("p:first",this).text("마우스를 올려? 떼라");
+				$("p:last",this).text(cnt++);
+			})
+		});
+	</script>
+</body>
+</html>

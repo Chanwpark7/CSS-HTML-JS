@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/* 박스와, 포늩 모두에 그림자 효과를 줄 수 있는데 속성명은 text-shadow(font)
+	기본적으로 범위는 horizontal,vertical 을 기준으로  pixel 등으로 값을 줄 수 있습니다.(범위 표시하는거 아님. 순서를 말하는거임)
+	text-shadow: 수직 수평 블러 컬러
+	box-shadow : 모든 box 모델에 그림자 효과 적용, 문법은 text와 동일*/
+		h1{
+			color: white;
+			text-shadow: 2px 2px 5px black; /* 수직 수평 블러 컬러 */
+		}
+		div{
+			border: 1px solid black;
+			box-shadow: 10px 10px lime;
+		}
+	</style>
+</head>
+<body>
+	<div>hello world.</div>
+</body>
+</html>

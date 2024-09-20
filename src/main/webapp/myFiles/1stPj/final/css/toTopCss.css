@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#container {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	right: 30px;
+	bottom: 30px;
+	position: fixed;
+	cursor: pointer;
+	box-sizing: border-box;
+	border: 1px solid #f1f1f1;
+	z-index:999;
+}
+
+#container img{
+	display: absolute;
+	width: 20px;
+	height: 20px;
+	z-index: 4;
+}
+
+#container .circle {
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	stroke: black;
+	stroke-width: 1;
+	stroke-dasharray: 157;
+	stroke-dashoffset: 157;
+	z-index: 5;
+}
+
+#container .circle circle{
+	transform-origin: center center;
+	transform: rotate(-90deg);
+}

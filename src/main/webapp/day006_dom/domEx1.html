@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Window Document Object 예시1</h2>
+	<p>이 페이지를 실행하면, 문서에는 URL 이 나오게 됩니다.</p>
+	
+	<p id="demo">It's raining man</p>
+	<p id="demo1">hello world</p>
+	<!-- 노드를 찾아서 값을 set/get 할때는 대표적 속성인 innerHTML 을 이용합니다.
+		ex) node. innerHTML -> hello world 나옴. node.innerHTML='hi' -> hi 라는 내용을 node에 넣음.
+		//form 에서 사용되는 input 을 제외한 모든 노드에서의 값은 위 속성을 이용해 set/get 합니다. -->
+	<form>
+		id:<input type="text">
+	</form>
+	<script>
+		let url=window.document.URL;
+		document.getElementById('demo').innerHTML=url;
+		
+	//node 찾아내기... 쿼리 셀렉터를 이용하여 노드를 직접 찾기(id, class, name, tagName 을 통해서 얻어낼 수 있음.)
+	//만약 찾게되면 Node 객체를 리턴하고, 없다면 null 리턴됨.
+	//id 로 Node 찾기. 모든 쿼리 셀렉터는 document 객체의 메소드로 구성되어 있습니다.
+		let demo1Obj=document.getElementById('demo1');
+		alert(demo1Obj.innerHTML);
+		demo1Obj.innerHTML='안녕하세요';
+		
+		const otherDemo=document.getElementById('demo');
+	//스타일을 바꿀때는 style.속성=Value 형식으로 함.
+		otherDemo.style.color='red';
+	
+	//변수를 선언하지 말고 demo1의 content 컬러를 blue로 바꿔보세요.
+		document.getElementById("demo1").style.color='blue';
+	</script>
+</body>
+</html>

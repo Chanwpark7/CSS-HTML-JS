@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width:100vw;
+  height:90vh;
+}
+
+#container_notice_title {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#container_notice_title svg{
+  width: 100%;
+}
+
+</style>
+</head>
+
+<body>
+  <div id="container_notice_title">
+    <svg xmlns="http://www.w3.org/2000/svg" id="ml12">
+    </svg>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
+  <script>
+    window.onload = play();
+    document.getElementById('tryAgain').addEventListener('click', () => { play() })
+
+function play() {
+  let l = Snap('#ml12');
+
+  setTimeout( function() {
+    // modify this one line below, and see the result !
+    let ml12Title = 'Notice';
+    let ml12Random = '';
+    let ml12TitleContainer = l.text("45%", '70%', '');
+    let possible = "-+*/|}{[]~\\\":;?/.><=+-_)(*&^%$#@!)}";
+    ml12TitleContainer.attr({
+      fontSize: 2.5+"em",
+      fontFamily: 'sans serif',
+      fontWeight: 'bold'
+    });
+
+    function generateRandomTitle(i, ml12Random) {
+      setTimeout( function() {
+        ml12TitleContainer.attr({ text: ml12Random });
+      }, i*100 );
+    }
+
+    for( let i=0; i < ml12Title.length+1; i++ ) {
+      ml12Random = ml12Title.substr(0, i);
+      for( let j=i; j < ml12Title.length; j++ ) { 
+        ml12Random += possible.charAt(Math.floor(Math.random() * possible.length)); 
+      }
+      generateRandomTitle(i, ml12Random);
+      ml12Random = '';
+    }
+
+  }, 100 );
+
+}
+
+
+
+
+  </script>
+</body>
+
+</html>

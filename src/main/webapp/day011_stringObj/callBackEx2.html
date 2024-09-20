@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	/* 콜백 함수 : 특정 함수가 수행된 이후, 실행 결과를 갖고 도다른 함수가 수행이 되어질 때 이 함수를 callBack 함수라고 함.
+		대부분은 비동기 통신을 할때 사용되고, 이 콜백 함수가 있어야 비동기 함수 수행이 가능하며 많은 스크립트 API가 콜백함수를
+		파라미터로 많이 사용함.
+		동기(synchronized) : 예를 들어 함수가 10개가 있을때 a->b->c->d... 이런식으로 stack 구조로 수행되는 형태를 동기수행이라고 함.
+		비동기(Asynchronause) : 위와 같이 함수가 나열되어 있을때 각각의 실행 스택을 생성해서 서로 독립적으로 수행되는 구조를 뜻함.
+		현재 대부분의 웹사이트의 데이터 처리 방식이 이 비동기 형태임. */
+		
+		function a(){ b();console.log("a함수");} //a부터 시작햇으나 a가 마지막에 끝나는 동기 방식.
+		function b(){ c();console.log("b함수");}
+		function c(){ d();console.log("c함수");}
+		function d(){ e();console.log("d함수");}
+		function e(){console.log("e함수");}
+		
+		console.log("스크립트 시작")
+	//비동기식 호출 예제
+		const intervalId=setInterval(mycallback,500,"p1","p2");
+		
+	//콜백함수 정의
+		function mycallback(a,b){
+			console.log(a);
+			console.log(b);
+		}
+		console.log("스크립트 끝");
+	</script>
+</body>
+</html>

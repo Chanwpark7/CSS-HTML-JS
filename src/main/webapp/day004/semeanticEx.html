@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+.all-browsers {
+  margin: 0;
+  padding: 5px;
+  background-color: lightgray;
+}
+
+.all-browsers > h1, .browser {
+  margin: 10px;
+  padding: 5px;
+}
+
+.browser {
+  background: white;
+}
+
+.browser > h2, p {
+  margin: 4px;
+  font-size: 90%;
+}
+
+aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+}
+</style>
+
+</head>
+<body>
+<!-- Section : 특정 컨텐츠를 구분짓는 논리 요소, 내부의 컨텐트는 다시 목적별로 정의 할 수 있음. 하나 이상의 섹션을 구분짓는게 주 목적
+챕터, 소개, 뉴스 아이템, contact inform 을 정의하도록 정의된 요소입니다.
+-->
+
+<section>
+	<h1>Front End</h1>
+	<p>
+		프론트 엔드 쪽 기술은 html 부터 javascript 및 확장 스크립트까지를 말한다.
+	</p>
+</section>
+
+<section>
+	<h1>Back End</h1>
+	<p>
+		백 엔드 쪽 기술은 Java부터 Jsp, Servlet, SpringBoot 및 확장 lib를 말한다.
+	</p>
+</section>
+
+
+<!-- Article : 이 요소는 독립적이면서 자체적으로 포함되는 컨텐츠를 지정하도록 정의됨.
+	위 의미를 웹 사이트와 독립적인 내용을 자체적으로 구성되어진 컨텐츠를 표현하도록 한다는 뜻.
+	예를 들면, 포럼의 게시물, 블로그 게시물, 사용자 의견, 제품의 카드 이미지(작은 광고), 신문 기사들을 말함. 
+-->
+<article class="all-browsers">
+	<h1>세계적으로 유명한 브라우저들.</h1>
+		<article class="browser">
+			 <h2>Google Chrome</h2>
+			 <p>Google Chrome is a web browser developed by Google, released in 2008. 
+			 Chrome is the world's most popular web browser today!
+			 </p>
+		</article>
+		<article class="browser">
+			 <h2>Mozilla Firfox</h2>
+			 <p>Mozilla Firefox is an open-source web browser developed by Mozilla.
+			 Firefox has been the second most popular web browser since January, 2018.
+			 </p>
+		</article>
+		<article class="browser">
+			 <h2>Internet Explorer</h2>
+			 <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015.
+			 Microsoft Edge replaced Internet Explorer.
+			 </p>
+		</article>
+</article>
+
+<!-- Footer : 사이트의 모든 페이지에서 사용되는 공통 정보를 정의한 페이지를 넣는 공간입니다.
+	대부분은 사이트의 권한, 권리, 저작권, contact 정보 등을 정의한 페이지를 넣는데, 이런 페이지를 바닥 페이지라고 합니다.
+-->
+
+<footer>
+	<p>모든 저작권은 Jason 에게 있음</p>
+	<p><a href="mailto:test@test.com">mailto:test@test.com</a></p>
+</footer>
+
+<!-- nav : 모든 링크가 이 내부에 있어야 하는 것은 아님!! 주요 탐색 메뉴에 관련된 대메뉴 등만 이 곳에 처리함. -->
+<nav>
+	<a href="#">HTML</a> |
+	<a href="#">CSS</a> |
+	<a href="#">JavaScript</a> |
+	<a href="#">JQuery</a>	|
+</nav>
+
+<!-- aside : side bar 에 사용되는 논리적 요소. 광고나 메인 컨텐트와 간접적으로 연결되는 컨텐트를 정의하도록 함.
+실제는 지들 멋대로 함.
+-->
+
+<p>My family and I visited The Epcot center this summer. 
+The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+
+	<aside>
+		<p>The Epcot center is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+	</aside>
+
+<p>My family and I visited The Epcot center this summer. 
+The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+<p>My family and I visited The Epcot center this summer. 
+The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

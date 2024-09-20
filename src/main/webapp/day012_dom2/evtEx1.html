@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 onclick="this.innerHTML = `HEY! Don't touch ME!`">Don't click this text</h1>
+	<h1 onclick="changeText(this)">Click Me</h1>
+	
+	<form action="#" name="f">
+		<input type="button" onclick="check(this.form)">
+	</form>
+	<script>
+		//changeText 라는 핸들러 함수를 만들어서 결과가 모두 맛점하세요 라고 나오도록 하세요.
+	/* 자바스크립트 이벤트 : 이벤트란, html 의 element에 특정 동작이 수행이 되면 어떻게 하겠다 라는 의미.
+		순서는 요소에 이벤트 종류를 등록(on~~), 이벤트가 발생하면 OS가 이벤트를 감지해서 호출.
+		그럼 코드에서 등록된 이벤트의 처리 함수인 핸들러 함수가 후속 처리를 하는 구조로 되어있음.
+		
+		이벤트를 등록하는 방법에는 두가지가 있는데, 첫번째는 우리가 해왔던 요소의 이벤트 속성(on~~)="event handler function"
+		이 있고 document.addEventListener(이벤트 등록하는 doc nod 의 메소드)에 등록하는 방법이 있음.
+		ex)button.addEventListener(리스너는 document 로 부터 하위 노드로 상속되어짐. 따라서 모든 노드가 사용 가능.)
+		button.addEventListener("click",콜백 핸들러함수)로 정의하는 방법이 있음.
+		
+		로직 구현에 따라서 편한대로 하면 됨. */
+		
+		//this : 객체 자신이 자신을 ref 하는 키워드. 매우 많이 사용됨.
+		
+		function check(theForm){
+			console.log(theForm);
+		}
+		function changeText(x){
+			alert("모두 맛점하세요.");
+		}
+	</script>
+</body>
+</html>

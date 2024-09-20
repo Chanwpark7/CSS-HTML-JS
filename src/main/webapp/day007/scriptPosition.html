@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스크립트의 정의 위치</title>
+<!-- external script : 파일로 정의된 스크립트를 가져와 사용하는 방식. -->
+<!-- <script src="../js/myScript1.js"></script> -->
+	<script src="http://localhost:8080/html_css_Basic/js/myScript1.js"></script>
+	<script>
+		function other(){
+			
+		}
+	</script>
+</head>
+<body>
+	<script>
+		function myFunction2(){
+			document.getElementById('demo').innerHTML="이건 변경된 구문 내용입니다.2";
+		}
+	</script>
+	<h2>헤드에 정의된 스크립트 호출해보기</h2>
+	<p id="demo">구문내용입니다.</p>
+	<button onclick="myFunction();">Click Me!</button>
+	<button onclick="myFunction2();">Click Me2!</button>
+</body>
+</html>

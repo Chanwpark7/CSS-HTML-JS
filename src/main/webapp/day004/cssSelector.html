@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+/*anchor 가상 요소 : 기존에 배웠던 가상 요소에 추가적으로 요소를 결합 할 수 있음.
+	참고로 기본 가상요소는 반드시 정의 순서가 다음과 같아야 효과적임 : link, visited, horver, active
+*/
+	a.highlight:hover{
+		color: #ff0000;
+		font-size: 22px;
+	}
+	div{
+		background-color: green;
+		color: white;
+		padding: 25px;
+		text-align: center;
+	}
+	div:hover{
+		background-color: blue;
+	}
+	p{
+		display: none;
+		background-color: yellow;
+		padding: 20px;
+	}
+	div:hover > p{
+		color:black;
+	}
+	
+/* 아래에는, div:hover 하위에 있는 모든 p에 적용되는 css를 정의 하세요.
+속성으로는 display: block; */
+
+	div:hover p{
+		display: block;
+	}
+	
+</style>
+
+</head>
+<body>
+
+	<h2>링크 가상요소 알아보기</h2>
+	<p><a class="highlight" href="#">Css syntax</a></p>
+	<p><a href="#">Css syntax</a></p>
+	
+	<h3>div에 마우스 오버하면 색 변경됨.</h3>
+	<div>Mouse Over 해주세요.
+		<p>여기 있다.</p>
+	</div>
+	
+</body>
+</html>

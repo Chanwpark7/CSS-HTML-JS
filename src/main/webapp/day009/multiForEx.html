@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	//다중 for 구문 : for 내부에 for 구현, 밖의 for은 outer, 내부는 inner 라고 함.
+	//outer 가 한번 반복될때, inner 는 지정된 조건만큼 반복되는 형식.
+	//ex) 구구단의 outer를 2~9단 까지, inner를 1~9까지 각각 곱하는 수로 지정. 따라서 각 outer단에서 1~9까지 곱한 후 inner 가 끝남.
+	//각 outer 단이 바뀌는 시점에서 새로운 inner block 생성되며 1~9까지 반복함.
+	let result = 0;
+	
+	Outer:for(let i=2;i<=9;i++){//2단부터 9단까지 실행. outer 시작
+		//i=2
+		if(i%2!=0){
+			continue;
+		}
+		document.write(i+"단 시작<br>");
+		Inner:for(let j=1;j<=9;j++){//inner 시작
+			if(j>=4){
+				break Outer;
+			}
+			result=i*j;
+			document.write(i+"*"+j+"="+result+"<br>");
+		}
+		document.write(i+"단 끝<br>");
+	}
+		
+	</script>
+</body>
+</html>

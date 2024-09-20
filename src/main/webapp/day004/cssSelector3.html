@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	p:first-child{/* 아래의 Strong 이 i 체인데, 첫번째인 Strong만 컬러를 blue 로 변경하도록 정의하세요. */
+		color: aqua;
+	}
+	p:first-child > i{
+		color: blue;
+	}
+	input:focus{
+		background-color: yellow;
+	}
+</style>
+
+</head>
+<body>
+
+	<p>나는 매우 <i>Strong</i> 한 사람입니다.</p>
+	<p>나는 매우 <i>Strong</i> 한 사람입니다.</p>
+	<div>
+		<p>나는 매우 <i>Strong</i> 한 사람입니다.</p>
+		<p>나는 매우 <i>Strong</i> 한 사람입니다.</p>
+	</div>
+	<p>나는 매우 <i>Strong</i> 한 사람입니다.</p>
+
+
+	<form action="">
+		First name : <input type="text" name="fname" autofocus="autofocus"><br><br>
+		Last name : <input type="text" name="lname"><br><br>
+	</form>
+</body>
+</html>

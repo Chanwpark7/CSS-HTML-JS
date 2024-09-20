@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가위바위보게임</title>
+	<script>
+	/*
+	 * 규칙 : 가위바위보 or 123 중 아무거나 내면 컴과 가위바위보 게임을 하게 됩니다.
+	 아래 P 태그는 총 전적을 나타내는데, 게임이 처음 시작되면, 안보이다가, 한번이라도 플레이된 이후 결과가 나오면 보여지게 되어져야 합니다.
+	 컴퓨터의 값은 나중에 배울 random() 값을 이용하고, 사용자의 값 과 비교해서 결과를 도출하면 됩니다.
+	 이 퀴즈가 쉬운 분들은 이미지를 이용해서 컴과 사용자의 viewGame 영역에 결과를 이미지로
+	 표시하셔도 되도, 아닌분들은 결과 창에 컴 : 가위 당신 : 보 당신승리!
+	 라는 결과 창을 게임시마다 보여주게 하세요.(동적 생성) 
+	 
+	 */
+
+		let total=0;
+		let win=0;
+		let lose=0;
+		let draw=0;
+
+		function gameStart(){
+		    const input = document.f.srp;
+		    const value = document.f.srp.value;
+			const comp = Math.floor(Math.random()*3);
+			
+			if(value==1){//유저 가위
+				total++;
+				if(comp==1){//패배
+					lose++;
+					alert("컴퓨터:바위, 유저:가위 패배");
+				}else if(comp==2){//승리
+					win++;
+					alert("컴퓨터:보, 유저:가위 승리");
+				}else if(comp==0){//승리
+					draw++;
+					alert("컴퓨터:가위, 유저:가위 무승부");
+				}
+			}
+			if(value==2){//유저 바위
+				total++;
+				if(comp==1){//무승부
+					draw++;
+					alert("컴퓨터:바위, 유저:바위 무승부");
+				}else if(comp==2){//패배
+					lose++;
+					alert("컴퓨터:보, 유저:바위 패배");
+				}else if(comp==0){//승리
+					win++;
+					alert("컴퓨터:가위, 유저:바위 승리");
+				}
+			}
+			if(value==3){//유저 보
+				total++;
+				if(comp==1){//승리
+					win++;
+					alert("컴퓨터:바위, 유저:보 승리");
+				}else if(comp==2){//무승부
+					draw++;
+					alert("컴퓨터:보, 유저:보 무승부");
+				}else if(comp==0){//패배
+					lose++;
+					alert("컴퓨터:가위, 유저:보 패배");
+				}
+			}
+		    
+			/* console.log("게임 결과 : 총 게임수"+total+" "+win+"승 "+lose+"패 "+draw+"무 승률 : "+Math.round(win*100/total)+"%"); */
+			document.getElementById("results").innerHTML="게임 결과 : 총 게임수"+total+" "+win+"승 "+lose+"패 "+draw+
+			"무 승률 : "+Math.round(win*100/total)+"%";
+			
+		    return false;
+		}
+	</script>
+</head>
+<body>
+	<form action="#" name='f' onsubmit="return gameStart();">
+		값 입력 : <input type="text" name="srp" id="srp" placeholder="가위(1),바위(2),보(3)">
+		<input type="submit" value="게임하기">
+	</form>
+	<p id="results"></p>
+</body>
+</html>

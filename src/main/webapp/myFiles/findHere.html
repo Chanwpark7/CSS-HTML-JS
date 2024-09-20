@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Find Here</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			font-family: sans-serif, arial;
+			padding: 10px;
+			background: #f1f1f1;
+			text-align: center;
+		}
+		.header{
+			padding: 30px;
+			text-align: center;
+			background: white;
+		}
+		.header h1{
+			font-size: 50px;
+		}
+		.topNav{
+			overflow: hidden;
+			background-color: black;
+		}
+		.topNav a{
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding:14px 16px;
+			text-decoration: none;
+			line-height: 1;
+		}
+		.topNav a:hover{
+			background-color: #a3a3a3;
+			color: black;
+		}
+		.row{
+			content: "";
+			display: table;
+			clear: both;
+			width: 100%;
+			border-bottom-style: none;
+		}
+		.row:after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.leftColumn1_preAd{
+			float: left;
+			width: 10%;
+		}
+		.ad{
+			float: left;
+			width: 79.5%;
+			
+		}
+		.rightColumn1_nextAd{
+			float: right;
+			width: 10%;
+		}
+		.leftColumn2_shop{
+			float: left;
+			width: 33%;
+		}
+		.associate{
+			float: left;
+			width: 33%;
+		}
+		.rightColumn_origin{
+			float: right;
+			width: 33%;
+		}
+		.card{
+			background-color: white;
+			padding: 20px;
+			margin-top: 20px;
+		}
+		.footer{
+			padding: 20px;
+			text-align: center;
+			background: white;
+			margin: 20px;
+		}
+		a{
+			border: 1px solid black;
+		}
+		p{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- 제일 먼저 header 영역에 대한 HTML 작성합니다. -->
+	<div class="header">
+		<h1>Find Here</h1>
+	</div>
+	<!-- End of header -->
+
+	<!-- Main nav 정의 -->
+	<div class="topNav">
+		<a href="#" style="float: left;">전체 메뉴</a>
+		<a href="#">커피</a>
+		<a href="#">티</a>
+		<a href="#">디카페인</a>
+		<a href="#">에이드&주스</a>
+		<a href="#">스무디&프라페</a>
+		<a href="#">주스</a>
+		<a href="#" style="float: right;">식사</a>
+	</div><!-- End of Main nav -->
+
+	<div class="row"><!-- 광고 row 정의 -->
+		<div class="leftColumn1_preAd">
+			<p>이전 광고<p>
+		</div>
+		<div class="ad">
+			<p>여긴 광고칸입니다.<p>
+		</div>
+		<div class="rightColumn1_nextAd">
+			<p>다음 광고<p>
+		</div>
+		<div class="leftColumn2_shop">
+			<div class="card">
+				<p>매장 찾기<p>
+				<form>
+					<input type="text" id=name placeholder="매장찾기 폼">
+					<input type="submit">
+				</form>
+			</div>
+		</div>
+		<div class="associate">
+			<p>여긴 제휴 안내 칸입니다.<p>
+		</div>
+		<div class="rightColumn_origin">
+			<p>원산지 표기란입니다.<p>
+		</div>	
+	</div>
+	<!-- End of Main 광고 칸 -->
+	
+	<div class="footer"> <!-- Footer -->
+		<h2>바닥페이지입니다.</h2>
+	</div> <!-- End of Footer -->
+</body>
+</html>

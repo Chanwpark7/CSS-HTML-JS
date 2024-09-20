@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- gradient 는 linear, radial, conic 이렇게 있으며,
+	linear 는 선형태. radial 은 circular. conic은 iconic.
+	linear 문법 : background-image : linear-gradient([방향], 컬러, 컬러, 컬러n ...) 
+	
+	circle 문법 : radial-gra...([시작할 포지션에서는 모양 크기], start-color...last-color)
+	
+	conic 문법 : conic-gra([from angle] [at position], color [degree], color [degree] -->
+	<style type="text/css">
+		#grad1{
+			height: 200px;
+			background-image: linear-gradient(red,orange,yellow,green,blue,navy,purple);
+		}
+		#rad2{
+			width: 200px;
+			height: 200px;
+			background-image: radial-gradient(red,orange,yellow,green,blue,navy,purple);
+			overflow: visible;
+		}
+		#conic3{
+			width: 200px;
+			height: 200px;
+			background-image: conic-gradient(red,yellow,green,blue,black);
+			overflow: visible;
+			border-radius: 50%
+		}
+	</style>
+</head>
+<body>
+	<div id="grad1" style="text-align: center; margin:auto; color: White; font-size: 45px; font-weight: bold;">
+		rainbow background
+	</div>
+	<hr>
+	<div id="rad2" style="text-align: center; margin:auto; color: White; font-size: 45px; font-weight: bold;">
+		rainbow background
+	</div>
+	<hr>
+	<div id="conic3" style="text-align: center; margin:auto; color: White; font-size: 45px; font-weight: bold;">
+		rainbow background
+	</div>
+</body>
+</html>

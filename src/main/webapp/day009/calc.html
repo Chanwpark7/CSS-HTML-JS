@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="f" name='f'><!-- 이렇게 하면 전송 안됨 -->
+		<input type="text" id="fir" name="first" size="2">
+			<select id="ys" size="1">
+			<option value="plus">+</option>
+			<option value="minus">-</option>
+			<option value="mult">*</option>
+			<option value="divi">/</option>
+			</select>
+		<input type="text" id="sec" name="second" size="2">
+		<p id="results"></p>
+		<input type="button" value="계산" onclick="checkRes();">
+	</form>
+	
+	<script>
+		let a=document.f.first;
+		let c=document.f.second;
+		const select=document.querySelector("select");
+		let b;
+		
+		function calc(a,b,c){
+			b=select.value;
+			switch(b){
+			case b = "plus":
+				return parseInt(a.value)+parseInt(c.value);
+				break;
+			case b = "minus":
+				return a.value-c.value;
+				break;
+			case b = "mult":
+				return a.value*c.value;
+				break;
+			case b = "divi":
+				return a.value/c.value;
+				break;
+			}
+		}
+		
+		function checkRes(){
+			let result=calc(a,b,c);
+			document.getElementById("results").innerHTML=result;
+		}
+		
+	</script>
+</body>
+</html>

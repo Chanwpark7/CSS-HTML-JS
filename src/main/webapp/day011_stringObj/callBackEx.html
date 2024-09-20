@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		.go{
+			color: green;
+		}
+		.stop{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="my_box">
+		<h3>Hello World</h3>
+	</div>
+	<button id=start>Start</button>
+	<button id=stop>Stop</button>
+	<script>
+		let intervalId;
+		
+		function changeColor(){
+			if(!intervalId){
+				intervalId=setInterval(flashText, 1000); //flashText 함수를 1초마다 호출하도록 콜백 설정.
+			}
+		}
+		
+		function flashText(){
+			const oElem=document.getElementById("my_box");
+			oElem.className=oElem.className == "go" ? "stop" : "go";
+		}
+		
+		function stopTextColor(){//stop버튼을 누르면 컬러 변경을 멈춤.
+			clearInterval(intervalId);
+			intervalId=null;
+		}
+		
+		document.getElementById("start").addEventListener("click",changeColor);
+		document.getElementById("stop").addEventListener("click",stopTextColor);
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery img slide</title>
+<script src="../jQuery/jquery-3.7.1.min.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		/* 슬라이드 전체 css 정의 */
+		#caro{
+			margin:0px;
+			width: 1200px;
+			height: 500px;
+			overflow: hidden;
+			position: relative;
+			border: 10px solid red;
+			box-sizing: content-box;
+		}
+		
+		/* 바로 자식노드에 대한 스타일 정의 > 표시는 css 에서 바로 하위의 자식에만 적용되라는 의미임. */
+		#caro > .slide{
+			height:350px;
+		}
+		
+		#caro > .slide > .img_container{
+			width: 3600px;
+			height: 350px;
+		}
+		
+		#caro > .slide > .img_container > div{
+			width: 1200px;
+			height: 350px;
+			float: left;
+		}
+		
+		#caro > .slide > .img_container > .slide_img1{
+			background-image: url("2.jpg");
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#caro > .slide > .img_container > .slide_img2{
+			background-image: url("3.jpg");
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#caro > .slide > .img_container > .slide_img3{
+			background-image: url("4.jpg");
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="caro">
+		<div class="slide">
+			<div class="img_container">
+				<div class="slide_img1">
+				</div>
+				<div class="slide_img2">
+				</div>
+				<div class="slide_img3">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			let index=0;
+			let sw=1;
+			
+			setInterval(function(){
+				index += sw;
+				$(".img_container").animate({"margin-left":index*(-1200)+"px"});
+				if(index==0||index>$(".img_container").length){
+					sw=-sw;
+				}
+			},1000);
+		})
+	</script>
+</body>
+</html>

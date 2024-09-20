@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" name='f' onsubmit="return checkId();"><!-- 이렇게 하면 전송 안됨 -->
+		값 입력 : <input type="email" name="email" id="email" placeholder="이메일을 입력하세요. (@abc 포함 8~15자 사이)">
+		<input type="button" value="회원가입" onclick="checkId();">
+	</form>
+
+	<script>
+		let myEmail="";
+		
+		//myId 문자열의 길이 확인하기
+		/* console.log("id의 길이 : "+myEmail.length); */
+		
+		//각 문자열의 문자 가져오기
+		/* 
+		for(let i=0;i<myEmail.length;i++){
+			console.log(myEmail.charAt(i));
+		} */
+		
+		/* Email을 입력받는 폼을 만든 후 회원가입 버튼도 만듦.
+		이메일이 입력되고, 버튼을 누르면 checkId()라는 함수가 호출 됨.
+		이후 사용자 Id를 검증하는데 조건은 다음과 같음
+		1. 전체 길이는 반드시 8~15자 사이여야 하고(@abc.com 포함)
+		2. 반드시 하나의 대문자와 하나의 숫자가 들어가야 함.
+		3. 이를 검증하도록 루프를 만들고 문제가 발생하면 alert 를 띄워서 뭐가 문제인지 출력.
+		4. 문제가 없다면, 올바른 이메일 Id입니다 라고 Alert 를 띄우기. */
+		
+		function checkId(){
+			const input = document.f.email.value;
+			console.log(input.length);
+		outer1:for(let i=0;i<input.length;i++){//모든 글자 검사
+				for(let j=0;j<input.length;j++){
+				if(65<=input.charCodeAt(j)&&input.charCodeAt(j)<=90){
+					break;
+				}continue;
+				}
+				for(let k=0;k<input.length;k++){
+					if(48<=input.charCodeAt(k)&&input.charCodeAt(k)<=57){
+						break;
+					}continue;
+					}
+				if(input.length<=15&&input.length>=8){
+				/* if(j==0||k==0){
+					if(k==0){
+						alert("하나 이상의 숫자를 포함해 주세요")
+					}else if(j==0){
+						alert("하나 이상의 대문자를 포함해 주세요")
+					}
+				} */
+					alert("올바른 아이디 입니다.");
+				}else{
+					alert("이메일을 (@abc.com 포함)8~15자로 입력해주세요.");
+				}
+			}
+		}
+	</script>
+</body>
+</html>

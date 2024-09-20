@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 Tag(Size)</title>
+<style>
+/*테이블 사이즈는 테이블의 w*h를 정읳반디ㅏ. 절대값과 상대값이 있는데, 절대값은 해상도나, 브라우저를 줄이거나 키울때 영향을
+받지 않아 깨질 수 있음, 반대로 상대값은 적절히 조정을 하기 때문에 상대값을 사용하는 형태가 정식입니다.
+절대값은 px등의 값으로 표현, 상대는 %로 정의합니다.
+*/
+
+/*table,th,td 모두에 border를 1px씩 주도록 정의함*/
+table,th,td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	border-radius: 10px;
+}
+
+th,td{
+	padding: 8px;
+	text-align: Left;
+	border-top:1px solid yellow;
+	border-bottom:1px solid cyan;}
+
+tr:hover{
+	background-color: purple;
+}
+
+/* th,td{
+border: 5px black;
+border-radius: 10px;
+background-color: #96D4D4;
+border-color: cyan;
+border-style:dotted;
+} */
+</style>
+</head>
+<body>
+<h2>우리반 인명</h2>
+
+<table style="width: 100%">
+	<caption>범죄자 목록</caption>
+	<tr>
+		<th>이름</th>
+		<th style="width: 70%">범죄명</th>
+		<th>집주소</th>
+	</tr>
+	<tr>
+		<td>김효빈</td>
+		<td>01033845789</td>
+		<td>혜화동</td>
+	</tr>
+	<tr>
+		<td>김주영</td>
+		<td>01062461597</td>
+		<td>부암동</td>
+	</tr>
+	<tr>
+		<td>전아영</td>
+		<td>01055478035</td>
+		<td>필동</td>
+	</tr>
+	<tr>
+		<td>전지훈</td>
+		<td>01038406901</td>
+		<td>부천</td>
+	</tr>
+	<tr>
+		<td>최우석</td>
+		<td>01091409411</td>
+		<td>도봉동</td>
+	</tr>
+	<tr>
+		<td>한경수</td>
+		<td>01089736306</td>
+		<td>의정부</td>
+	</tr>
+</table>

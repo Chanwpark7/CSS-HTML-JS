@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>HTML DOM</h2>
+	<p>querySelector를 이용한 요소 찾아서 변경</p>
+	<p class="intro">Hello world.</p>
+	<p class="intro">이건 querySelectorAll() 을 이용한 예시</p>
+	<p id="demo"></p>
+	
+	<hr>
+	
+	<h2>폼 하위 요소 찾아내기(document.forms 속성 이용하기.)</h2>
+	<form action="#" id="frm1">
+		First name: <input type="text" name="fname" value="Jason">
+		Last name: <input type="text" name="lname" value="Park">
+	</form>
+	<p id="demo2"></p>
+	<script>
+		const x=document.querySelectorAll("p.intro"); //배열로 모든 p.intro 요소를 찾아서 리턴.
+		document.getElementById("demo").innerHTML=x[0].innerHTML;
+		
+		//document .forms 속성을 이용해서 폼의 노드구조부터 알아봄.
+		console.log(document.forms["frm1"]); //이렇게 하면 id 가 frm1 인 form node 를 리턴시키고 하위의 input 요소는 배열로 존재하게 됨.
+		//일반 노드의 content 외 input 요소의 값을 얻어낼 때는 속성명이 틀림.(innterHTML, value)
+		const y=document.forms["frm1"];
+		let text="";
+		
+		for(i=0;i<y.length;i++){
+			text += y.elements[i].value + "<br>";
+		}
+		
+		document.getElementById("demo2").innerHTML = text;
+		
+	/* HTML DOM 에서의 Document
+		DOM의 위치에서 window 의 자식 노드로 객체로 표현됨.
+		일반적으로 dom을 표현할때 window는 생략하고 document 를 root 로 잡고 표현함.
+		때문에 document 는 html 의 body 내의 모드 요소에서는 최고 root node 임.
+		따라서, 동적으로 html body 내의 element 를 접근할때는 반드시 document 에서부터 시작해서 접근해야함.
+		
+		DOM은 문서내의 모든 요소를 Node(ex: p a h img etc.)라 칭하고, 해당 node 는 객체로 표현됨.
+		때문에 모든 속성과 메소드를 이용해서 여러가지 작업이 가능.
+		
+		ex) 노드를 찾을 때 사용되는 getElementById, querySelector 등은 모두 document 객체의 메소드임.
+		
+		또한 만약 특성 노드의 contents나 속성의 값을 변경할때 사용되는 element.innerHTML or attribute(속성을 접근할때 사용),
+		ex)a tag의 href, img의 src, width height 등등등...
+		style.property 등도 모두 document 를 통해 얻어냄.(document.element.속성) or getElement...()를
+		통해 얻어낸 node의 속성 변경 등.
+		
+		이외의 메소드로는 속성의 값을 set 하는 element.setAttribute(attr, value);
+		
+		document.createElement(element): 동적으로 새 노드 생성
+		document.removeChild(element): 요소 삭제
+		document.appendChild(element): 요소 추가
+		document.replaceChild(old,new): 요소 변경
+		document.write(text): 문서에 text 작성. */
+		
+	</script>
+</body>
+</html>

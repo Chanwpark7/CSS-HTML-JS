@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Link에 대해서 1</title>
+<style>
+/*CSS의 가상클래스를  이용해서 link 상태에 따른 스타일을 정의 할게요.  */
+a:link{/*방문전의 링크 상태 정의*/
+	color: lime;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:visited{/*방문전의 링크 상태 정의*/
+	color: pink;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover{/*방문전의 링크 상태 정의*/
+	color: red;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+a:active{
+	color: yellow;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+
+
+</style>
+</head>
+<body>
+<h1 id="rm">우리 과정에 대한 Road Map</h1>
+
+<h3 id="fb">프론트 과정 기초</h3>
+	<ul>
+		<li>HTML/CSS</li>
+		<li>JavaScript</li>
+		<li>JQuery</li>
+		<li>반응형 웹디자인</li>
+	</ul>
+	
+<h3 id="fadv">프론트 과정 심화</h3>
+	<ul>
+		<li>React</li>
+		<li>Next</li>
+		<li>Flutter</li>
+	</ul>
+<h3 id="prog">프로그래밍 과정</h3>
+	<ul>
+		<li>Java</li>
+		<li>Jsp</li>
+	</ul>
+
+
+<img src="img/1.jpg" height="300px"/><br>
+<img src="img/2.jpg" height="300px"/>
+
+
+<h3>우리 과정에 대한 고찰</h3>
+<p>
+	우리 과정의 <a href="#fb">프론트기초</a>, <a>심화</a>, <a>프로그래밍</a> 순으로 진행될 예정입니다..
+</p>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		/* 변수를 선언하는 방식엔 4가지가 존재.
+		
+		1. 키워드 없이 선언 ex) x = 10;
+		2. let, const, var 등을 이용
+		3. var 은 자바스크립트가 처음 만들어졌을때부터 사용햇떤 키워드
+		4. let, const(상수와 불변객체, 즉 객체 타입이 변하지 말아야할 때 사용.) 는 2015년 처음 도입된 변수 키워드.
+		5. const ex)배열객체나 객체(Object)에 주로 사용됨. */
+
+		/* for(i=10;i<10;i++);
+		if(x==10){} */
+		
+		x=10;
+		y=20;
+		z=x*y;
+		console.log(z);
+		
+		/* let 키워드 : ECMA(European Computer Manufacture Association) : 자바스크립트의 Spec(Protocol)을 정의하는 집단.
+			매년 스펙을 발표. 이 스펙에 따라 API가 추가 되거나, 변경, 삭제됨. 개발자는 이 스펙을 준수해서 개발해야함.
+			let 은 ECMA2015 에 추가된 변수 키워드임.
+			
+			특징으로는 블락 scope 를 갖고, 사용되기 전에 반드시 초기화 되어야 하며, 같은 scope 내에서는 절대 재선언 불가한 특징을 갖고 잇음.
+			내부적으로는 지역(local) 변수처럼 활요오딤. this로 접근 불가.*/
+		
+		{
+			let a=10;
+			console.log("블락의 a="+a);
+		}
+		/* console.log("블락 밖에서의 a="+a); */
+		/* {
+			var b=10;
+			console.log(b);
+		}
+		console.log(b); */
+		
+		let name="박찬우";
+		{let name="찬우";
+			name=1;
+			console.log(name);
+		}
+		console.log(name);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

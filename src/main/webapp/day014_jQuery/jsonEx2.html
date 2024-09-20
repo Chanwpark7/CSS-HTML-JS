@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/* JSON.stringify(obj) : 자바스크립트 객체를 JSON으로 변환해서 리턴하는 메소드.
+			JSON을 문법적으로 일일이 만들기 보다는 객체로 생성해서 변환하는데 정말 많이 쓰입니다. */
+		
+		const obj={name:"jason",age:31,city:"서울"};
+		const myJson=JSON.stringify(obj);
+		
+		console.log(myJson);
+		localStorage.setItem("json",myJson);
+		
+		//JSON 내부에 있는 함수를 문자열로 변경.
+		const txt=`{"name":"Jason","age":"function(){return 30;}"}`
+		const obj2= JSON.parse(txt);
+		/* eval() 함수 : 전역함수로서 (window 객체의 것.) 많이 사용이 되지만 가급적 사용을 말리는 대표적 함수.
+			이 함수는 파라미터로 오는 문자열 내의 스크립트 코드를 실행해주는 대표적인 함수임.
+			때문에 문자열로 함수를 주었을때, 이 문자열의 함수를 그래도 실행함. */
+		obj2.age=eval(obj.age);
+		console.log(obj2.age);
+		
+		//배열을 JSON으로 변환.
+		const arr=["도연","재형","재흥","찬우","지윤"];
+		const myjo=JSON.stringify(arr);
+		
+		console.log(myjo);
+		const obj3={name:"a",today:new Date()};
+		const myJson3=JSON.stringify(obj3);
+		console.log(myJson3);
+	</script>
+</body>
+</html>

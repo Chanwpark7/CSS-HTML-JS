@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		/* top 메뉴를 버튼식으로 보이게 정의하기 */
+		.dropbtn{
+			background-color: olive;
+			color: black;
+			padding: 6px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+		}
+		.dropdown{
+			position: relative;
+			display: inline-block;
+		}
+		.dropdown-content{
+			display: none;
+			position: absolute;
+			color: white;
+			background-color: gray;
+			min-width: 160px;
+			box-shadow:0px 8px 16px 0px rgba(0,0,0,0.5);
+			z-index: 1;
+		}
+		
+/* 메뉴 내부에 있는 링크에 대한 스타일 지정: 하나의 링크가 하나의 메뉴이므로 block 으로 수정하고 컬러 및 밑줄 제거 */
+		.dropdown-content a{
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+		}
+		.dropdown-content a:hover{
+			background-color: f1f1f1;
+		}
+		.dropdown:hover .dropdown-content{
+			display: block;
+		}
+		.dropdown:hover .dropbtn{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="dropdown">
+		<button class="dropbtn">Drop down</button>
+		<div class="dropdown-content">
+			<a href="#">Menu1</a>
+			<a href="#">Menu2</a>
+			<a href="#">Menu3</a>
+		</div>
+	</div>
+</body>
+</html>

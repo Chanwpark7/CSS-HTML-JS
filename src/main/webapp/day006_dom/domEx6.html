@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert Title Here</title>
+
+</head>
+<body>
+	<h1>querySelectorAll() Method 알아보기</h1>
+	<p id="pId">메소드의 값으로 Tag명, class명, id명 등 모든값이 올 수 있음. Collection type으로 리턴.</p>
+	<h2 class="exam">이건 헤딩</h2>
+	<p class="exam">이건 구문</p>
+	<script>
+		const nodeList=document.querySelectorAll('.exam'); //id 는 #을 통해 접근, class 는 .을 통해 접근.
+		
+		for(let i=0; i<nodeList.length; i++){ //이건 루프 문어 나중에 배움.
+		nodeList[i].style.backgroundColor='red';
+		}
+	</script>
+</body>
+
+</html>

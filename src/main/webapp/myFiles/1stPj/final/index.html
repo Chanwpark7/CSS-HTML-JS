@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>홈</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    
+    <!-- 리셋 CSS 파일 연결 -->
+    <link rel="stylesheet" href="./css/reset.css">
+        
+    <!-- 미디어쿼리 사용 pc CSS 파일 연결 -->
+    <link rel="stylesheet" href="./css/pc.css" media="screen and (min-width: 1280px)">
+
+    <!-- 미디어쿼리 사용 Tablet CSS 파일 연결 -->
+    <link rel="stylesheet" href="./css/tablet.css" media="screen and (min-width: 768px) and (max-width: 1279px)">
+
+    <!-- 미디어쿼리 사용 mobile CSS 파일 연결 -->
+    <link rel="stylesheet" href="./css/mobile.css"x media="screen and (max-width: 767px)">
+
+    <!--  font-family: "Pacifico", cursive;  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- 공용폰트 font-family: "Noto Sans KR", sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    
+
+
+
+
+    <!-- 공용 헤더 푸터-->
+    <!-- <link rel="stylesheet" href="./css/common.css"> -->
+    
+    <!--= 탑버튼 -->
+    <link rel="stylesheet" href="./css/toTopCss.css">
+
+    <!-- 팝업 CSS  -->
+    <link rel="stylesheet" href="./css/popup.css">
+    
+    <!-- 상담 CSS  -->
+    <link rel="stylesheet" href="./css/talk.css">
+    
+
+   
+
+
+
+
+    
+</head>
+
+<body>
+    <!-- 팝업 -->
+    <div id="pop" class="pop">
+        <div class="layerBox">
+            <h1 class="pop_title">공지사항</h1>
+            <div class="cont">
+                <p class="img_notice"><img src="./img/notice.png" width="300px" height="300px"></p>
+            </div>
+            <div class="close">
+                <span id="check" class="btnTodayHide"><input type="checkbox" value="checkbox" name="chkbox" id="chkday"/><label for="chkday"> 24시간 동안 보지 않기</label></span>
+                <span id="close" class="btnClose"> <a href="#">닫기</a></span>
+            </div>
+        </div>
+    </div>
+
+   <!-- 헤더  -->
+    <header class="header">
+    
+       <!--  로고  -->
+       <h1><a href="./index.html">더 조은</a></h1>
+       
+       <!--  토글 버튼  -->
+        <a class="menu_trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        
+        <div class="ph_Nav">
+            <div class="nav_Bg"></div>
+            <div class="toggle_Wrap">
+                <div class="toggle_All_Wrap">
+                    <a href="./login.html">
+                        <div class="toggle_login">
+                            <p>로그인</p>
+                        </div>
+                    </a>
+                    
+                    
+                    
+                    <!--  토글 메뉴  -->
+                    <div class="toggle_List_Wrap">
+                        <ul>
+                            <li class="toggle_List_Intro list_Open">
+                                <a href="#" class="toggle_Intro">소개</a>
+                                <ul class="toggle_Intro_List">
+                                    <li><a href="./history.html">연혁</a></li>
+                                    <li><a href="./beef.html">원산지</a></li>
+                                    <li><a href="./membership.html">멤버쉽</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="toggle_List_Menu list_Open">
+                                <a href="#" class="toggle_Menu">메뉴</a>
+                                <ul class="toggle_Menu_List">
+                                    <li><a href="./steak.html">스테이크</a></li>
+                                    <li><a href="./pasta.html">파스타</a></li>
+                                    <li><a href="./pizza.html">피자</a></li>
+                                    <li><a href="./side.html">사이드</a></li>
+                                    <li><a href="./drink.html">음료</a></li>
+                                    <li><a href="./alcohol.html">주류</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="toggle_List_Store list_Open">
+                                <a href="#" class="toggle_Store">매장</a>
+                                <ul class="toggle_Store_List">
+                                    <li><a href="./map_joonggu.html">중구점</a></li>
+                                    <li><a href="./map_nowongu.html">노원</a></li>
+                                    <li><a href="./map_seochogu.html">서초점</a></li>
+                                    <li><a href="./map_songpagu.html">송파점</a></li>
+                                    <li><a href="./map_yeongdeuphogu.html">영등포점</a></li>
+                                    <li><a href="./map_busan.html">부산 지점</a></li>
+                                </ul>
+                            </li>
+                            <li class="toggle_List_News list_Open">
+                                <a href="#" class="toggle_News">소식</a>
+                                <ul class="toggle_News_List">
+                                    <li><a href="./notice.html">공지사항</a></li>
+                                    <li><a href="#">이벤트</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li class="toggle_List_Five">
+                                <a href="#">채용</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </header>
+
+   <!-- --------------------------------------------------------------------------------  -->
+   
+   <div class="slider">
+    <div class="slides">
+        <div class="slide" style="background-image: url('./img/slide_1.jpg');"></div>
+        <div class="slide" style="background-image: url('./img/slide_2.jpg');"></div>
+        <div class="slide" style="background-image: url('./img/slide_3.jpg');"></div>
+    </div>
+    <div class="tabs">
+        <div class="tab"><div class="progress"></div></div>
+        <div class="tab"><div class="progress"></div></div>
+        <div class="tab"><div class="progress"></div></div>
+    </div>
+    <div class="arrow arrow-prev"><img src="img/left-arrow.png"></div>
+    <div class="arrow arrow-next"><img src="img/right-arrow.png"></div>
+</div>
+
+
+    <section class="main1">
+        
+          <h2><a href="#">The Joeun Restaurant</a>
+          <span class="main1_l"></span><span class="main1_e">The Joeun Restaurant</span>
+          </h2>
+        
+        
+        <div class="main1_2">
+           <ul>
+              <li class="main1_2_1">
+                <a href="./history.html">
+                
+                    <img src="./img/icon_history.png">
+               
+                    <span class="main1_2_1">연혁</span>
+                </a>
+            </li>
+              
+              <li class="main1_2_1">
+                <a href="./beef.html">
+                    <img src="./img/icon_cow.png"><span class="main1_2_1">원산지</span>
+              </a>
+            </li>
+              
+              <li class="main1_2_1">
+                 <a href="membership.html">
+                    <img src="./img/icon_membership.png"><span class="main1_2_1">멤버쉽</span>
+                 </a>
+              </li>
+
+           </ul>
+        </div>
+        
+        <div class="marquee-container">
+            <div class="marquee">
+                <p>The Joeun Restaurant! Tel. 000 - 0000. Jongno. </p>
+            </div>
+        </div>
+      
+    </section>
+
+    <section class="main2">
+        <div class="main2_container">
+          <h2>The Joeun Restaurant - Menu</h2>
+       </div>
+       
+       <div class="main2_c">
+          <div class="main2_1">
+          
+             <div class="main2_ib main2_ib_1">
+                <a href="./steak.html"><img src="./img/menu/steak/hamburg.jpeg"></a>
+                <a href="./pasta.html"><img src="./img/menu/pasta/cream.jpeg"></a>
+                <a href="./pizza.html"><img src="./img/menu/pizza/potato.jpeg"></a>
+             </div>
+
+             <div class="main2_ib main2_ib_2">
+                <a href="./side.html"><img src="./img/menu/side/chicken.jpeg"></a>
+                <a href="./drink.html"><img src="./img/menu/drink/ade_strawberry.jpeg"></a>
+                <a href="./alcohol.html"><img src="./img/menu/alcohol/alcohol_wine.jpeg"></a>
+             </div>
+             
+             
+          </div>
+      </div>   
+        
+    </section>
+    
+    
+    <section class="main3">
+        <h2>The Joeun Restaurant - Branch</h2>
+        <ul class="main-box">
+
+            <li class="box active">
+                <span class="m3_c">중구점</span>
+                <a href="./map_joonggu.html" class="detail">
+                    <img src="./img/m_joonggu.svg" alt="중구 로고">
+
+                    <div>
+                        <div class="m_container">
+                            <h3>중구점</h3>
+                            <p>종각역 4번출구에서 도보 3분</p>
+                            <p>서울특별시 종로구 우정국로2길 21 9층</p>
+                            <p>매장 전화번호 : 02 - 1234 - 5678</p>
+                          </div>
+                    </div>
+                 </a>
+            </li>
+
+            <li class="box">
+                <span class="m3_c">노원점</span>
+                <a href="./map_nowongu.html" class="detail">
+                    <img src="./img/m_nowongu.svg" alt="노원구 로고">
+
+                    <div>
+                        <div class="m_container">
+                            <h3>노원점</h3>
+                            <p>노원역 4번출구에서 도보 1분</p>
+                            <p>서울특별시 노원구 동일로 1414 롯데백화점 노원점 9층</p>
+                            <p>매장 전화번호 : 02 - 9876 - 5632</p>
+                          </div>
+                    </div>  
+                 </a>
+            </li>
+
+            <li class="box">
+                <span class="m3_c">서초점</span>
+                <a href="./map_seochogu.html" class="detail">
+                    <img src="./img/m_seochogu.svg" alt="서초구 로고">
+
+                    <div>
+                        <div class="m_container">
+                            <h3>서초구점</h3>
+                            <p>고속터미널역 8번출구에서 도보 1분</p>
+                            <p>서울특별시 서초구 신반포로 176 신세계 백화점 강남점 11층</p>
+                            <p>매장 전화번호 : 02 - 2345 - 6789</p>
+                          </div>
+                    </div> 
+                 </a>
+            </li>
+            
+            <li class="box">
+                <span class="m3_c">송파지점</span>
+                <a href="./map_songpagu.html" class="detail">
+                    <img src="./img/m_songpagu.svg" alt="송구 로고">
+
+                    <div>
+                        <div class="m_container">
+                            <h3>송파지점</h3>
+                            <p>잠실역 10번출구에서 도보 1분</p>
+                            <p>서울특별시 송파구 올림픽로 300 롯데월드몰</p>
+                            <p>매장 전화번호 : 02 - 1234 - 5679</p>
+                          </div>
+                    </div> 
+                 </a>
+            </li>
+        
+            <li class="box">
+                <span class="m3_c">영등포 지점</span>
+                <a href="./map_yeongdeuphogu.html" class="detail">
+                    <img src="./img/m_yeongdeuphogu.svg" alt="영등포구 로고">
+
+                    <div>
+                        <div class="m_container">
+                            <h3>영등포 지점</h3>
+                            <p>영등포역 6번출구에서 도보 7분</p>
+                            <p>서울특별시 영등포구 영중로 15 타임스퀘어 B1층</p>
+                            <p>매장 전화번호 : 02 - 2345- 6789</p>
+                          </div>
+                    </div> 
+                </a>
+            </li>
+        
+            <li class="box">
+                <span class="m3_c">부산 지점</span>
+                <a href="./map_busan.html" class="detail">
+                    <img src="./img/m_busan.svg" alt="부산 로고">
+
+                    <div>
+                        <div class="m_container">
+                            <h3>부산 지점</h3>
+                            <p>센텀시티역 12번 출구에서 1분</p>
+                            <p>부산 해운대구 센텀남대로 35 신세계백화점 센텀시티점 B1층</p>
+                            <p>매장 전화번호 : 051 - 3456 - 7891</p>
+                          </div>
+                    </div> 
+                 </a>
+            </li>
+
+        </ul>
+
+        <div class="snow_wrap">
+            <canvas class="snow"></canvas>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- 푸터 -->
+    <footer>
+       <div class="f_container">
+       <div class="f1_1">
+          <h2 class="f_logo">The Johen Restaurant</a></h2>
+          
+          <p class="f_p1">고객만족센터</p>
+          <p class="f_p2">02.1818.1818</p>
+          
+          <div class="f1_2">
+             <h3>Follow us</h3>
+             <div class="f_img">
+             
+             <ul class="f_icon">
+                <li><a href="./insta.html" class="f_icon1"><img src="img/f_img_insta.png"></a></li>
+                <li><a href="#" class="f_icon1"><img src="img/f_img_face.png"></a></li>
+                <li><a href="#"  class="f_icon1"><img src="img/f_img_you.png"></a></li>
+             </ul>
+             </div>
+          </div>
+       </div>
+       
+        <div class="f2">
+            <ul>
+                <li><a href="./history.html">연혁</a></li>
+                <li><a href="./beef.html">원산지</a></li>
+                <li><a href="./membership.html">멤버쉽</a></li>
+            </ul>
+            <ul>
+               <li><a href="#">소식</a></li>
+               <li><a href="#">공지사항</a></li>
+               <li><a href="#">이벤트</a></li>
+                  <li><a href="#">FAQ</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">운영방침</a></li>
+                <li><a href="#">정보처리</a></li>
+            </ul>
+         </div>
+        </div>
+              
+            
+           <address class="copy" alt="(우)03189 서울특별시 종로구 우정국로2길 21 ">
+               <area shape="rect" coords="550, 19, 660, 36" target="_blank" href="" title="" alt="">
+           </address>
+           <p class="blind">Copyright &copy; 2024 ddddddddddddd . ALL RIGHT RESERVED.</p>
+        
+    </footer>
+    
+    <div id="container">
+		<img src="./img/upload.png" alt="img">
+		<svg class="circle" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="26" cy="26" r="25"></circle>
+			<!-- <path d="M34.5 2 C50.75 2 67 18.25 67 34.5 C67 50.75 50.75 67 34.5 67 C18.25 67 2 50.75 2 34.5 C2 18.25 18.25 2 34.5 2Z"> -->
+		</svg>
+	</div>
+
+    <!-- 상담 버튼 -->
+
+    <div class="talk_Wrap">
+        <div class="talk_Window_Wrap talk_Hidden talk_Opa">
+            <div class="talk_Window">
+                <header class="talk_Header">
+                    <p>더 좋은 레스토랑 고객센터입니다.</p>
+                </header>
+                <main class="talk_List_Wrap">
+                    <div class="talk_Time">
+                        <p>고객센터 운영시간</p>
+                        <p>평일 오전 9시 ~ 오후 5시</p>
+                    </div>
+                    <div class="talk_Connect">
+                        <a href="#">
+                            <i class="fa-brands fa-weixin"></i>
+                            <span>
+                                채팅 상담
+                            </span>
+                        </a>
+                        <a href="#">
+                            <i class="fa-sharp fa-solid fa-comment"></i>
+                        </a>
+                    </div>
+                    <div class="talk_Notice">
+                        <p>공지</p>
+                        <ul>
+                            <li><a href="#">행운의 편지</a></li>
+                            <li><a href="#">이 편지는 영국에서 최초로 시작되어 일년에 한바퀴를 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진 이 편지는 4일 안에 당신 곁을 떠나야 합니다. 이 편지를 포함해서 7통을 행운이 필요한 사람에게 보내 주셔야 합니다. 복사를 해도 좋습니다. 혹 미신이라 하실지 모르지만 사실입니다.</a></li>
+                        </ul>
+                    </div>
+                    <div class="talk_Quest">
+                        <p>자주 묻는 질문</p>
+                        <div class="talk_Quest_Input_Wrap">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" class="talk_Quest_Input" placeholder="검색어를 입력해주세요.">
+                        </div>
+                        <ul>
+                            <li><a href="#">매장 영업시간은 어떻게 되나요?</a></li>
+                            <li><a href="#">할인되는 카드가 어떤게 있나요?</a></li>
+                            <li><a href="#">더 좋은 멤버쉽 해택을 알고싶어요.</a></li>
+                            <li><a href="#">따로 적립이 있나요?</a></li>
+                            <li><a href="#">안녕하세요?</a></li>
+                        </ul>
+                    </div>
+                </main>
+                <footer class="talk_Footer">
+                    <p>광고달고 돈벌고 싶다.</p>
+                </fotter>
+            </div>
+        </div>
+        <div class="talk_Icon"></div>
+    </div>
+    
+   
+    <!-- 폰트 어썸-->
+    <script src="https://kit.fontawesome.com/3904c47793.js" crossorigin="anonymous"></script>
+
+    <!--  jquery 연결 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- common scirpt -->
+    <script src="./js/index.js"></script>
+    
+    <!-- 햄버거 연결 -->
+    <script src="./js/hamburger.js"></script>
+
+    <!-- 탑버튼 버튼-->
+    <script src="./js/toTopApp.js"></script>
+
+    <!-- 팝업 JS  -->
+    <script src="./js/popup.js"></script>
+    
+    <!-- 상담 JS  -->
+    <script src="./js/talk.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+/* Animation 효과 : @keyframes 이라는 CSS 를 이용하여 Animation 효과를 부여합니다.
+	transition 과는 다르며, 위 속성에 여러 속성을 부여하여 구현. 대표적인 속성으로 from, to 가 있음. */
+		@keyframes ex1{
+			from{background-color: red;}
+			to{background-color: blue;}
+		}
+		@keyframes ex2{/* 0,25,50,100%의 단위 속성을 이용 값으로 이펙트 지정 가능 */
+			0%{background-color: yellow;}
+			25%{background-color: green;}
+			50%{background-color: purple;}
+			100%{background-color: yellow;}
+		}
+		
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			animation-name: ex1;
+			animation-duration: 4s;
+			animation-delay: 2;
+			animation-iteration-count: infinite; /* 반복수 */
+		}
+		.divtr{
+			width: 100px;
+			height: 50px;
+			background: red;
+			font-weight: bold;
+			position: relative;
+			animation-name: ex1;
+			animation-fill-mode: forwards;
+		}
+		#div1{
+			transition-timing-function: ease;
+			background: yellow;
+		}
+		#div2{
+			transition-timing-function: linear;
+			background: green;
+		}
+		#div3{
+			transition-timing-function: ease-in;
+			background: orange;
+		}
+		#div4{
+			transition-timing-function: ease-out;
+			background: blue;
+		}
+		#div5{
+			transition-timing-function: ease in-out;
+			background: navy;
+		}
+		#div6{
+			transition-timing-function: width 0.5s cubic-bezier(0.25,0.25,0.75,0.75);
+			background: purple;
+		}
+		div:hover{
+			width: 100px;
+			height: 100px;
+			background: red;
+			animation-name: ex2;
+			animation-duration: 4s;
+		}
+		
+/* 정의된 애니메이션을 적용한 컴포넌트에 속성 및 값으로 적용시키면 됩니다
+	대표적인 속성 : animation-name : keyframes의 이름, duration : 지속시간. */
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<b>4초</b>가 지난 후엔 원래 색상으로 돌아옵니다.
+	</div>
+	<div class="divtr">
+		<b>4초</b>가 지난 후엔 원래 색상으로 돌아옵니다.
+	</div>
+</body>
+</html>

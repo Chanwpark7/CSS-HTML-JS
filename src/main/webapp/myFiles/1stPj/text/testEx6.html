@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <style>
+      body {
+				margin:0;
+				padding:0;
+				height: 200vh;
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      #container {
+        width: 0.5vw;
+        border-radius: 0.25vw;
+        background-color: rgba(0,0,0,0.2);
+				position: fixed;
+        top: 0;
+        right: 0;
+      }
+      
+      #container:hover {
+        background-color: rgba(0,0,0,0.6);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container" onmousedown="mouseIsClicked(event)"></div>
+
+
+    <script>
+      box = document.querySelector('#container');
+
+      let yOffset=0;
+
+      let mouseClicked = false;
+      
+       //scrollBar height를 window 전체 height에 따라 변경
+      let box_height = window.innerHeight*window.innerHeight/document.body.offsetHeight;
+      box.style.height = box_height+"px";
+
+     
+      window.addEventListener('scroll', function () {
+				//window.scrollY=스크롤 바 top 부분 px 로 계산
+				//window.innerHeight = vh(margin 제외) 계산
+				//document.body.offsetHeight = 총 body height 계산
+      
+        //scrollBar 위치를 전체 window 전체 height에 대한 비율 계산.
+        let scrollY_percent = window.scrollY /document.body.offsetHeight;
+        if(!mouseClicked){
+          if (scrollY_percent < 0) { //margin padding 때문에 scrollY 가 0 일때 document.body.offsetHeight이 1vh 보다 크게 되어 음수가 잡히는 경우 배제.
+            scrollY_percent = 0;
+            box.style.top=scrollY_percent*window.innerHeight+"px";
+            //div가 fixed 된 화면 내에서 scroll bar 가 움직인 px 만큼 움직임
+          }
+          box.style.top=scrollY_percent*window.innerHeight+"px";
+        }
+      });
+    </script>
+  </body>
+</html>

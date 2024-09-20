@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Display 속성과 JavaScript</title>
+
+	<style>
+		.imgbox{
+			float: left;
+			text-align: center;
+			width: 200px;
+			border: 1px solid gray;
+			margin: 4px;
+			margin-left: 40px;
+			padding: 6px;
+		}
+		.button{
+			width: 100%
+		}
+	</style>
+
+</head>
+<body>
+	<p><b>Visiblity 속성</b> : component를 보이게 하거나 반대로 할 경우 사용됨. 값으로는 hidden 이 있는데,
+		보이지는 않지만 영역은 차지함.
+	</p>
+	<p><b>Display 속성</b> : component를 보이게 하거나 반대로 할 경우 사용됨. 값으로는 none 이 있는데,
+		영역까지 모두 삭제함.
+	</p>
+	
+	<div class="imgbox" id="imgbox1">Box 1<br>
+		<img alt="sports1" src="1.jpg" style="width: 100%">
+		<button onclick="remouveElement();">삭제(remove)</button>
+	</div>
+	<div class="imgbox" id="imgbox2">Box 2<br>
+		<img alt="sports2" src="2.jpg" style="width: 100%">
+		<button onclick="changeVisibility()">감추기(hide)</button>
+	</div>
+	<div class="imgbox" id="imgbox3">Box 3<br>
+		<img alt="sports3" src="3.jpg" style="width: 100%">
+		<button onclick="resetAll()">원복(reset)</button>
+	</div>
+
+	<script>
+		function remouveElement(){
+			//alert("1번의 이미지를 지웁니다.")
+			document.getElementById('imgbox1').style.display='none';
+		}
+		function changeVisibility(){
+			//alert("2번의 이미지를 감춥니다.")
+			document.getElementById('imgbox2').style.visibility='hidden';
+		}
+		function resetAll(){
+			//display 속성이 none 인 경우 block 으로 속성값을 변경하면 원래대로 돌아옴.
+			//visibility 값이 hidden 인 경우 visible 값으로 변경하면 원래대로 돌아옴.
+			document.getElementById('imgbox1').style.display='block';
+			document.getElementById('imgbox2').style.visibility='visible';
+		}
+	</script>
+	
+</body>
+</html>

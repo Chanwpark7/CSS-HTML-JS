@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/* pagination : 댓글등의 리스트를 표현할 때 각 페이지별로 글들의 집합을 표현하도록 하는 것.
+	이 pagination 은 댓글 뿐만이 아니라, 기사나, 상품의 목록 등, 웹 상에서 정말 많이 사용되는 기능임.
+	
+	기획내용 : 페이지네이션의 값은 보통 숫자입니다.(1,2,3,4,5...) 그리고 이 숫자는 일반적으로 10개를 하나의 그룹으로 담고 있습니다.
+	예를 들어서 DB 상에 101개의 글이 들어있다면, 가장 최신의 글을 리스트에서 기본으로 보여주고, 페이지의 번호를 1로 한다고 가정할 경우
+	1page 에는 101 ~ 92까지의 글들이 리스트에 보이게 됨. 2페이지를 쿨릭한다는 것은, 91 ~ 82번 까지의 최신글 이전 글들을 본다는 의미.
+	현재 리스트 페이지에는 1 ~ 10번 페이지 까지의 index 가 보여지고 [다음] or >> 등 더 오래된 내용이 있다는 표식지가 보여짐.
+	
+	일단 각 페이지는 글 번호를 자시느이 영역으로 갖고 있고, 내부 패딩도 적용할 것이므로 inline-box 형태로 정의함.
+	그리고 각 페이지 번호를 클릭 할 수 있어야 하므로 a 태그로 감싸게 됨. 이때 페이지가 나열이 되어야 하는데, 나열 방식을 float 으로 잡도록 함.
+	링크의 밑줄은 보이지 않도록 구성함. */
+		.pagination{
+			display: inline-block;
+		}
+		.pagination a{
+			text-decoration: none;
+			color: black;
+			float: left;
+			padding: 8px 16px;
+			transition: background-color 0.0005s;
+			border: 1px solid gray;
+			margin: 0 2.5px;
+			font-size: 22px;
+			text-align: center;
+		}
+		.pagination a.active{
+			background-color: lime;
+			color: white;
+		}
+		.pagination a:hover:not(.active){/* page index 에 마우스 오버시 배경 색 변경 적용 */
+			background-color: red;
+			color: white;
+			transition: background-color 1s;
+		}
+		.pagination a:first-child{
+			background-color: lime;
+			color: white;
+			border-radius: 5px;
+		}
+		.pagination a:last-child{
+			background-color: lime;
+			color: white;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h2>simple paging</h2>
+	<div class="pagination">
+		<a>&laquo;</a>
+		<a href="#">1</a>
+		<a href="#" class="active">2</a>
+		<a href="#">3</a>
+		<a href="#">4</a>
+		<a href="#">5</a>
+		<a href="#">6</a>
+		<a href="#">7</a>
+		<a href="#">8</a>
+		<a href="#">9</a>
+		<a href="#">10</a>
+		<a>&raquo;</a>
+	</div>
+</body>
+</html>

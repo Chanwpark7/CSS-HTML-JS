@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하나의 요소에 다중 이벤트 처리</title>
+	<script src="../jQuery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+ID : <input type="text" name="id">
+
+	<script>
+	//위 input 요소에 두개의 이벤트를 처리 예정임. focus 와 blur 시 컬러를 변경할 예정.
+	$(document).ready(function(){
+		/* $("input").focus(function(){ //모든 input 요소에 적용
+			//DOM에서는 Node의 Style에 접근하기 위해선 node.style.속성 이렇게 했지만
+			//jquery에서는 css() 라는 메소드로 처리함. 파라미터로는 속성을 나열하면 됨.
+			
+			$(this).css("backgroundColor","yellow");
+		});
+		$("input").blur(function(){
+			$(this).css("backgroundColor","white");
+		}); */
+		
+		//위 방법말고 아래 방법도 있음
+		$("input").on({ //on메소드를 이용해서 하위에 이벤트와 핸들러를 여러번 연결할 수도 있음.
+			focus:function(e){
+				//자바스크립트 이벤트 객체 : 이벤트가 발생한 노드에서 자동으로 VM이 이 객체를 생성해서 핸들러 함수에 전달해줌.
+				//만약 이 객체의 속성 중 필요한게 로직내에 있다면, 파라미터로 받아서 사용만 하면 됨. 만약 없다면 무시해도 됨.
+				console.log(e.currentTarget);
+				$(this).css("backgroundColor","yellow");
+			},
+			blur:function(e){
+				console.log(e);
+				$(this).css("backgroundColor","white");
+			},
+			mousemove:function(e){
+				console.log(e.pageX+" : "+e.pageY);
+			},
+			change:function(e){
+				console.log(e.key);
+			}
+		})
+	});
+	</script>
+</body>
+</html>

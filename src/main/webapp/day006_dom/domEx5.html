@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert Title Here</title>
+
+</head>
+<body>
+	<h1>querySelector() Method 알아보기</h1>
+	<p id="pId">메소드의 값으로 Tag명, class명, id명 등 모든값이 올 수 있음. 단, 찾아낸 경우, 첫번째 매칭된 노드만 리턴함.</p>
+	<ul>
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li class="liClass">Milk</li>
+	</ul>
+	<script>
+		const theNode=document.querySelector('.liClass'); //id 는 #을 통해 접근, class 는 .을 통해 접근.
+		theNode.style.color='red';
+	</script>
+</body>
+
+</html>

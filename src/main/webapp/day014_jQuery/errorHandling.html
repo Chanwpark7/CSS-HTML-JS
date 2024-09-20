@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="demo"></p>
+	
+	<h2>5~10 사이의 수만 입력.</h2>
+	<input type="text" id="in1">
+	<button onclick="myfunction();">입력 확인</button>
+	<p id="demo1"></p>
+	
+	<script>
+	/*  자바스크립트 에러 핸들링.
+		자바스크립트는 인터프리팅 언어이기 때문에 컴파일 과정이 없음.
+		따라서 에러가 실행을 해야만 알 수 있음.
+		하지만 에러를 확인하는 과정은 일반적으로 콘솔에 나타나는 내용을 보고 알게됨.
+		에러핸들링을 하게 되면 에러가 발생했을때 적절하게 대처가 가능하고, 에러의 내용도 쉽게 파악할 수 있는 장점이 있음.
+		아래는 문법
+		에러가 핸들링되는 과정은 다음과 같음.
+		실행되는 코드가 에러를 내포하고 있다가 발생되면, VM은 에러의 내용을 담은 객체를 프로그램으로 던져버림(throw)
+		프로그래머는 이 에러 객체를 받아서 적절히 핸들링을 하면 됨.
+		try{에러가 발생한 코드}catch(err(던져진 에러 객체.)){에러가 발생시 처리할 구문}finally{에러 여부와 상관없이 수행할 코드} */
+			
+		//인위적 에러 발생 코드
+		try{
+			throw "lol";
+			addAlert("hi");
+			alert("hello");
+		}catch(err){
+		/*  throw 에 대해서 알아보기: throw 는 프로그래머가 직접 예외를 던지는 경우를 뜻함.
+			특정 상황을 프로그래머가 예외라고 판단되면 throw를 통해 처리 로직을 변경 할 수 있음. */
+			document.getElementById("demo").innerHTML=err; //던져진 예외 객체가 갖고 잇는 속성 중 예외 내용.
+		}
+		
+		function myfunction(){
+			//숫자를 검증해서 범위 밖이면 에러로 처리하는 로직 작성함.
+			const message=document.getElementById("demo1");
+			message.innerHTML="";
+			
+			let x=document.getElementById('in1').value;
+			
+			try{
+				if(x.trim()=="") throw "비어있음";
+				if(isNaN(x)) throw "숫자가 아님";
+				x=Number(x);//Number 생성자를 이용해서 문자열의 타입을 수치로 변경.(parseInt와 같음)
+				
+				if(x<5) throw "5보다 적음";
+				if(x>10) throw "10보다 큼";
+			}catch(err){
+				message.innerHTML="입력값이 "+err;
+			}finally{
+				alert("이건 예외와 상관없이 무조건 실행되는 영역입니다.");
+			}
+		}
+	</script>
+</body>
+</html>

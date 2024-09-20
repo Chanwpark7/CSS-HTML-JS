@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="demo"></p>
+	<script>
+	/* 	자바스크립트 모듈
+		모듈이라는 개념은 자주 사용하는 변수, 함수등을 파일내의 특정 모듈로 선언하고 그 기능이 필요한 코드에서 가져다 사용하는 목적.
+		그렇게 되면 코드의 재사용성이 증가 하고 코드의 중복성은 떨어지게 됨.
+		
+		모듈로 사용될 코드는 반드시 .js 파일에 함수나 객체, 변수 등으로 정의 되어야 하고,
+		export 라는 이름으로 자신을 찾을 수 있도록 해야함.
+		
+		해당 모듈을 사용하는 페이지 쪽에서는 스크립트 선언문에서 type="module"로 선언하고
+		import 라는 키워드를 이용해서 모듈을 사용하도록 함. */
+	</script>
+	<script type="module">
+		import message from "../comm_module/message.js";
+		import {checkCookie,getCookie,setCookie} from "../comm_module/cookieModule.js";
+
+		document.getElementById("demo").innerHTML=message();
+		checkCookie();
+	</script>
+</body>
+</html>

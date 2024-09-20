@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		//form의 하위 중 input 노드를 먼저 찾아서 값을 가져옴. 이벤트에 대한 함수로 정의함.
+		function validateForm(){
+			let x=document.forms["myf"]["fname"].value;
+			let y=document.myf.fname.value;
+			console.log(y);
+			
+			if(x==""){
+				alert("반드시 이름을 입력");
+				return false;
+			}
+			return false;
+		}
+		
+		function myFunction(){
+			//숫자가 아니거나(NaN, 범위가 벗어난 값이 오면 demo에 올바르지 않은 값이라고 찍고, 올바른 값이라면 ok라고 출력시키도록 정의하세용.)
+			let x=document.getElementById("demo");
+			let y=document.getElementById("numb").value;
+			if(!isNaN(y)&&y<=10&&y>=1){
+				x.innerHTML="ok";
+			}else{
+				x.innerHTML="올바르지 않은 값.";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<p>1~10사이의 숫자만 입력해라.</p>
+	<input id="numb">
+	
+	<button onclick="myFunction()">테스트</button>
+	<p id="demo"></p>
+	
+	<form action="test.jsp" method="post" name="myf" onsubmit="return validateForm();">
+		이름 : <input type="text" name="fname" value="Jason">
+		<input type="submit">
+	</form>
+</body>
+</html>

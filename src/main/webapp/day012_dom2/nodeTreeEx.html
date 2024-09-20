@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Node Tree 순회</title>
+</head>
+<body>
+	<input type="button" value="문서 내용 바꾸깅" onclick="change();">
+	<h2>header</h2>
+	<p>이건 구문(paragraph)이여</p>
+	<p>이건 구문(paragraph)2인 것이여</p>
+	<script>
+		//header 노드를 get 해봐라 임마. TagName() 메소드 사용해라? item()이라는 노드 메소드가 있어. 찾아서 이용해.
+		const header=document.getElementsByTagName("h2");
+		const para=document.getElementsByTagName("p").item(1);
+		console.log(header);
+		console.log(header.item(0));
+		header.item(0).firstChild.data="이건 동적으로 변경한 내용";
+		para.firstChild.data="잠깨라잉?";
+		
+	/* createElement, createTextNode : 1번은 요소를 생성하는 메소드, 2번은 textnode를 생성한느 메소드
+		이를 이용해서 동적으로 노드를 새롭게 생성해서 특정 부모의 자식으로 append() 시킬 수 있음. */
+		const newText=document.createTextNode("이건 세번째 구문일걸?"); //새로운 textNode 생성.
+		const newElement=document.createElement("p"); //p 요소를 새로 생성했음.
+		
+		//부모 p에서 자식 text 를 편입시킴.appendChild()
+		newElement.appendChild(newText);
+
+		para.parentNode.appendChild(newElement);
+		
+		function change(){
+			
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jQuery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+	ID : <input type="text" id="target" value=""><br>
+	<button id="btn">val() 확인</button><br>
+	
+	<img id="img1" src="../imgGallery/1.jpg" alt="" width="300" height="300"><br>
+	<button id="btn1">attr() 확인</button><br>
+	<script>
+		//jQuery 에서는 입력태그의 내용을 get/set 할땐 val() 를 이용해서 작업함.
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				alert($("#target").val());
+			});
+		});
+		
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+				alert($("#img1").attr("src"));
+			});
+		});
+	</script>
+</body>
+</html>

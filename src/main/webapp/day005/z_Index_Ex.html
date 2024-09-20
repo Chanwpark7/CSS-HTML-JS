@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style type="text/css">
+		img{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			z-index: -1;
+			max-width:100%;
+			max-height: 100%;
+		}
+		.container{
+			/* 맨 바닥에 적용되는 css에 relative 를 적용하면, 이 내부에 배치된 모든 component 는 상속(inherited) 을 받기 때문에
+				자동으로 relative 배치를 받게 됩니다. */
+			position: relative;
+		}
+		.black-box{
+			position: absolute;
+			z-index: 1;
+			border: 2px solid black;
+			height: 100px;
+			margin: 30px;
+		}
+		.gray-box{
+			position: absolute;
+			z-index: 3; /* 인덱스 순서가 높기 때문에 black box보다 높이 위치하게 됨. */
+			background-color: gray;
+			border: 2px solid black;
+			height: 60px;
+			margin: 70px;
+			top: 50px;
+			left: 50px;
+		}
+		.green-box{
+			position: absolute;
+			z-index: 5; /* 인덱스 순서가 높기 때문에 gary box보다 높이 위치하게 됨. */
+			background-color: green;
+			border: 2px solid black;
+			width: 35%;
+			height: 100px;
+			margin: 7px;
+			top: -15px;
+			left: 270px;
+		}
+	</style>
+
+</head>
+<body>
+
+	<h1>이건 Heading</h1>
+	<img alt="" src="5.jpg">
+	<p>이미지가 문자열 뒤에 보이게 됩니다.</p>
+	
+	<div class="container">
+		<div class="black-box">Black Box</div>
+		<div class="gray-box">Gray Box</div>
+		<div class="green-box">Green Box</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

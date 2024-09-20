@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/mapCss.css?after">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Locations</title>
+</head>
+
+<body>
+    <!-- 헤더  -->
+    <header class="header">
+        
+        <!--  로고  -->
+        <h1><a href="./index.html">더 조은</a></h1>
+        
+        <!--  토글 버튼  -->
+        <a class="menu_trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        
+        <div class="ph_Nav">
+            <div class="nav_Bg"></div>
+            <div class="toggle_Wrap">
+                <div class="toggle_All_Wrap">
+                    <a href="./login.html">
+                        <div class="toggle_login">
+                            <p>로그인</p>
+                        </div>
+                    </a>
+                     
+                     <!--  토글 메뉴  -->
+                   <div class="toggle_List_Wrap">
+                    <ul>
+                        <li class="toggle_List_Intro list_Open">
+                            <a href="#" class="toggle_Intro">소개</a>
+                            <ul class="toggle_Intro_List">
+                                <li><a href="./history.html">연혁</a></li>
+                                <li><a href="./beef.html">원산지</a></li>
+                                <li><a href="./membership.html">멤버쉽</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="toggle_List_Menu list_Open">
+                            <a href="#" class="toggle_Menu">메뉴</a>
+                            <ul class="toggle_Menu_List">
+                                <li><a href="./steak.html">스테이크</a></li>
+                                <li><a href="./pasta.html">파스타</a></li>
+                                <li><a href="./pizza.html">피자</a></li>
+                                <li><a href="./side.html">사이드</a></li>
+                                <li><a href="./drink.html">음료</a></li>
+                                <li><a href="./alcohol.html">주류</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="toggle_List_Store list_Open">
+                            <a href="#" class="toggle_Store">매장</a>
+                            <ul class="toggle_Store_List">
+                                <li><a href="./map_joonggu.html">중구점</a></li>
+                                <li><a href="./map_nowongu.html">노원</a></li>
+                                <li><a href="./map_seochogu.html">서초점</a></li>
+                                <li><a href="./map_songpagu.html">송파점</a></li>
+                                <li><a href="./map_yeongdeuphogu.html">영등포점</a></li>
+                                <li><a href="./map_busan.html">부산지점</a></li>
+                            </ul>
+                        </li>
+                        <li class="toggle_List_News list_Open">
+                            <a href="#" class="toggle_News">소식</a>
+                            <ul class="toggle_News_List">
+                                <li><a href="./notice.html">공지사항</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li class="toggle_List_Five">
+                            <a href="#">채용</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div id="bg_container">
+        <h1 class="ml2">Locations</h1>
+        <img id="ocean" src="./img/ocean.png">
+        <img id="sunRay" src="./img/sunRay.png">
+        <img id="family2" src="./img/family2.png">
+    </div>
+
+    <section class="board">
+        <div class="toHome">
+            <img src="./img/pngwing.com.png" onclick="location.href='index.html'" />
+            <a class="home" href="index.html"></a>
+          </div>
+        <div class="detail">
+            <div class="btn">
+            <button class="dropBtn">Locations</button>
+            <div class="dropdown-content">
+                <a href="history.html">TJ Story</a>
+                <a href="notice.html">Notice</a>
+                <a href="mapIndex.html">Locations</a>
+                <a href="beef.html">Beef Story</a>
+                <a href="membership.html">Membership</a>
+            </div>
+        </div>
+        </div>
+        <div class="path">Main > Locations</div>
+    </section>
+
+    <section class="mainBody">
+        <!-- 페이지 제목 -->
+        <div class="title">
+            <h2>매장 위치</h2>
+        </div>
+        <div class="map2">
+            <!-- 서울 지도 -->
+
+            <div class="seoul">    
+                <div class="locaname">
+                    <h2>서울</h2>
+                </div>
+                <img src="./img/seoul3.jpg" usemap="#wmap" />
+                <map name="wmap">
+                    <area
+                        coords="297,221,365,219,370,230,358,240,344,258,335,250,326,255,279,246,280,241,289,232,288,226"
+                        , shape="poly" , name="joonggu" , href="map_joonggu.html">
+                    <area
+                        coords="431,296,453,297,490,267,507,273,502,289,537,309,533,326,560,333,557,351,543,361,538,375,516,389,383,349,432,331"
+                        , shape="poly" , name="songpa" , href="map_songpagu.html">
+                    <area
+                        coords="313,322,345,295,354,296,382,360,392,361,406,383,449,375,467,407,448,432,432,431,434,439,425,451,404,451,383,432,381,391,364,410,334,387,315,401,307,378,312,336,311,334,306,324"
+                        , shape="poly" , name="seocho" , href="map_seochogu.html">
+                    <area
+                        coords="408,28,418,23,423,18,434,17,450,14,456,15,469,23,464,38,468,64,463,72,469,98,490,98,495,117,483,124,483,138,455,136,423,148,392,117,410,98,403,53"
+                        , shape="poly" , name="nowon" , href="map_nowongu.html">
+                    <area
+                        coords="164,242,189,255,197,266,227,272,237,168,261,291,261,305,229,309,221,335,207,341,192,359,182,327,176,313,161,293,179,281,159,48"
+                        , shape="poly" , name="yeongdeungpo" ,
+                        href="map_yeongdeuphogu.html">
+                </map>
+            </div>
+
+
+            <!-- 부산 지도 -->
+            <div class="busan">
+                <div class="locaname">
+                    <h2>부산</h2>
+                </div>
+                <img src="./img/busan3.jpg" usemap="#wwmap" />
+                <map name="wwmap">
+                    <area
+                        coords="391,164,418,189,408,209,436,232,457,221,462,239,449,245,446,263,430,272,400,275,378,265,360,218,358,210,365,202,363,192"
+                        shape="poly" , name="busan" , href="map_busan.html">
+                </map>
+            </div>
+        </div>
+
+        <div class="brand">
+            <h3>[전국 지점]</h3>
+            <ul>
+                <li>서울 중구 <span>02 - 1234 - 5678</span></li>
+                <li>서울 노원 <span>02 - 9876 - 5632</span></li>
+                <li>서울 송파 <span>02 - 1234 - 5679</span></li>
+                <li>서울 서초 <span>02 - 2345 - 6789</span></li>
+                <li>서울 영등포 <span>02 - 2345- 6789</span></li>
+                <li>부산 해운대 <span>051 - 3456 - 7891</span></li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <div class="f_container">
+            <div class="f1_1">
+                <h2 class="f_logo">The Johen Restaurant</a></h2>
+
+                <p class="f_p1">고객만족센터</p>
+                <p class="f_p2">02.1818.1818</p>
+
+                <div class="f1_2">
+                    <h3>Follow us</h3>
+                    <div class="f_img">
+
+                        <ul class="f_icon">
+                            <li><a class="f_icon1"><img src="img/f_img_insta.png"></a></li>
+                            <li><a class="f_icon1"><img src="img/f_img_face.png"></a></li>
+                            <li><a class="f_icon1"><img src="img/f_img_you.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f2">
+                <ul>
+                    <li><a>소개</a></li>
+                    <li><a>연혁</a></li>
+                    <li><a>고기</a></li>
+                    <li><a>멤버쉽</a></li>
+                </ul>
+                <ul>
+                    <li><a>소식</a></li>
+                    <li><a>공지사항</a></li>
+                    <li><a>이벤트</a></li>
+                    <li><a>FAQ</a></li>
+                </ul>
+                <ul>
+                    <li>이용약관</li>
+                    <li>이용약관</li>
+                    <li>정보처리</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <address class="copy" alt="(우)03189 서울특별시 종로구 우정국로2길 21 ">
+            <area shape="rect" coords="550, 19, 660, 36" target="_blank" href="" title="" alt="">
+        </address>
+        <p class="blind">Copyright &copy; 2024 ddddddddddddd . ALL RIGHT RESERVED.</p>
+
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://kit.fontawesome.com/3904c47793.js" crossorigin="anonymous"></script>
+    <script src="./js/hamburger.js"></script>
+
+    <div id="container">
+        <img src="./img/upload.png" alt="img" />
+        <svg class="circle" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="25"></circle>
+        </svg>
+    </div>
+
+    <script src="./js/mapApp.js?after"></script>
+    </div>
+
+    <script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+    <script>
+        $(function () {
+            $('#wwmap').rwdImageMaps();
+        });
+    </script>
+
+    <script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+    <script>
+        $(function () {
+            $('#wmap').rwdImageMaps();
+        });
+    </script>
+
+
+</body>
+
+</html>7

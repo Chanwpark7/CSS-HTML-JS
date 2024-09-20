@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가위바위보게임</title>
+	<script>
+		let total=0;
+		let win=0;
+		let lose=0;
+		let draw=0;
+		let comp;
+	
+		
+		function gameStart(){
+			comp = Math.floor(Math.random()*3);
+		    
+			if(comp==1){//바위
+				lose++;
+			}else if(comp==2){//보
+				win++;
+			}else if(comp==0){//가위
+				draw++;
+			}
+			
+			console.log(win+"보 "+lose+"바위 "+draw+"가위");
+			/* document.getElementById("results").innerHTML="게임 결과 : 총 게임수"+total+" "+win+"승 "+lose+"패 "+draw+
+			"무 승률 : "+Math.round(win*100/total)+"%"; */
+			
+		    return false;
+		}
+		
+		let input=0;
+		//input 값을 받아서 올바른 값인지를 판별하는 함수 작성.
+		function checkInVal(input){
+			switch(input){
+				case "가위" :
+				case 0 :
+					return true;
+				case "바위" :
+				case 1 :
+					return true;
+				case "보" :
+				case 2 :
+					return true;
+					default:
+						console.log("값이 잘못됨");
+						return false;
+			}
+		}
+		
+		for(i=0;i<10;i++){
+			gameStart();
+			if(checkInVal(comp)){
+				continue;
+			}
+			break;
+		}
+	</script>
+</head>
+<body>
+	<p id="results"></p>
+</body>
+</html>

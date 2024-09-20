@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Link에 대해서 1</title>
+</head>
+<body>
+<!-- Link 는 하이퍼링크를 뜻 하며, 문서 내부에서 이동 및 외부(URL 을 통한)로도 연결이 가능합니다.
+	anchor(닻) 을 모티브로 해서 만들어졌다고 해서 태그명은 a 입니다. 커플 태그이고, 반드시 열고 닫아야 합니다.
+	대표적 속성으로는 href, target 이 있습니다.
+	Link 를 이용해서 사이트의 메뉴 등을 구성할 수 있고, CSS 를 이용해서 디자인을 적용 할 수 있습니다.
+	또한 Link 에는 가상요소(pseudo) 클래스가 존재합니다.(이부분은 나중에 보게됩니다)
+	
+	target 속성은 링크가 걸린 페이지가 어떻게 열리는지를 결정합니다.
+	값으로는 _self, _blank, _parent, _top 이 있으며,
+	self : 링크가연결된 페이지의 내용을 대체합니다.
+	blank : 새로운 창(window) or tab 을 생성해서 내용을 표기 합니다.
+	parent : 부모창에 내용을 표시합니다.
+	top : 윈도우 전체에 내용을 표시합니다.(잘 안쓰임) 
+ -->
+ 
+<a href="http://www.daum.net" target="_blank">다음</a>가기<br><br><br>
+
+<!-- 내 사이트에서의 링크 처리하기..절대와 상대 구분해서 처리하기 -->
+<!-- 
+	상대적인표기는 현재 파일을 기준으로 링크되어진 리소스를 찾아내는 형태..ex>../somewhere/some.html
+	절대표기법은 URL 을 기준으로 host 명을 제외한 path 를 기준으로 링크할때 ex>/rootPathName/path1/path(n)/some.html
+-->
+
+<!-- 이미지를 링크로 감싸면 이미지자체가 링크화 되어집니다. 
+	아래 이미지를 클릭하면, day1 path 의 greeting.html 이 링크되도록 절대값으로 설정하세요.
+-->
+<a href="/html_css_Basic/day1/greeting.html"><img src="img/smiley.gif"/></a>
+
+
+<hr><hr>
+
+<h2> 이미지의 Floating 확인하기</h2>
+<p><b> Floating 이란 이미지와 함께 표기되는 컨텐트가 어떻게 표기될지를 결정합니다.</b><br>
+속성이 floating이고, 값은 right, left, both 가 있는데, 앞 두가지를 잘 사용합니다.<br>
+figcaption : 이미지 그룹의 요소를 나타내는 요소입니다.
+위 속성을 사용할때는 반드시 figure 라는 root 태그 하위에 img, figcaption 이 정의 되어야 합니다.(이건 기억하세요.)
+float 과는 독립적으로 이미지의 제품등을 표현해 낼 때 사용됩니다.
+</p>
+
+<p>
+<figure><img src="img/smiley.gif" style="float: right;width: 42px; height: 42px"/>
+<figcaption>이건 이미지의 캡션</figcaption>
+플로팅이 적용되지 않은 상태의 이미지와 내용들..
+</figure>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

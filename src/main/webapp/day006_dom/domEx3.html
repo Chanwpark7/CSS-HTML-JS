@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>class 이름으로 노드 찾기</title>
+</head>
+<body>
+	<form>
+		id: <input type="text" name="id"><br>
+		name: <input type="text" name="name" value="박찬우"><br>
+	</form>
+	<script>
+	//getElementsByName('nameValue') -> 이름이 같은 Node 를 찾아서 Collection 리턴.
+		const nameCollect=document.getElementsByName('name');
+		
+		console.log(nameCollect[0].value);
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Image Tag</h1>
+<p>
+	Image tag 는  &lt;img/&gt; 로, 싱글태그이며, 반드시 같은 요소내에서 태그를 끝내야 합니다.<br>
+	중요 속성으로는 src(이미지 경로 및 이름), alt(대체명) 이 있습니다.<br>
+	width,height 는 이미지의 가로*세로의 pixel 을 지정합니다.<br>
+	타 사이트의 이미지도 가져다 사용 가능합니다.<br>
+</p>
+<ul>
+	<li>이미지1 : <img alt="이미지1번" src="img/1.jpg"/></li>
+	<li>공통 이미지2 : <img alt="공통이미지2번" src="../comm_img/3.jpg"/></li>
+	<li>외부 이미지 : <img alt="공통이미지2번" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpk2lI-XNqA1Alyy7ozKoB-uEDYhxEck14Q0hpwBe6NTEHTXqlo3iavPrplZA5OZG6GtY&usqp=CAU"/></li>
+</ul>
+<p>이미지 맵(Map) 만들어 보기.<br>
+   이미지의 각 영역을 지정해서 그 부위에 link 를 잡아서 해당 페이지로 이동 시키는 걸 뜻합니다.
+</p>
+
+<hr>
+<p>아래 이미지에서 컴터, 커피, 컵 을 클릭하면 해당 페이지로 이동 합니다.</p>
+
+<!-- 이미지맵을 사용할때는 img 태그의 usemap 이라는 속성에 값으로 #Value 를 줘야 합니다. -->
+<!-- 이후 map name=usemap 이름 태그를 사용해서 이미지 맵을 구성합니다.-->
+<img src="img/workplace.jpg" alt="WorkPlace" width="400" height="379" usemap="#workmap"/>
+
+<!-- map 의 하위 요소로는 area 가 있습니다. 여기 속성으로 좌표값,링크(href) 를 주면 끝  -->
+<map name="workmap">
+	<area alt="Computer" coords="34,44,270,350" shape="rect" href="/html_css_Basic/day2/computer.html">
+	<area alt="iphone" coords="290,172,333,250" shape="rect" href="iphone.html">
+	<area alt="starbugs" coords="337,300,44" shape="circle" href="starbugs.html">
+</map>
+
+<p style="background-image: url('img/1.jpg');">
+	하하하<br>
+	하하하<br>
+	하하하<br>
+	하하하<br>
+	하하하<br>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

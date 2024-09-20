@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Componenet 의 위치를 지정하는 position 속성 : static(정적: 일반적인 기본속성), relative(상대), fixed(고정), absolute(절대), sticky
+	각 속성에 따라서 이미지나 content 들의 위치값이 조정이 되거나, 고정 되거나 합니다.
+	중요!! 각 포지션의 설정 범위는 Top->Right->Bottom->Left 순으로 정의 합니다.
+-->
+	<style>
+		.container{
+			position: relative;
+		}
+		.topleft{
+			position: absolute;
+			top: 8px;
+			left: 16px;
+			font-size: 20px;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+			opacity: 0.2;
+		}
+	</style>
+</head>
+<body>
+	<h2>Image Text</h2>
+	<p>특정 문자열을 Top/Left에 배치한 결과 입니다.</p>
+	<div class="container">
+		<img src="../comm_img/bg.jpg" height="400px" width="1000px">
+		<div class="topleft">Top Left</div>
+	</div>
+</body>
+</html>

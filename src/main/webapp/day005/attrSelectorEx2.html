@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 요소의 속성 선택자 : 우리가 지금까지 공부한건 요소(Element) 선택자를 Css 에서 정의하는 것.
+	이번에는 각 Element 가 갖고 잇는 속성 그리고 만약 값이 있다면, 그 값을 기준으로 정의 하는 방법을 알아보겠다.
+	
+	문법 : 요소명[속성[=value]] -> =value 는 옵션임.
+	속성선택자는 []를 사용하여 적용할 속성명을 넣어주는데에서 시작함.
+	
+	다양한 값 옵션으로는 
+	~([value]가 포함된 모든 경우), |([value]가 -으로 시작하거나 끝나는 모든 경우), ^([value]가 처음인 경우), $[value]가 끝인 경우), *(특정 문자가 지정된 모든 값)
+	등이 있으며, 하나씩 알아보자.
+-->
+	<style type="text/css">
+		/* a[target='_blank']{
+			background-color: yellow;
+		} */
+		[title ~= 'flower']{
+			border: 5px solid yellow;
+		}
+		[class *='top']{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<a href="#" class="topLink">a1</a>
+	<a href="a.html" target="_self" class="top-header">a2</a>
+	<a href="b.html" target="_blank" class="top-bottom">a3</a>
+	<img alt="" src="../imgGallery/2.jpg" title="a flower">
+	<img alt="" src="../imgGallery/3.jpg" title="flower">
+	<img alt="" src="../imgGallery/4.jpg" title="dog">
+</body>
+</html>

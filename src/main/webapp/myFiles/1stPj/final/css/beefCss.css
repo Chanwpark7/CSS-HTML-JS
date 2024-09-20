@@ -1,0 +1,1002 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+  font-family: "Pacifico", cursive; 
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* background img 정의 */
+.background{
+    width: 100%;
+    top: 0;
+    height:30vh;
+    z-index: -5;
+}
+
+#bg_container{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(#ff7d5dcf 0%, rgb(255, 190, 86) 35%, rgb(255, 221, 118) 50%, rgb(255, 252, 186) 75%, rgb(255, 252, 232) 100%);
+    z-index: -5;
+  }
+  
+  .ml12 {
+    font-size: 3.5em;
+    font-weight: bold;
+  }
+
+  .ml12 .letter {
+    display: inline-block;
+  }
+
+  #mpTree3{
+    position: absolute;
+    top: 2rem;
+    left: 0rem;
+    width: 20rem;
+    z-index: -2;
+  }
+  
+  #moon{
+    position: absolute;
+    top: 2rem;
+    right: 10rem;
+    width: 15rem;
+    z-index: -4;
+  }
+  
+  #couple{
+    position: absolute;
+    left: 20rem;
+    bottom: 0rem;
+    width: 4rem;
+    z-index: -1;
+  }
+  
+  #bg_wrap{
+    overflow: hidden;
+    position: absolute;
+    width:100%;
+    height: 300%;
+  }
+  
+  #mp1{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 25s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp2{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.9s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp3{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.8s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp4{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.7s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp5{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.6s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp6{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.5s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp7{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.4s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp8{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.3s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp9{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.2s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp10{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating 24.1s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  
+  #mp11{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 24.0s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp12{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.9s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp13{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.8s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp14{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.7s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp15{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.6s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp16{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.5s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp17{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.4s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp18{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.3s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp19{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.2s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mp20{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    animation: vibrating2 23.1s ease-in-out infinite alternate;
+    z-index: -3;
+  }
+  
+  #mpImg1{
+    width: 100%;
+    animation: rotating 1.5s ease-in-out infinite alternate;
+  }
+  
+  #mpImg2{
+    width: 100%;
+    animation: rotating 1.7s ease-in-out infinite alternate;
+  }
+  
+  #mpImg3{
+    width: 100%;
+    animation: rotating 3.3s ease-in-out infinite alternate;
+  }
+  
+  #mpImg4{
+    width: 100%;
+    animation: rotating 3.1s ease-in-out infinite alternate;
+  }
+  
+  #mpImg5{
+    width: 100%;
+    animation: rotating 2.9s ease-in-out infinite alternate;
+  }
+  
+  #mpImg6{
+    width: 100%;
+    animation: rotating 2.7s ease-in-out infinite alternate;
+  }
+  
+  #mpImg7{
+    width: 100%;
+    animation: rotating 2.5s ease-in-out infinite alternate;
+  }
+  
+  #mpImg8{
+    width: 100%;
+    animation: rotating 2.3s ease-in-out infinite alternate;
+  }
+  
+  #mpImg9{
+    width: 100%;
+    animation: rotating 2.1s ease-in-out infinite alternate;
+  }
+  
+  #mpImg10{
+    width: 100%;
+    animation: rotating 1.9s ease-in-out infinite alternate;
+  }
+  
+  
+  #mpImg11{
+    width: 100%;
+    animation: rotating 2.6s ease-in-out infinite alternate;
+  }
+  
+  #mpImg12{
+    width: 100%;
+    animation: rotating 2.8s ease-in-out infinite alternate;
+  }
+  
+  #mpImg13{
+    width: 100%;
+    animation: rotating 2.2s ease-in-out infinite alternate;
+  }
+  
+  #mpImg14{
+    width: 100%;
+    animation: rotating 1.0s ease-in-out infinite alternate;
+  }
+  
+  #mpImg15{
+    width: 100%;
+    animation: rotating 2.8s ease-in-out infinite alternate;
+  }
+  
+  #mpImg16{
+    width: 100%;
+    animation: rotating 2.6s ease-in-out infinite alternate;
+  }
+  
+  #mpImg17{
+    width: 100%;
+    animation: rotating 2.4s ease-in-out infinite alternate;
+  }
+  
+  #mpImg18{
+    width: 100%;
+    animation: rotating 2.2s ease-in-out infinite alternate;
+  }
+  
+  #mpImg19{
+    width: 100%;
+    animation: rotating 2.0s ease-in-out infinite alternate;
+  }
+  
+  #mpImg20{
+    width: 100%;
+    animation: rotating 1.8s ease-in-out infinite alternate;
+  }
+  
+  @keyframes rotating {
+      0% {
+        transform: rotate(45deg);
+      }
+      100% {
+        transform: rotate(-45deg);
+      }
+  }
+  
+  @keyframes vibrating{
+    0%{
+      transform: translateX(500%);
+    }
+    25%{
+      transform: translateX(-1000%);
+    }
+    50%{
+      transform: translateX(1000%);
+    }
+    75%{
+      transform: translateX(-1500%);
+    }
+    100%{
+      transform: translateX(1500%);
+    }
+  }
+  
+  @keyframes vibrating2{
+    0%{
+      transform: translateX(-500%);
+    }
+    25%{
+      transform: translateX(1000%);
+    }
+    50%{
+      transform: translateX(-1000%);
+    }
+    75%{
+      transform: translateX(1500%);
+    }
+    100%{
+      transform: translateX(-1500%);
+    }
+  }
+
+/* Body 정의 */
+.mainBody{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* body 내 nav bar 정의 */
+.board {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: white;
+}
+
+/* 1번 탭(홈) */
+.toHome {
+  position: relative;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toHome .home {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.toHome img {
+  width: 50%;
+  position: absolute;
+  cursor: pointer;
+  float: left;
+}
+
+/* 홈 탭 마우스 오버시 효과 정의 */
+.toHome:hover {
+  background-color: black;
+}
+
+.toHome:hover img {
+  filter: invert(100%);
+}
+
+/* 2번 탭(소개 상세페이지) */
+.detail {
+  position: relative;
+  width: 30%;
+  height: 100%;
+}
+
+.btn{
+  height: 100%;
+  width:50%;
+}
+
+/* dropdown 정의 */
+.detail .dropBtn {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  top: 5vh;
+  display: none;
+  z-index: 4;
+  background-color: black;
+}
+
+.detail .dropdown-content a {
+  display: block;
+  padding: auto;
+  text-decoration: none;
+  width: 80%;
+  padding: 5% 10%;
+  color: white;
+}
+
+.detail .dropdown-content :nth-child(4) {
+  text-decoration: none;
+  color: gray;
+}
+
+/* dropdown 이벤트 정의 */
+.btn:hover .dropBtn {
+  background-color: black;
+  color: white;
+}
+
+.btn:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: gray;
+  color: black;
+}
+
+.dropdown-content a:nth-child(4):hover {
+  background-color: black;
+  color: gray;
+}
+
+
+/* 3번 탭(경로) */
+.path {
+  display: flex;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  align-items: center;
+  float: right;
+}
+
+/*main 제목*/
+.main h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/*main 페이지 전체*/
+.main{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+max-width : 1400px;
+width: 80%;
+height: 80%;
+border: 2px solid black;
+padding: 3%;
+}
+
+.main2{
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total{
+    width: 70%;
+    height: 50%;
+}
+
+.left, .grill {
+    height: 33.3%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.right {
+    height: 33.3%;
+    width: 100%;
+    margin: 3% auto;
+    padding: 0;
+}
+
+
+.left #korea{
+    display: flex;
+    height: 13rem;
+    width: 40%;
+    margin-right: 2%;
+}
+
+.korea_box{
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    height: 13rem;
+    width: 60%;
+}
+
+.korea_box p{
+    /* line-height:2rem; */
+    text-align: center;
+    font-size: 1rem;
+    line-height: 110%;
+}
+
+.korea_box h3{
+    margin: 1.3rem;
+    text-align: center;
+}
+
+.right #usa{
+    height: 14rem;
+    width: 40%;
+    margin-left:2%;
+}
+
+.amer_box{
+    border:1px solid #333;
+    display: flex;
+    flex-direction: column;
+    height: 14rem;
+    width: 60%;
+}
+
+.amer_box p{
+    /* line-height: 1.5rem; */
+    text-align: center;
+    font-size: 1rem;
+    line-height: 110%;
+}
+
+.amer_box h3{
+    text-align: center;
+    margin: 1.3rem;
+}
+
+.grill #gr{
+    display: flex;
+    height: 22rem;
+    width: 40%;
+    margin-right: 2%;
+}
+
+.grill_box{
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    height: 22rem;
+    width: 80%;
+    text-align: center;
+}
+
+.grill_box dl{
+    overflow: hidden;
+}
+
+.grill_box dt{
+    font-weight: bold;
+    margin: 2% 0;
+    font-size: 1rem;
+}
+
+.grill_box dd{
+    font-size: 0.9rem;
+}
+
+    /*left 1 페이지*/
+   .left{
+    display : flex;
+ 
+    }
+   
+   /*right 페이지*/
+   .right{
+    display : flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   /*left 2 페이지*/
+   .grill{
+    display: flex;
+   }
+   
+   /*left 1 이미지*/
+   .left #korea{
+    transition : all 0.2s linear;
+   }
+   
+   /*left 1 이미지 이벤트효과*/
+   .left #korea:hover{
+    transform : scale(1.1);
+   }
+   
+   /*right 이미지*/
+   .right #usa{
+    transition : all 0.2s linear;
+   }
+   
+   /*right 이미지 이벤트 효과*/
+   .right #usa:hover{
+     transform : scale(1.1);
+   }
+   
+   /*left 2 이미지*/
+   .grill #gr{
+     transition : all 0.2s linear;
+   }
+
+   
+   /*left 2 이미지 이벤트 효과*/
+   .grill #gr:hover{
+     transform : scale(1.1);
+   }
+   
+
+
+/* upload btn 정의 */
+#container {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	right: 30px;
+	bottom: 30px;
+	position: fixed;
+	cursor: pointer;
+	box-sizing: border-box;
+    z-index: 10;
+}
+
+#container img{
+	display: absolute;
+	width: 20px;
+	height: 20px;
+	z-index: 4;
+}
+
+#container .circle {
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	stroke: black;
+	stroke-width: 1;
+	stroke-dasharray: 157;
+	stroke-dashoffset: 157;
+	z-index: 5;
+}
+
+#container .circle circle{
+	transform-origin: center center;
+	transform: rotate(-90deg);
+}
+
+/* mobile 용 css */
+@media all and (min-width:320px) and (max-width:767px){
+  #wrap{
+      flex: row wrap;
+  }
+
+  .ml12{
+    font-size: 2em;
+  }
+
+  .board .path{
+    display: none;
+  }
+
+  .board .detail{
+    width:70%;
+  }
+
+  .board .btn{
+    width:100%;
+  }
+
+  .board .dropdown-content{
+    width:100%;
+    z-index: 10;
+  }
+
+  .header #bgImg{
+      width: 1440px;
+  }
+  
+  .total{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2rem;
+  }
+
+  /*메인 페이지*/
+.main{
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+      border: none;
+      align-items: center;
+      justify-content: center;
+}    
+
+  .main h1{
+  display: flex;
+      margin: 0;
+      padding-top: 2rem;
+      text-align: center;
+      margin-left: 8%;
+      font-size: 2rem;
+ }
+
+   /*left1  이미지*/
+.left #korea{
+   width : 80%;
+   height : 70%;
+   display : flex;
+   justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding-top: 1rem;
+  }
+
+   /*right 이미지*/
+.right #usa{
+  width : 80%;
+   height : 70%;
+   display : flex;
+   justify-content : center;
+      align-items: center;
+   margin: 0;
+
+}
+
+  /*left 2 이미지*/
+.grill #gr{
+  width : 80%;
+   height : 70%;
+   display : flex;
+   justify-content : center;
+      align-items: center;
+  margin: 0;
+
+}
+
+  /*left 1 p 박스*/
+.korea_box{
+  display : flex;
+      flex-direction: column;
+   width: 80%;
+   height: 70%;
+      text-align: center;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+}
+
+  /*right p 박스*/
+.amer_box{
+   display : flex;
+      flex-direction: column;
+   width :80%;
+   height: 70%;
+   margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+}
+
+  /*left 2 p 박스*/
+.girll_box{
+   display : flex;
+      flex-direction: column;
+   width: 80%;
+  height: 70%;
+      padding: 1rem;
+      font-size: 1rem;
+  margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+}
+
+
+
+  /*left 1 페이지*/
+.left{
+      display: flex;
+  flex-direction : column;
+      margin: 0;
+      justify-content: center;
+      align-items: center;
+}
+
+  /*right 페이지*/
+.right{
+      display: flex;
+  flex-direction: column;
+      margin: 0;
+      justify-content: center;
+}
+
+  /*left 2 페이지*/
+.grill{
+      display: flex;
+  flex-direction: column;
+      margin: 0;
+      justify-content: center;
+      align-items: center;
+}
+
+  .amer_box p{
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 130%;
+      padding-bottom: 2%;
+  }
+
+  .amer_box h3{
+      text-align: center;
+      font-size: 1.2rem;
+  }
+
+   /*left 1 페이지 p*/
+  .korea_box p{
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 130%;
+      padding-bottom: 2%;
+  }
+
+  .korea_box h3{
+      font-size: 1.2rem;
+  }
+
+  .girll_box{
+      font-size: 0.8rem;
+  }
+
+  .grill_box dt{
+      line-height: 130%;
+  }
+
+  /*이미지 이벤트효과 none*/
+  .left #korea,  .grill #gr, .right #usa{
+  transition : none;
+}
+
+  .background #couple{
+      left: 40%;
+  }
+}
+
+/* tablet 용 css */
+@media all and (min-width:768px) and (max-width:1279px){
+  #wrap{
+      flex: row wrap;
+  }
+  
+  /*메인 페이지*/
+  .main{
+  display: flex;
+      justify-content: center;
+      align-items: center;
+  width: 100%;
+  border: none;
+      height: auto;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      padding-top: 0;
+}    
+
+  .total{
+      padding-bottom: 3rem;
+      width: 70%;
+  }
+
+  .left, .right, .grill{
+      width: 100%;
+  }
+
+  /*left 1 p 박스*/
+.korea_box{
+  width: 60%;
+      height: 15rem;
+}
+
+  /*right p 박스*/
+.amer_box{
+  width: 60%;
+      height: 15rem;
+  }
+
+  /*left 2 p 박스*/
+.girll_box{
+  width: 60%;
+      height: 18rem;
+      
+}
+
+  /*이미지 정의*/
+.left #korea,  .right #usa{
+      width: 40%;
+      height: 15rem;
+}
+
+  .grill #gr{
+      width: 40%;
+
+  }
+
+  .grill_box dt{
+      margin: 2%;
+      line-height: 130%;
+  }
+
+}
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/* 문자열 속성 : length -> 문자열의 길이를 리턴함. */
+		str="hello";
+		console.log(str.length);
+		
+		//여기서부터 메소드.
+		/* charAt(index번호) : 인덱스에 해당하는 문자열을 리턴함. */
+		console.log(str.charAt(0));
+		str=str.charAt(str.length-1); //str이 마지막 인덱스를 참조하게 되고 더이상 hello를 찾을 수 없게 됨.
+		console.log(str);
+		
+		str="abcdefg";
+		//위 문자열을 for 구문을 이용해서 문자 하나씩 추추(charAt 이용)해서 출력 시키세요.
+		for(let i=0;i<=(str.length-1);i++){
+			console.log(str.charAt(i));
+		}
+		for(let i=0;i<=(str.length-1);i++){
+			console.log(str.charCodeAt(i));
+		}
+		for(let i=0;i<=(str.length-1);i++){
+			console.log(str[i]);
+		}
+		
+		//문자열을 분리하는 메서드 : slice(start index,end), substring(strat index,end), substr(start index,length);
+		str= "hello world";
+		console.log(str.slice(-10));
+		console.log(str.substring(-1)); // - 기능 지원 안함.
+		console.log(str.substr(0,str.length));
+		
+		console.log(str.toUpperCase());
+		console.log(str.toLowerCase());
+		console.log(str.indexOf("h")); //몇번째 인덱스에 존재하는지 인덱스 number 리턴.
+		console.log(str.indexOf("p")); //찾으려는 문자열이 포함되지 않다면 -1 리턴.
+		
+		myEmail="chanwpark7@naver.com";
+		console.log(myEmail.indexOf("@")); //-1이 리턴될 경우 @가 포함되지 않았다는걸 의미함.
+		console.log(str.concat("b "));
+		
+		str=" abc "
+		console.log(str.trim().length);
+		
+		str="1";
+		console.log(str.padStart(4,"wer"));
+		
+		str= "hello world";
+		console.log(str.indexOf("l",str.indexOf("l")+2)); //3번째 l 이 들어간 인덱스 리턴.
+		
+		//replace() : 특정 문자열을 파라미터로 받아서 그 부분을 두번째 파라미터 값으로 편경해서 새로운 문자열 객체를 리턴.
+		str="visit my home please. it is my pleasure.";
+		let res=str.replace("t","l");
+		res=str.replaceAll("my","your");
+		console.log(res);
+		
+		str="some@some.com";
+		console.log(str.startsWith("some",str.indexOf("@")+1));
+		
+		//search() : indexOf 와 같지만, 틀린점은 파라미터가 하나만 존재한다는 것임.
+			/* indexOf 는 두개가 기본이고 조건에 따라서 두개를 써도, 안써도 그만이지만, search 는 하나만 존재함.
+			그리고 사용법으로는 정규화식의 표현법인 /찾을 문자열/ 을 이용해서 파라미터를 줘야 함. 찾게되면 문자열이 같은 인덱스를 리턴함. */
+		str="welcome to my world. it|s javascript world";
+		console.log(str.search(/world/));
+		
+		//match(/찾을 문자열/) : 찾을 문자열이 포함되었는지를 판단하는 메소드.
+		console.log(str.match(/ipt/));
+		console.log(str.match(/ipt/)[0]);
+		let arr = str.match(/ipt/);
+		console.log(arr+" "+arr.length);
+		
+		//NaN : Not a Number 의 약자. 변수의 결과 값이 NaN인 경우 조건절에서 false 로 처리됨.
+		let x=100/"apple";
+		console.log(x);
+		
+		if(isNaN(x)){
+			console.log("NaN이 아닙니다.")
+		}
+		
+		//수에 관련된 알아두면 좋은 메소드 몇가지
+		//toFixed(자릿수) : 실수의 값의 자릿수만큼만 표현함.
+		let y = 3.141592; //주의할 점 : javascript의 모든 데이터는 내부적으로 객체로 처리되기 때문에 따로 객체 생성(new Number())등을 하지 않고서도 그냥 값으로 호출 가능함.
+		console.log(y.toFixed(2));
+		y=6;
+		console.log(Number.MAX_VALUE);
+	</script>
+</body>
+</html>

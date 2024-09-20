@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>수직 메뉴바 만들어보기</title>
+	<style type="text/css">
+/* ul 은 deco 는 none 으로, margin, padding은 0, wid = 200px, bg color 은 자유
+	li 내부에 있는 a 는 block 형태로, color 는 검은색, 패딩은 상하 8, 좌우 16, deco 는 none
+	li 의 a 에 마우스 오버시엔 bg color 자유, font컬러도 변경. */
+		ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			width: 200px;
+			background-color: cyan;
+		}
+		li a{
+			display: block;
+			color: black;
+			padding: 8px 16px;
+			text-decoration: none;
+		}
+		li a:hover{
+			background-color: red;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<a href="#">Menu1</a>
+		</li>
+		<li>
+			<a href="#">Menu2</a>
+		</li>
+		<li>
+			<a href="#">Menu3</a>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	const title = document.createElement("title");
+	title.appendChild(document.createTextNode("wut? this is html made by node?"))
+	document.head.appendChild(title);
+	
+	const header = document.createElement("h1");
+	header.appendChild(document.createTextNode("Really? this is a header?"));
+	const para = document.createElement("p");
+	para.appendChild(document.createTextNode("you mean this is a paragraph?"));
+	document.body.appendChild(header);
+	document.body.appendChild(para);
+});
+</script>

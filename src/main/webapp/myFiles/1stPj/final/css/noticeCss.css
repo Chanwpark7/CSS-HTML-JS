@@ -1,0 +1,452 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* background img 정의 */
+.background{
+  width: 100%;
+  top: 0;
+  height:30vh;
+  z-index: -5;
+}
+
+
+#bg_container{
+  z-index: -5;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+#container_notice_title {
+  left: 24%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+#container_notice_title svg{
+  width: 100%;
+}
+
+#container_notice_title_right {
+  left: 76%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+#bg_container .left{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 15rem;
+}
+
+#bg_container .right{
+  position: absolute;
+  transform: scaleX(-1);
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  height: 15rem;
+  display: block;
+}
+
+/* body 내 nav bar 정의 */
+.board {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: white;
+}
+
+/* 1번 탭(홈) */
+.toHome{
+  position: relative;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toHome .home{
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.toHome img{
+  width:50%;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* 홈 탭 마우스 오버시 효과 정의 */
+.toHome:hover{
+  background-color: black;
+}
+
+.toHome:hover img{
+  filter: invert(100%);
+}
+
+/* 2번 탭(소개 상세페이지) */
+.detail {
+  position: relative;
+  width: 30%;
+  height: 100%;
+}
+
+.btn{
+  height: 100%;
+  width:50%;
+}
+
+/* dropdown 정의 */
+.detail .dropBtn {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  top: 5vh;
+  display: none;
+  z-index: 4;
+  background-color: black;
+}
+
+.detail .dropdown-content a {
+  display: block;
+  padding: auto;
+  text-decoration: none;
+  width: 80%;
+  padding: 5% 10%;
+  color: white;
+}
+
+.detail .dropdown-content a:nth-child(2) {
+  text-decoration: none;
+  color: gray;
+}
+
+/* dropdown 이벤트 정의 */
+.btn:hover .dropBtn {
+  background-color: black;
+  color: white;
+}
+
+.btn:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: gray;
+  color: black;
+}
+
+.dropdown-content a:nth-child(2):hover {
+  background-color: black;
+  color: gray;
+}
+
+/* 3번 탭(경로) */
+.path{
+  display: flex;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Body 정의 */
+.mainBody{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+}
+/* Notice part 정의 */
+.notice {
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2REM;
+  margin: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 1280px;
+  margin: auto;
+  align-content: center;
+  margin-top: auto;
+}
+
+th,
+td {
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  text-align: center;
+  padding: 24px 8px;
+}
+
+th:first-child {
+  padding: 0 8px;
+}
+
+tr {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  background-color: white;
+}
+
+.pagination {
+  display: flex;
+  margin: auto;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid silver;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 5px;
+}
+
+#click {
+  float: right;
+  width: 60px;
+  height: 30px;
+  position: absolute;
+  right: 9%;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* upload btn 정의 */
+#container {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  right: 30px;
+  bottom: 30px;
+  position: fixed;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+#container img {
+  display: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 4;
+}
+
+#container .circle {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  stroke: black;
+  stroke-width: 1;
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  z-index: 5;
+}
+
+#container .circle circle {
+  transform-origin: center center;
+  transform: rotate(-90deg);
+}
+
+/* mobile 용 css */
+@media all and (max-width: 767px) {
+  #wrap {
+    flex: row wrap;
+  }
+
+  .board .path{
+    display: none;
+  }
+
+  .board .detail{
+    width:70%;
+  }
+
+  .board .btn{
+    width:100%;
+  }
+
+  .board .dropdown-content{
+    width:100%;
+    z-index: 10;
+  }
+
+  .header #bgImg {
+    width: 1440px;
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: lighter;
+  }
+
+  .notice,
+  table,
+  .list {
+    width: 100%;
+  }
+
+  th,
+  td {
+    font-size: 0.8rem;
+  }
+
+  .container {
+    min-width: 480px;
+  }
+
+  .pagination {
+    width: 70%;
+  }
+
+  .pagination a {
+    font-size: 1rem;
+    padding: 1% 2%;
+  }
+
+  .pagination a:nth-child(n + 7):nth-child(-n + 11) {
+    display: none;
+  }
+
+  #click {
+    right: 2%;
+  }
+
+  #bg_container .left{
+    width:50%;
+  }
+
+  #bg_container .right{
+    width: 35%;
+    display: none;
+  }
+  #container_notice_title {
+    left: 55%;
+    width: 100%;
+  }
+  
+  #container_notice_title_right {
+    display:none;
+  }
+}
+
+/* tablet 용 css */
+@media all and (min-width: 768px) and (max-width: 1279px) {
+  #wrap {
+    flex: row wrap;
+  }
+
+  .board {
+    display: flex;
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: lighter;
+  }
+
+  .notice,
+  table,
+  .list {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 18px 6px;
+  }
+
+  .pagination {
+    width: 70%;
+  }
+
+  .pagination a {
+    font-size: 1.5rem;
+    padding: 1% 2%;
+  }
+
+  #click {
+    right: 2%;
+  }
+
+  #bg_container .left{
+    width: 35%;
+  }
+
+  #bg_container .right{
+    width: 35%;
+  }
+  #container_notice_title {
+    left: 45%;
+  }
+  
+  #container_notice_title_right {
+    display:none;
+  }
+}
